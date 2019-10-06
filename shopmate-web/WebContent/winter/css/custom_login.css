@@ -1,3 +1,7 @@
-.hideme1{
-  display: none
+#security_question{
+  width: 100%;
+  padding-left: 11px;
+}
+#signup_heading{
+  margin-bottom: 34px;
 }
