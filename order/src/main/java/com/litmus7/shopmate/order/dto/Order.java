@@ -2,6 +2,8 @@ package com.litmus7.shopmate.order.dto;
 
 import java.sql.Date;
 
+import javax.persistence.Entity;
+@Entity
 public class Order {
 	
 
