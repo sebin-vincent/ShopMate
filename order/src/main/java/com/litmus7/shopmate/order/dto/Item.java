@@ -1,14 +1,28 @@
 package com.litmus7.shopmate.order.dto;
 
+import java.io.Serializable;
 import java.sql.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 @Entity
-public class Item {
+@Table(name = "order_detail")
+public class Item implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
 	private String orderId;
+	@Column(name = "sku_id")
 	private String skuId; 
-	private int quantity; 
+	@Column(name = "quantity")
+	private int quantity;
+	@Column(name = "unit_price")
 	private long unitPrice; 
+	@Column(name = "last_modified_date")
 	private Date lastModifiedDate;
 	
 	public Item() {
