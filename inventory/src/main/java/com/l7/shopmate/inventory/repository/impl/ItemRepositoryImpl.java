@@ -25,18 +25,6 @@ public class ItemRepositoryImpl implements ItemRepository {
     @Override
     public Item getItemAvailabilityState(int id) {
 
-
-       // State itemState = entityManager.find(Item.class, String.valueOf(id)).getStock().getState();
-//        if (itemState == null) {
-//            throw new DataNotFoundException("The given item "+ id +" does not exists.");
-//        }
-//        Item item = entityManager.find(Item.class, String.valueOf(id));
-//        if (item == null) {
-//            throw new DataNotFoundException("The given item "+ id +" does not exists.");
-//        } else {
-//            State itemState = item.getStock().getState();
-//            return itemState;
-//        }
         return entityManager.find(Item.class, String.valueOf(id));
     }
 }
