@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.litmus7.shopmate.Dto.Catalog;
 import com.litmus7.shopmate.Services.CatalogService;
 
+
 @RestController
 public class CatalogController {
 
@@ -20,5 +21,7 @@ public class CatalogController {
 
 		return catalogService.findAllCatalog();
 	}
+	
+	
 
 }
