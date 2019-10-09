@@ -91,6 +91,17 @@
                             </ul>
                         </div>
                         <div class="hearer_icon d-flex">
+<!------------------------------to be removed to profile section------->
+                                <div class="col-md-12 form-group">
+                                        <button type="button" value="change password" class="btn_3" id="change_paswd_show_bttn">
+                                                Change password
+                                            </button>
+                                        </div>
+
+                                       
+
+
+<!------------------------------to be removed to profile section------->
                             <div class="dropdown cart">
                                 <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -155,6 +166,12 @@
                                is just a few clicks away from you.Don't be late !</p>
                             <a href="#" class="btn_3" id="already_customer">Login </a>
                         </div>
+                        <div class="login_part_text_iner" id="forgot_password_left"  style="display:none">
+                            <h2>Forgot Password?</h2>
+                            <p>Don't Worry! We are here to help you... 
+                                You are just a click away..</p>
+                            
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
@@ -179,10 +196,80 @@
                                     <button type="submit" value="submit" class="btn_3">
                                         log in
                                     </button>
-                                    <a class="lost_pass" href="#">forget password?</a>
+                                    <a class="lost_pass" href="#" id="forgot_pswd">forgot password?</a>
+                                    
                                 </div>
                             </form>
                         </div>
+
+                        <div class="login_part_form_iner" id="forgot_password" style="display:none">
+                            <h3>Please fill it!</h3>
+                            <form class="row contact_form" id="forgot_password_form">                                
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="email" class="form-control" id="fp_email" name="email" value=""
+                                        placeholder="Email" required>
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                        <select class="security" id="sec_quest" name="security_quest"  required>
+                                            <option value=""hidden>Select the question from the following options</option>
+                                            <option value="1">Who's your daddy?</option>
+                                            <option value="2">What is your favorite color?</option>
+                                            <option value="3">What is your favorite book?</option>                            
+                                            <option value="4">What brand of food did your first pet eat?</option>
+                                         </select>
+                                </div>
+
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="text" class="form-control" id="Sec_ans" name="sec_ans" value=""
+                                        placeholder="Answer" required>
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="password" class="form-control" id="fp_new_password" name="password" value=""
+                                        placeholder="New Password" required>
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="password" class="form-control" id="fp_conf_password" name="password" value=""
+                                        placeholder="Confirm Password" required>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <button type="submit" value="submit" class="btn_3" id="fp_up_bttn">
+                                        Update
+                                    </button>
+                                </div>
+                                <label style="visibility: hidden">Emailid doesn't match</label>
+
+                                
+                            </form>
+                        </div>
+
+  <!----------------To be removed section Change password----------------->
+                         <div class="login_part_form_iner" id="change_password_right" style="display:none">
+                                <h3>Please enter new password!</h3>
+                                <form class="row contact_form" id="change_password_form">                                
+                                    <div class="col-md-12 form-group p_star">
+                                            <input type="password" class="form-control" id="chng_old_password" name="password" value=""
+                                                    placeholder="Old Password" required>
+                                    </div>
+                        
+                                    <div class="col-md-12 form-group p_star">
+                                        <input type="password" class="form-control" id="chng_new_password" name="password" value=""
+                                            placeholder="New Password" required>
+                                    </div>
+                                    <div class="col-md-12 form-group p_star">
+                                        <input type="password" class="form-control" id="chng_conf_password" name="password" value=""
+                                            placeholder="Confirm Password" required>
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <button type="button" value="submit" class="btn_3" id="change_paswd_bttn">
+                                            Change
+                                        </button>
+                                    </div>
+                                      
+                                </form>
+                            </div>
+    <!-----------------------------------to be removed to profile change password---------------------------------------------->
+                        
+
                         <div class="login_part_form_iner" id="sign_up" style="display:none">
                             <h3>Please SignUp</h3>
                             <form class="row contact_form" id="sign_up_form">
