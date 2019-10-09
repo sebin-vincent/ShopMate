@@ -8,11 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.litmus7.shopmate.order.dao.GetPaymentMethodServiceDao;
 import com.litmus7.shopmate.order.dao.ItemServiceDao;
-<<<<<<< HEAD
-=======
 import com.litmus7.shopmate.order.dao.RetrieveShipingMethodDao;
-import com.litmus7.shopmate.order.dto.Item;
->>>>>>> ccec1156c6f9ae4dcf06e20bc2a6d578d3ace73e
 import com.litmus7.shopmate.order.dto.Order;
 import com.litmus7.shopmate.order.dto.Response;
 

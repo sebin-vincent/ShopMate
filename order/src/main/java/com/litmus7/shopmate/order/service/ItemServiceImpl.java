@@ -46,13 +46,13 @@ public class ItemServiceImpl implements ItemServiceDao {
 			}
 			
 			resp.setMessage("cart item list");
-			resp.setStatus("Success");
+			resp.setStatus(200);
 			resp.setPayload(itemList);
 			return resp;
 		}else {
 			resp.setMessage("no items in cart");
 			resp.setPayload(null);
-			resp.setStatus("failed");
+			resp.setStatus(401);
 			return resp;
 		}
 	}
