@@ -7,26 +7,33 @@ import org.springframework.stereotype.Service;
 
 import com.litmus7.shopmate.order.dao.ItemServiceDao;
 import com.litmus7.shopmate.order.dto.Item;
+import com.litmus7.shopmate.order.dto.Order;
 import com.litmus7.shopmate.order.repositorydao.ItemRepositoryDao;
+
 @Service
 public class ItemServiceImpl implements ItemServiceDao {
+	
 	@Autowired
 	ItemRepositoryDao itemRepositoryDaoImpl;
 
 	@Override
-	public List<Item> getallItemsService() {
-		return itemRepositoryDaoImpl.getallItems();
+	public Order getincompleteOrderIdByProfileIdService(int profileId) {
+		Object[] object= itemRepositoryDaoImpl.getincompleteOrderIdByProfileId(profileId);
+		Order order=new Order();
+		order.setOrderId((int) object[0]);
+		return order;
 	}
 
 	@Override
-	public List<Item> getincompleteOrderItemListService(String orderId) {
-		return itemRepositoryDaoImpl.getincompleteOrderItemList(orderId);
-	}
-
-	@Override
-	public String getincompleteOrderIdByProfileIdService(String profileId) {
+	public List<Item> getcartItemByProfileId(int profileId) {
+		Object[] result = itemRepositoryDaoImpl.getincompleteOrderIdByProfileId(profileId);
+		int orderId = result[0];
+		List<Item> itemList = itemRepositoryDaoImpl.getcartItems(profileId);
 		
-		return itemRepositoryDaoImpl.getincompleteOrderIdByProfileId(profileId);
+		
+		return null;
 	}
+
+	
 
 }

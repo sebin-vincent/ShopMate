@@ -1,6 +1,5 @@
 package com.litmus7.shopmate.order.dto;
 
-import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.Column;
@@ -9,19 +8,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
 @Table(name = "order_detail")
-public class Item implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class Item {
 	@Id
-	private String orderId;
+	private int orderId;
 	@Column(name = "sku_id")
 	private String skuId; 
 	@Column(name = "quantity")
 	private int quantity;
 	@Column(name = "unit_price")
-	private long unitPrice; 
+	private int unitPrice; 
 	@Column(name = "last_modified_date")
 	private Date lastModifiedDate;
 	
@@ -29,11 +24,11 @@ public class Item implements Serializable{
 		super();
 	}
 
-	public String getOrderId() {
+	public int getOrderId() {
 		return orderId;
 	}
 
-	public void setOrderId(String orderId) {
+	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
 
@@ -57,7 +52,7 @@ public class Item implements Serializable{
 		return unitPrice;
 	}
 
-	public void setPrice(long unitPrice) {
+	public void setPrice(int unitPrice) {
 		this.unitPrice = unitPrice;
 	}
 
@@ -73,7 +68,7 @@ public class Item implements Serializable{
 		return unitPrice;
 	}
 
-	public void setUnitPrice(long unitPrice) {
+	public void setUnitPrice(int unitPrice) {
 		this.unitPrice = unitPrice;
 	}
 }
