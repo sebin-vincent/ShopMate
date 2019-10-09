@@ -20,18 +20,18 @@ public class ItemServiceImpl implements ItemServiceDao {
 	public Order getincompleteOrderIdByProfileIdService(int profileId) {
 		Object[] object= itemRepositoryDaoImpl.getincompleteOrderIdByProfileId(profileId);
 		Order order=new Order();
-		order.setOrderId((int) object[0]);
+		order.setOrderId((Integer)object[0]);
 		return order;
 	}
 
 	@Override
 	public List<Item> getcartItemByProfileId(int profileId) {
 		Object[] result = itemRepositoryDaoImpl.getincompleteOrderIdByProfileId(profileId);
-		int orderId = result[0];
-		List<Item> itemList = itemRepositoryDaoImpl.getcartItems(profileId);
+		int orderId =(int) result[0];
+		List<Item> itemList = itemRepositoryDaoImpl.getcartItems(orderId);
 		
 		
-		return null;
+		return itemList;
 	}
 
 	

@@ -9,6 +9,6 @@ import com.litmus7.shopmate.order.dto.Item;
 @Repository
 public interface ItemRepositoryDao {
 	public Object[] getincompleteOrderIdByProfileId(int profileId);
-	public List<Item>  getcartItems(int profileId);
+	public List<Item>  getcartItems(int orderId);
 
 }
