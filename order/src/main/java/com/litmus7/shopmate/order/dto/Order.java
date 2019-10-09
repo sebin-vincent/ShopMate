@@ -2,22 +2,29 @@ package com.litmus7.shopmate.order.dto;
 
 import java.sql.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 @Entity
 public class Order {
-	
-
+	@Id
+	@Column(name = "order_id")
 	private String orderId; 
-	private String profileId; 
-	private String addressId; 
-	private String shippingMethodId; 
-	private String paymentMethodId; 
-	private long totalAmount; 
-	private String orderStatusId; 
+	@Column(name = "profile_id")
+	private String profileId;
+	@Column(name = "address_id")
+	private String addressId;
+	@Column(name = "shipping_method_id")
+	private String shippingMethodId;
+	@Column(name = "payment_method_id")
+	private String paymentMethodId;
+	@Column(name = "total_amount")
+	private long totalAmount;
+	@Column(name = "order_status_id")
+	private String orderStatusId;
+	@Column(name = "delivery_date")
 	private Date deliveryDate;
-	
-	
-	
+
 	public Order() {
 		super();
 	}
