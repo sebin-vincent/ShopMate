@@ -4,14 +4,17 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 @Entity
 @Table(name = "order_payment_method")
 public class Payment {
 	@Id
 	@Column(name = "payment_method_id")
 	private int paymentMethodId;
+	
 	@Column(name = "payment_method")
 	private String paymentMethod;
+	
 	public Payment() {
 		
 	}

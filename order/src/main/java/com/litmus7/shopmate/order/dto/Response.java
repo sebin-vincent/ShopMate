@@ -2,27 +2,30 @@ package com.litmus7.shopmate.order.dto;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Response {
-	
-	private String status;
-	private List<Object> payload;
+
+	private int status;
+	private Object payload;
 	private String Message;
-	
+
 	public Response() {
-		
+
 	}
-	
-	public Response(String status, String message, List<Object> payload) {
+
+	public Response(int status, String message, List<Object> payload) {
 		this.status = status;
 		Message = message;
 		this.payload = payload;
 	}
 
-	public String getStatus() {
+	public int getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
 
@@ -34,13 +37,12 @@ public class Response {
 		Message = message;
 	}
 
-	public List<Object> getPayload() {
+	public Object getPayload() {
 		return payload;
 	}
 
-	public void setPayload(List<Object> payload) {
+	public void setPayload(Object payload) {
 		this.payload = payload;
 	}
-	
-	
+
 }

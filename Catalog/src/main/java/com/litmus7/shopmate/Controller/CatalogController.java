@@ -10,7 +10,6 @@ import com.litmus7.shopmate.Dto.Catalog;
 import com.litmus7.shopmate.Services.CatalogService;
 
 @RestController
-
 public class CatalogController {
 
 	@Autowired
