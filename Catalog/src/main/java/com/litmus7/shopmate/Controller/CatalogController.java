@@ -10,15 +10,16 @@ import com.litmus7.shopmate.Dto.Catalog;
 import com.litmus7.shopmate.Services.CatalogService;
 
 @RestController
+
 public class CatalogController {
 
 	@Autowired
 	private CatalogService catalogService;
-	
-	
+
 	@GetMapping("/catalog")
-	public Optional<Catalog> getCatalog(){
-		
+	public Optional<Catalog> getCatalog() {
+
 		return catalogService.getMenu();
 	}
+
 }

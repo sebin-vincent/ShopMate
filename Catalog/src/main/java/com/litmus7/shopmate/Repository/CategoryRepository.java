@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import com.litmus7.shopmate.Dto.Category;
 
-@Component
+
 public interface CategoryRepository extends CrudRepository<Category, Long>{
 
 	

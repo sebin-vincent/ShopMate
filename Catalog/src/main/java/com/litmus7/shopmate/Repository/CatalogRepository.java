@@ -6,9 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.litmus7.shopmate.Dto.Catalog;
 
 @Repository
-public interface CatalogRepository extends CrudRepository<Catalog, Long>{
+public interface CatalogRepository extends CrudRepository<Catalog, Long> {
 
-	
-	
-	
 }

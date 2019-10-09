@@ -6,10 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.litmus7.shopmate.Dto.Catalog;
-import com.litmus7.shopmate.Repository.CatalogRepository;;
+import com.litmus7.shopmate.Repository.CatalogRepository;
 
 
 @Service
+
 public class CatalogService {
 
 	@Autowired
