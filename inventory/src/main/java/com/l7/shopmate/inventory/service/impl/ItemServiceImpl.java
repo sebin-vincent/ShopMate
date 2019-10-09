@@ -2,6 +2,7 @@ package com.l7.shopmate.inventory.service.impl;
 
 import com.l7.shopmate.inventory.entity.Item;
 import com.l7.shopmate.inventory.entity.State;
+import com.l7.shopmate.inventory.entity.Stock;
 import com.l7.shopmate.inventory.exception.DataNotFoundException;
 import com.l7.shopmate.inventory.repository.ItemRepository;
 import com.l7.shopmate.inventory.repository.impl.ItemRepositoryImpl;
@@ -31,6 +32,11 @@ public class ItemServiceImpl implements ItemService {
         }
     }
 
+    @Override
+    public Stock ReserveItem(int id, int quantity) {
+        Stock updatedStock = itemRepositoryImpl.reserveItem(id, quantity);
+        return updatedStock;
+    }
 
 
 }

@@ -2,14 +2,13 @@ package com.l7.shopmate.inventory.controller;
 
 import com.l7.shopmate.inventory.entity.Item;
 import com.l7.shopmate.inventory.entity.State;
+import com.l7.shopmate.inventory.entity.Stock;
+import com.l7.shopmate.inventory.model.ReserveBodyDto;
 import com.l7.shopmate.inventory.model.ResponseInfo;
 import com.l7.shopmate.inventory.service.ItemService;
 import com.l7.shopmate.inventory.service.impl.ItemServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,11 +26,19 @@ public class ItemController {
     }
 
     @GetMapping("{id}/state")
-//    @GetMapping("state/{id}")
     public ResponseInfo getState(@PathVariable String id){
         List<Object> responses = new ArrayList<Object>();
         responses.add(itemServiceImpl.getItemAvailabilityById(Integer.parseInt(id)));
         ResponseInfo responseInfo = new ResponseInfo(200, "Availability info", responses);
         return responseInfo;
     }
+
+   @PutMapping("reserve")
+    public ResponseInfo reserveItem(@RequestBody ReserveBodyDto reserveBodyDto) {
+       Stock updatedStock = itemServiceImpl.ReserveItem(Integer.parseInt(reserveBodyDto.getSkuId()), reserveBodyDto.getQuantity());
+       List<Object> responses = new ArrayList<Object>();
+       responses.add(updatedStock);
+       ResponseInfo responseInfo = new ResponseInfo(200, "Stock updated", responses);
+       return responseInfo;
+   }
 }
