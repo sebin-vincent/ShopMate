@@ -1,6 +1,6 @@
 package com.litmus7.shopmate.Controller;
 
-import java.util.Optional;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +16,9 @@ public class CatalogController {
 	private CatalogService catalogService;
 
 	@GetMapping("/catalog")
-	public Optional<Catalog> getCatalog() {
+	public List<Catalog> getCatalog() {
 
-		return catalogService.getMenu();
+		return catalogService.findAllCatalog();
 	}
 
 }

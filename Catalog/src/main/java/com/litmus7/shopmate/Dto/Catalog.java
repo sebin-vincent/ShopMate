@@ -1,5 +1,4 @@
 package com.litmus7.shopmate.Dto;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
