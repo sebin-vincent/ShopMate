@@ -37,13 +37,23 @@ public class ItemRepositoryImpl implements ItemRepository {
     @Override
     public Stock reserveItem(int skuid, int quantity) {
 
-
-
         Stock itemStock = entityManager.find(Item.class, String.valueOf(skuid)).getStock();
         itemStock.setReservedStock(itemStock.getReservedStock() + quantity);
         itemStock.setAvailableStock(itemStock.getAvailableStock() - quantity);
 
         Stock updatedStock = entityManager.find(Item.class, String.valueOf(skuid)).getStock();
         return updatedStock;
+    }
+
+    @Override
+    public Stock unreserveItem(int skuid, int quantity) {
+
+        Stock itemStock = entityManager.find(Item.class, String.valueOf(skuid)).getStock();
+        itemStock.setReservedStock(itemStock.getReservedStock() - quantity);
+        itemStock.setAvailableStock(itemStock.getAvailableStock() + quantity);
+
+        Stock updatedStock = entityManager.find(Item.class, String.valueOf(skuid)).getStock();
+        return updatedStock;
+
     }
 }

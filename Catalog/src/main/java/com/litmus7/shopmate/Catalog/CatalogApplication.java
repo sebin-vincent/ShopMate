@@ -4,8 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication
-@ComponentScan(basePackages = {"com.litmus7.shopmate"})
+@SpringBootApplication(scanBasePackages={"com.litmus7.shopmate"})
 public class CatalogApplication {
 
 	public static void main(String[] args) {

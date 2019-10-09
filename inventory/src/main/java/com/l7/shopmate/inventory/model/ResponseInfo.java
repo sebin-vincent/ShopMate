@@ -6,9 +6,9 @@ public class ResponseInfo {
 
     private int statusCode;
     private String message;
-    private List<Object> payload;
+    private Object payload;
 
-    public ResponseInfo(int statusCode, String message, List<Object> payload) {
+    public ResponseInfo(int statusCode, String message, Object payload) {
         this.statusCode = statusCode;
         this.message = message;
         this.payload = payload;
@@ -30,11 +30,11 @@ public class ResponseInfo {
         this.message = message;
     }
 
-    public List<Object> getPayload() {
+    public Object getPayload() {
         return payload;
     }
 
-    public void setPayload(List<Object> payload) {
+    public void setPayload(Object payload) {
         this.payload = payload;
     }
 }

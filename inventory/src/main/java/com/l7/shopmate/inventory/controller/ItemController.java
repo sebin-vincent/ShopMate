@@ -27,18 +27,21 @@ public class ItemController {
 
     @GetMapping("{id}/state")
     public ResponseInfo getState(@PathVariable String id){
-        List<Object> responses = new ArrayList<Object>();
-        responses.add(itemServiceImpl.getItemAvailabilityById(Integer.parseInt(id)));
-        ResponseInfo responseInfo = new ResponseInfo(200, "Availability info", responses);
+        ResponseInfo responseInfo = new ResponseInfo(200, "Availability info", itemServiceImpl.getItemAvailabilityById(Integer.parseInt(id)));
         return responseInfo;
     }
 
    @PutMapping("reserve")
     public ResponseInfo reserveItem(@RequestBody ReserveBodyDto reserveBodyDto) {
        Stock updatedStock = itemServiceImpl.ReserveItem(Integer.parseInt(reserveBodyDto.getSkuId()), reserveBodyDto.getQuantity());
-       List<Object> responses = new ArrayList<Object>();
-       responses.add(updatedStock);
-       ResponseInfo responseInfo = new ResponseInfo(200, "Stock updated", responses);
+       ResponseInfo responseInfo = new ResponseInfo(200, "Stock updated", updatedStock);
        return responseInfo;
    }
+
+    @PutMapping("unreserve")
+    public ResponseInfo unreserveItem(@RequestBody ReserveBodyDto reserveBodyDto) {
+        Stock updatedStock = itemServiceImpl.UnreserveItem(Integer.parseInt(reserveBodyDto.getSkuId()), reserveBodyDto.getQuantity());
+        ResponseInfo responseInfo = new ResponseInfo(200, "Stock updated", updatedStock);
+        return responseInfo;
+    }
 }
