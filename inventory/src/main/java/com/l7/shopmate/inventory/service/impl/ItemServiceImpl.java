@@ -38,5 +38,11 @@ public class ItemServiceImpl implements ItemService {
         return updatedStock;
     }
 
+    @Override
+    public Stock UnreserveItem(int id, int quantity) {
+        Stock updatedStock = itemRepositoryImpl.unreserveItem(id, quantity);
+        return updatedStock;
+    }
+
 
 }

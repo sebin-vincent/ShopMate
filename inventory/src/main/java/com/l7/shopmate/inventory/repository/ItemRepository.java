@@ -11,4 +11,5 @@ public interface ItemRepository {
     public Item getItemById(int id); //API example for reference
     public Item getItemAvailabilityState(int id);
     public Stock reserveItem(int skuid, int quantity);
+    public Stock unreserveItem(int skuid, int quantity);
 }
