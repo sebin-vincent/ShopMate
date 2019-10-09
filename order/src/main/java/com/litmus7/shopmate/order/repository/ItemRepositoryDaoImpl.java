@@ -19,17 +19,19 @@ public class ItemRepositoryDaoImpl implements ItemRepositoryDao {
 
 	@Override
 	public Object[] getincompleteOrderIdByProfileId(int profileId) {
-		Query query1 = entityManager
-				.createQuery("select orderId from Order where profileId = '" + profileId + "' and orderStatusId =1");
-		return (Object[]) query1.getSingleResult();
+		Query query1 = entityManager.createQuery(
+				"select orderId,profileId from Order where profileId = '" + profileId + "' and orderStatusId =1");
+		Object[] ob = (Object[]) query1.getSingleResult();
+		return ob;
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Item> getcartItems(int profileId) {
-		Object[] result = getincompleteOrderIdByProfileId(profileId);
-		System.out.println("==========================="+result[0]);
-		Query query2 = entityManager.createQuery("select orderId,skuId,quantity,unitPrice,lastModifiedDate from Item where orderId ="+result[0]);
+	public List<Item> getcartItems(int orderId) {
+		//Query query2 = entityManager.createQuery("select i from Item i where orderId =" + 100);
+
+		Query query2 = entityManager.createQuery("select i.orderId,i.skuId from Item i where i.orderId =" + 100);
+
 		return query2.getResultList();
 	}
 
