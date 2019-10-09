@@ -41,4 +41,13 @@ public class ItemController {
        ResponseInfo responseInfo = new ResponseInfo(200, "Stock updated", responses);
        return responseInfo;
    }
+
+    @PutMapping("unreserve")
+    public ResponseInfo unreserveItem(@RequestBody ReserveBodyDto reserveBodyDto) {
+        Stock updatedStock = itemServiceImpl.UnreserveItem(Integer.parseInt(reserveBodyDto.getSkuId()), reserveBodyDto.getQuantity());
+        List<Object> responses = new ArrayList<Object>();
+        responses.add(updatedStock);
+        ResponseInfo responseInfo = new ResponseInfo(200, "Stock updated", responses);
+        return responseInfo;
+    }
 }
