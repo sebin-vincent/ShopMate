@@ -1,15 +1,13 @@
 package com.litmus7.shopmate.order.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.litmus7.shopmate.order.dao.ItemServiceDao;
-import com.litmus7.shopmate.order.dto.Item;
 import com.litmus7.shopmate.order.dto.Order;
+import com.litmus7.shopmate.order.dto.Response;
 
 @RestController
 public class OrderController {
@@ -23,7 +21,7 @@ public class OrderController {
 	}
 	
 	@GetMapping("/order/cart/{profileId}")
-	public List<Item> getAllCartItems(@PathVariable int profileId){
+	public Response getAllCartItems(@PathVariable int profileId){
 		return itemServiceDao.getcartItemByProfileId(profileId);
 	}
 	

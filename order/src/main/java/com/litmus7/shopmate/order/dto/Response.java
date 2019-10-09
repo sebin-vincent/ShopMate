@@ -1,23 +1,20 @@
 package com.litmus7.shopmate.order.dto;
 
-import java.util.List;
-
 public class Response {
 	
 	private String status;
-	private List<Object> payload;
 	private String Message;
+	private Object payload;
 	
 	public Response() {
 		
 	}
-	
-	public Response(String status, String message, List<Object> payload) {
+	public Response(String status, String message, Object payload) {
+		super();
 		this.status = status;
 		Message = message;
 		this.payload = payload;
 	}
-
 	public String getStatus() {
 		return status;
 	}
@@ -34,13 +31,14 @@ public class Response {
 		Message = message;
 	}
 
-	public List<Object> getPayload() {
+	public Object getPayload() {
 		return payload;
 	}
 
-	public void setPayload(List<Object> payload) {
+	public void setPayload(Object payload) {
 		this.payload = payload;
 	}
+	
 	
 	
 }
