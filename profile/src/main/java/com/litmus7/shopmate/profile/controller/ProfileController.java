@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.litmus7.shopmate.profile.dao.ChangePasswordDao;
 import com.litmus7.shopmate.profile.dao.ForgotPasswordDao;
 import com.litmus7.shopmate.profile.dto.LoginDto;
 import com.litmus7.shopmate.profile.dto.ProfileDto;
 import com.litmus7.shopmate.profile.dto.Response_Info;
-import com.litmus7.shopmate.profile.service.ChangePasswordService;
 
 @RestController
 @ComponentScan(value="com.litmus7.shopmate.profile")
@@ -21,7 +21,10 @@ public class ProfileController {
 	ForgotPasswordDao forgotPasswordService;
 	
 	@Autowired
-	ChangePasswordService changePasswordService;	
+	ChangePasswordDao changePasswordService;
+	
+	
+	
 	
 	@PostMapping("/forgotpassword")
 	public Response_Info forgotPassword(@RequestBody ProfileDto profile){		
