@@ -82,17 +82,29 @@
                   </div>
                 </li>
 
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact</a>
-                </li>
-              </ul>
-            </div>
-            <div class="hearer_icon d-flex">
-              <div class="dropdown cart">
-                <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="ti-bag"></i>
-                </a>
-                <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.html">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="hearer_icon d-flex">
+<!------------------------------to be removed to profile section------->
+                                <div class="col-md-12 form-group">
+                                        <button type="button" value="change password" class="btn_3" id="change_paswd_show_bttn">
+                                                Change password
+                                            </button>
+                                        </div>
+
+                                       
+
+
+<!------------------------------to be removed to profile section------->
+                            <div class="dropdown cart">
+                                <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="ti-bag"></i>
+                                </a>
+                                <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <div class="single_product">
 
                                     </div>
@@ -133,90 +145,163 @@
   </section>
   <!-- breadcrumb start-->
 
-  <!--================login_part Area =================-->
-  <section class="login_part section_padding">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 col-md-6">
-          <div class="login_part_text text-center">
-            <div class="login_part_text_iner" id="new_to_our_shop">
-              <h2>New to our Shop?</h2>
-              <p>There are advances being made in science and technology
-                everyday, and a good example of this is the</p>
-              <a href="#" class="btn_3" id="new_to_shop">Create an Account</a>
-            </div>
-            <div class="login_part_text_iner" id="already_our_customer" style="display:none">
-              <h2>Already our customer?</h2>
-              <p>Why do you wait then?The world of shopping
-                is just a few clicks away from you.Don't be late !</p>
-              <a href="#" class="btn_3" id="already_customer">Login </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6">
-          <div class="login_part_form">
-            <div class="login_part_form_iner" id="login">
-              <h3>Welcome Back ! <br>
-                Please Sign in now</h3>
-              <form class="row contact_form">
-                <div class="col-md-12 form-group p_star">
-                  <input type="email" class="form-control" id="log_email" name="email" required value="" placeholder="Email" required>
+  
+
+
+    <!--================login_part Area =================-->
+    <section class="login_part section_padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="login_part_text text-center">
+                        <div class="login_part_text_iner" id="new_to_our_shop">
+                            <h2>New to our Shop?</h2>
+                            <p>There are advances being made in science and technology
+                                everyday, and a good example of this is the</p>
+                            <a href="#" class="btn_3" id="new_to_shop">Create an Account</a>
+                        </div>
+                        <div class="login_part_text_iner" id="already_our_customer"  style="display:none">
+                            <h2>Already our customer?</h2>
+                            <p>Why do you wait then?The world of shopping
+                               is just a few clicks away from you.Don't be late !</p>
+                            <a href="#" class="btn_3" id="already_customer">Login </a>
+                        </div>
+                        <div class="login_part_text_iner" id="forgot_password_left"  style="display:none">
+                            <h2>Forgot Password?</h2>
+                            <p>Don't Worry! We are here to help you... 
+                                You are just a click away..</p>
+                            
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-12 form-group p_star">
-                  <input type="password" class="form-control" id="log_password" name="password" required value="" placeholder="Password">
+                <div class="col-lg-6 col-md-6">
+                    <div class="login_part_form">
+                        <div class="login_part_form_iner" id="login">
+                            <h3>Welcome Back ! <br>
+                                Please Sign in now</h3>
+                            <form class="row contact_form">
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="email" class="form-control" id="log_email" name="email" required value=""
+                                        placeholder="Email" required>
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="password" class="form-control" id="log_password" name="password" required value=""
+                                        placeholder="Password">
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <div class="creat_account d-flex align-items-center">
+                                        <input type="checkbox" id="f-option" name="selector">
+                                        <label for="f-option">Remember me</label>
+                                    </div>
+                                    <button type="submit" value="submit" class="btn_3">
+                                        log in
+                                    </button>
+                                    <a class="lost_pass" href="#" id="forgot_pswd">forgot password?</a>
+                                    
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="login_part_form_iner" id="forgot_password" style="display:none">
+                            <h3>Please fill it!</h3>
+                            <form class="row contact_form" id="forgot_password_form">                                
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="email" class="form-control" id="fp_email" name="email" value=""
+                                        placeholder="Email" required>
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                        <select class="security" id="sec_quest" name="security_quest"  required>
+                                            <option value=""hidden>Select the question from the following options</option>
+                                            <option value="1">Who's your daddy?</option>
+                                            <option value="2">What is your favorite color?</option>
+                                            <option value="3">What is your favorite book?</option>                            
+                                            <option value="4">What brand of food did your first pet eat?</option>
+                                         </select>
+                                </div>
+
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="text" class="form-control" id="Sec_ans" name="sec_ans" value=""
+                                        placeholder="Answer" required>
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="password" class="form-control" id="fp_new_password" name="password" value=""
+                                        placeholder="New Password" required>
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="password" class="form-control" id="fp_conf_password" name="password" value=""
+                                        placeholder="Confirm Password" required>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <button type="submit" value="submit" class="btn_3" id="fp_up_bttn">
+                                        Update
+                                    </button>
+                                </div>
+                                <label style="visibility: hidden">Emailid doesn't match</label>
+
+                                
+                            </form>
+                        </div>
+
+  <!----------------To be removed section Change password----------------->
+                         <div class="login_part_form_iner" id="change_password_right" style="display:none">
+                                <h3>Please enter new password!</h3>
+                                <form class="row contact_form" id="change_password_form">                                
+                                    <div class="col-md-12 form-group p_star">
+                                            <input type="password" class="form-control" id="chng_old_password" name="password" value=""
+                                                    placeholder="Old Password" required>
+                                    </div>
+                        
+                                    <div class="col-md-12 form-group p_star">
+                                        <input type="password" class="form-control" id="chng_new_password" name="password" value=""
+                                            placeholder="New Password" required>
+                                    </div>
+                                    <div class="col-md-12 form-group p_star">
+                                        <input type="password" class="form-control" id="chng_conf_password" name="password" value=""
+                                            placeholder="Confirm Password" required>
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <button type="button" value="submit" class="btn_3" id="change_paswd_bttn">
+                                            Change
+                                        </button>
+                                    </div>
+                                      
+                                </form>
+                            </div>
+    <!-----------------------------------to be removed to profile change password---------------------------------------------->
+                        
+
+                        <div class="login_part_form_iner" id="sign_up" style="display:none">
+                            <h3>Please SignUp</h3>
+                            <form class="row contact_form" id="sign_up_form">
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="text" class="form-control" id="name" name="name" value=""
+                                        placeholder="Name" required>
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="email" class="form-control" id="email" name="email" value=""
+                                        placeholder="Email" required>
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="tel" class="form-control" id="tel-num" name="tel-num" value=""
+                                        placeholder="Mobile number" required>
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="password" class="form-control" id="sign_password" name="password" value=""
+                                        placeholder="Password" required>
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="password" class="form-control" id="conf_password" name="password" value=""
+                                        placeholder="Confirm Password" required>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <button type="button" value="submit" class="btn_3" id="sign_up_bttn">
+                                        SignUp
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-12 form-group">
-                  <div class="creat_account d-flex align-items-center">
-                    <input type="checkbox" id="f-option" name="selector">
-                    <label for="f-option">Remember me</label>
-                  </div>
-                  <button type="submit" value="submit" class="btn_3">
-                    log in
-                  </button>
-                  <a class="lost_pass" href="#">forget password?</a>
-                </div>
-              </form>
-            </div>
-            <div class="login_part_form_iner" id="sign_up" style="display:none">
-              <h3 id="signup_heading">Please SignUp</h3>
-              <form class="row contact_form" id="sign_up_form">
-                <div class="col-md-12 form-group p_star">
-                  <input type="text" class="form-control" id="name" name="name" value="" placeholder="Name" required>
-                </div>
-                <div class="col-md-12 form-group p_star">
-                  <input type="email" class="form-control" id="email" name="email" value="" placeholder="Email" required>
-                </div>
-                <div class="col-md-12 form-group p_star">
-                  <input type="tel" class="form-control" id="tel-num" name="tel-num" value="" placeholder="Mobile number" required>
-                </div>
-                <div class="col-md-12 form-group p_star">
-                  <input type="password" class="form-control" id="sign_password" name="password" value="" placeholder="Password" required>
-                </div>
-                <div class="col-md-12 form-group p_star">
-                  <input type="password" class="form-control" id="conf_password" name="password" value="" placeholder="Confirm Password" required>
-                </div>
-                <div class="col-md-12 form-group p_star" id="security_question">
-                  <select class="form-control">
-                    <option value="1">What was the name of your first childhood freind?</option>
-                    <option value="2">What is your favorite music album?</option>
-                    <option value="3">What is your favorite music album?</option>
-                    <option value="4">What is your favorite music album?</option>
-                  </select>
-                </div>
-                <div class="col-md-12 form-group p_star">
-                  <input type="text" class="form-control" id="security_answer" name="anser" value="" placeholder="Answer" required>
-                </div>
-                <div class="col-md-12 form-group">
-                  <br />
-                  <br />
-                  <button type="button" value="submit" class="btn_3" id="sign_up_bttn">
-                    SignUp
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>

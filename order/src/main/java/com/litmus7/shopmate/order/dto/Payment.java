@@ -1,17 +1,23 @@
 package com.litmus7.shopmate.order.dto;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "order_payment_method")
 public class Payment {
+	@Id
+	@Column(name = "payment_method_id")
 	private int paymentMethodId;
+	
+	@Column(name = "payment_method")
 	private String paymentMethod;
 	
 	public Payment() {
-		super();
-		// TODO Auto-generated constructor stub
+		
 	}
-	
 	public int getPaymentMethodId() {
 		return paymentMethodId;
 	}
@@ -24,8 +30,6 @@ public class Payment {
 	public void setPaymentMethod(String paymentMethod) {
 		this.paymentMethod = paymentMethod;
 	}
-	
-	
 	
 
 }

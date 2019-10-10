@@ -6,5 +6,10 @@
 .springBeans
 .sts4-cache
 /Servers
+<<<<<<< HEAD
 /login
 /signup
+=======
+/Test
+/cart
+>>>>>>> 9c1b3be7933069c9a736e950ed840fc82db78b2d

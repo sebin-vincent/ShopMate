@@ -2,65 +2,74 @@ package com.litmus7.shopmate.order.dto;
 
 import java.sql.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 @Entity
+@Table(name = "manager")
 public class Order {
-	
-
-	private String orderId; 
-	private String profileId; 
-	private String addressId; 
-	private String shippingMethodId; 
-	private String paymentMethodId; 
-	private long totalAmount; 
-	private String orderStatusId; 
+	@Id
+	@Column(name = "order_id")
+	private int orderId;
+	@Column(name = "profile_id")
+	private int profileId;
+	@Column(name = "address_id")
+	private int addressId;
+	@Column(name = "shipping_method_id")
+	private int shippingMethodId;
+	@Column(name = "payment_method_id")
+	private int paymentMethodId;
+	@Column(name = "total_amount")
+	private int totalAmount;
+	@Column(name = "status_id")
+	private int orderStatusId;
+	@Column(name = "delivery_date")
 	private Date deliveryDate;
-	
-	
-	
+
 	public Order() {
 		super();
 	}
-	public String getOrderId() {
+	public int getOrderId() {
 		return orderId;
 	}
-	public void setOrderId(String orderId) {
+	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
-	public String getProfileId() {
+	public int getProfileId() {
 		return profileId;
 	}
-	public void setProfileId(String profileId) {
+	public void setProfileId(int profileId) {
 		this.profileId = profileId;
 	}
-	public String getAddressId() {
+	public int getAddressId() {
 		return addressId;
 	}
-	public void setAddressId(String addressId) {
+	public void setAddressId(int addressId) {
 		this.addressId = addressId;
 	}
-	public String getShippingMethodId() {
+	public int getShippingMethodId() {
 		return shippingMethodId;
 	}
-	public void setShippingMethodId(String shippingMethodId) {
+	public void setShippingMethodId(int shippingMethodId) {
 		this.shippingMethodId = shippingMethodId;
 	}
-	public String getPaymentMethodId() {
+	public int getPaymentMethodId() {
 		return paymentMethodId;
 	}
-	public void setPaymentMethodId(String paymentMethodId) {
+	public void setPaymentMethodId(int paymentMethodId) {
 		this.paymentMethodId = paymentMethodId;
 	}
 	public long getTotalAmount() {
 		return totalAmount;
 	}
-	public void setTotalAmount(long totalAmount) {
+	public void setTotalAmount(int totalAmount) {
 		this.totalAmount = totalAmount;
 	}
-	public String getOrderStatusId() {
+	public int getOrderStatusId() {
 		return orderStatusId;
 	}
-	public void setOrderStatusId(String orderStatusId) {
+	public void setOrderStatusId(int orderStatusId) {
 		this.orderStatusId = orderStatusId;
 	}
 	public Date getDeliveryDate() {
