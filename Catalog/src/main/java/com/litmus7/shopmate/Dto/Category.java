@@ -39,13 +39,11 @@ public class Category {
 		this.product = product;
 	}
 
-	public List<Catalog> getCatalogs() {
-		return catalogs;
-	}
-
-	public void setCatalogs(List<Catalog> catalogs) {
-		this.catalogs = catalogs;
-	}
+	/*
+	 * public List<Catalog> getCatalogs() { return catalogs; }
+	 * 
+	 * public void setCatalogs(List<Catalog> catalogs) { this.catalogs = catalogs; }
+	 */
 
 	public long getId() {
 		return id;
