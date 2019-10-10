@@ -48,14 +48,6 @@ public class Item {
 		this.quantity = quantity;
 	}
 
-	public long getPrice() {
-		return unitPrice;
-	}
-
-	public void setPrice(int unitPrice) {
-		this.unitPrice = unitPrice;
-	}
-
 	public Date getLastModifiedDate() {
 		return lastModifiedDate;
 	}

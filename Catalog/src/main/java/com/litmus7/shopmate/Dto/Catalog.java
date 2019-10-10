@@ -1,8 +1,13 @@
 package com.litmus7.shopmate.Dto;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,7 +23,17 @@ public class Catalog {
 	@Column(name = "active_status")
 	private int activeStatus;
 	
+	@ManyToMany
+	@JoinTable(name="catalog_category",joinColumns = {@JoinColumn(name="catalog_id")},inverseJoinColumns = {@JoinColumn(name="category_id")})
+	private List<Category> categories = new ArrayList<Category>();
 	
+	
+	public List<Category> getCategories() {
+		return categories;
+	}
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
+	}
 	public long getId() {
 		return id;
 	}
