@@ -10,6 +10,11 @@ import com.l7.shopmate.inventory.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @Service
 public class ItemServiceImpl implements ItemService {
 
@@ -27,8 +32,34 @@ public class ItemServiceImpl implements ItemService {
         if (item == null) {
             throw new DataNotFoundException("Item not found.");
         } else {
-            State state = item.getStock().getState();
-            return state;
+            Date startDate = item.getStartDate();
+            Date endDate = item.getEndDate();
+
+            final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date currentDate = new Date();
+            String formatedCurrentDate = dateFormat.format(currentDate);
+            String formatedStartDate = dateFormat.format(startDate);
+            String formatedEndDate = dateFormat.format(endDate);
+
+            boolean isAvailableBetweenDateRange = false;
+            try {
+                isAvailableBetweenDateRange = dateFormat.parse(formatedCurrentDate)
+                        .after(dateFormat.parse(formatedStartDate)) &&
+                        dateFormat.parse(formatedCurrentDate)
+                                .before(dateFormat.parse(formatedEndDate));
+
+            } catch (ParseException e) {
+                System.out.println("parse exception");
+            }
+
+            if (isAvailableBetweenDateRange) {
+                State state = item.getStock().getState();
+                return state;
+            } else {
+                State notAvailableState = new State(0, "NOTAVAILABLE", 0);
+                return notAvailableState;
+            }
+
         }
     }
 

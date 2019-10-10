@@ -42,4 +42,10 @@ public class State {
     public void setStateType(String stateType) {
         this.stateType = stateType;
     }
+
+    public State(int stateId, String stateType, int stateThreshold) {
+        this.stateId = stateId;
+        this.stateType = stateType;
+        this.stateThreshold = stateThreshold;
+    }
 }
