@@ -11,6 +11,14 @@ public class Response_Info {
 	private String status_Message;
 	private List<Object> payload;
 	
+	
+	
+	public Response_Info(int status_Code, String status_Message, List<Object> payload) {
+		super();
+		this.status_Code = status_Code;
+		this.status_Message = status_Message;
+		this.payload = payload;
+	}
 	public int getStatus_Code() {
 		return status_Code;
 	}

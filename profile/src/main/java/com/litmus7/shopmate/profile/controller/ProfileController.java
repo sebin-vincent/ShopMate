@@ -13,8 +13,8 @@ import com.litmus7.shopmate.profile.dto.LoginDto;
 import com.litmus7.shopmate.profile.dto.ProfileDto;
 import com.litmus7.shopmate.profile.dto.Response_Info;
 
-@RestController
-@ComponentScan(value="com.litmus7.shopmate.profile")
+//@RestController
+//@ComponentScan(value="com.litmus7.shopmate.profile")
 public class ProfileController {
 	
 	@Autowired
