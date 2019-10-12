@@ -23,7 +23,7 @@ public class ProfileController {
 	@Autowired
 	ChangePasswordDao changePasswordService;
 	
-	
+	//comment to resolve conflict of resmi
 	
 	
 	@PostMapping("/forgotpassword")
