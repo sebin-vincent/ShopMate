@@ -6,7 +6,6 @@ import com.l7.shopmate.inventory.entity.Stock;
 import com.l7.shopmate.inventory.exception.DataNotFoundException;
 import com.l7.shopmate.inventory.model.LatestArrivedItem;
 import com.l7.shopmate.inventory.repository.ItemRepository;
-import com.l7.shopmate.inventory.repository.impl.ItemRepositoryImpl;
 import com.l7.shopmate.inventory.service.ItemService;
 import com.l7.shopmate.inventory.service.urlbuilder.PdpUrlBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,7 +89,7 @@ public class ItemServiceImpl implements ItemService {
 
         for (Item item : latestItems) {
             //TODO retrieve real price, image url from catalog db.
-            LatestArrivedItem latestArrivedItem = new LatestArrivedItem(item.getItemId(), item.getItemName(), pdpUrlBuilder.build(item.getItemName()), "image_url", 110);
+            LatestArrivedItem latestArrivedItem = new LatestArrivedItem(item.getItemId(), item.getItemName(), pdpUrlBuilder.build(item.getItemName()));
             latestArrivedItems.add(latestArrivedItem);
         }
 
