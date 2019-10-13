@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "order_payment_method")
-public class Payment {
+public class PaymentDto {
 	@Id
 	@Column(name = "payment_method_id")
 	private int paymentMethodId;
@@ -15,7 +15,7 @@ public class Payment {
 	@Column(name = "payment_method")
 	private String paymentMethod;
 	
-	public Payment() {
+	public PaymentDto() {
 		
 	}
 	public int getPaymentMethodId() {

@@ -9,7 +9,6 @@ public class Response {
 	private String Message;
 	public Response() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public int getStatus() {
 		return status;

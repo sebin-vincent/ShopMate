@@ -8,8 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
 @Table(name = "order_detail")
-public class Item {
+public class ItemDto {
 	@Id
+	private int no;
 	private int orderId;
 	@Column(name = "sku_id")
 	private String skuId; 
@@ -20,7 +21,7 @@ public class Item {
 	@Column(name = "last_modified_date")
 	private Date lastModifiedDate;
 	
-	public Item() {
+	public ItemDto() {
 		super();
 	}
 
