@@ -1,13 +1,13 @@
-package com.litmus7.shopmate.order;
+package com.litmus7.shopmate.catalog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OrderApplication {
+public class CatalogApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OrderApplication.class, args);
+		SpringApplication.run(CatalogApplication.class, args);
 	}
 
 }

@@ -7,9 +7,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
 import com.litmus7.shopmate.order.dao.GetPaymentMethodServiceDao;
-import com.litmus7.shopmate.order.dto.Payment;
+import com.litmus7.shopmate.order.dto.PaymentDto;
 import com.litmus7.shopmate.order.dto.Response;
-import com.litmus7.shopmate.order.repositorydao.GetPaymentMethodRepoDao;
+import com.litmus7.shopmate.order.repository.GetPaymentMethodRepoDao;
 
 @ComponentScan("com.litmus7.shopmate")
 @Service
@@ -22,7 +22,7 @@ public class GetPaymentMethodServiceImpl implements GetPaymentMethodServiceDao {
 	Response response;
 
 	@Override
-	public List<Payment> retrievePayments() {
+	public List<PaymentDto> retrievePayments() {
 		// TODO Auto-generated method stub
 		return getPaymentMethodRepoimpl.findAll();
 	}

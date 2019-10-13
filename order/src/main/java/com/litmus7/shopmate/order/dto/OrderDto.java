@@ -1,14 +1,17 @@
 package com.litmus7.shopmate.order.dto;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 @Entity
 @Table(name = "manager")
-public class Order {
+public class OrderDto {
 	@Id
 	@Column(name = "order_id")
 	private int orderId;
@@ -27,63 +30,84 @@ public class Order {
 	@Column(name = "delivery_date")
 	private Date deliveryDate;
 
-	public Order() {
+
+	@OneToMany(mappedBy = "orderId")
+	private List<ItemDto> item;
+
+	public List<ItemDto> getItem() {
+		return item;
+	}
+
+	public void setItem(List<ItemDto> item) {
+		this.item = item;
+	}
+
+	public OrderDto() {
 		super();
 	}
+
 	public int getOrderId() {
 		return orderId;
 	}
+
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
+
 	public int getProfileId() {
 		return profileId;
 	}
+
 	public void setProfileId(int profileId) {
 		this.profileId = profileId;
 	}
+
 	public int getAddressId() {
 		return addressId;
 	}
+
 	public void setAddressId(int addressId) {
 		this.addressId = addressId;
 	}
+
 	public int getShippingMethodId() {
 		return shippingMethodId;
 	}
+
 	public void setShippingMethodId(int shippingMethodId) {
 		this.shippingMethodId = shippingMethodId;
 	}
+
 	public int getPaymentMethodId() {
 		return paymentMethodId;
 	}
+
 	public void setPaymentMethodId(int paymentMethodId) {
 		this.paymentMethodId = paymentMethodId;
 	}
+
 	public long getTotalAmount() {
 		return totalAmount;
 	}
+
 	public void setTotalAmount(int totalAmount) {
 		this.totalAmount = totalAmount;
 	}
+
 	public int getOrderStatusId() {
 		return orderStatusId;
 	}
+
 	public void setOrderStatusId(int orderStatusId) {
 		this.orderStatusId = orderStatusId;
 	}
+
 	public Date getDeliveryDate() {
 		return deliveryDate;
 	}
+
 	public void setDeliveryDate(Date deliveryDate) {
 		this.deliveryDate = deliveryDate;
 	}
-	
-	
-	
-	
-	
-	
-	
 
 }
