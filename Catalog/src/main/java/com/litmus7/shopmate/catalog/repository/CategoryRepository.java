@@ -18,9 +18,9 @@ public interface CategoryRepository extends JpaRepository<CategoryDto, Integer> 
 			nativeQuery = true)
 	public List<CategoryDto> findActiveCategories(@Param("activeCatalogId") int catalogId);
 	
-	@Query(value="select cm.category_id from category_master cm where cm.category_id in "
+	@Query(value="select cm.* from category_master cm where cm.active_status='1' and cm.category_id in "
 			+ "(select cs.subcategory_id from category_subcategory cs where cs.category_id=:categoryId)"
 			, nativeQuery = true)
-	public List<Integer> findActiveSubCategories(@Param("categoryId") int categoryId);
+	public List<CategoryDto> findActiveSubCategories(@Param("categoryId") int categoryId);
 
 }

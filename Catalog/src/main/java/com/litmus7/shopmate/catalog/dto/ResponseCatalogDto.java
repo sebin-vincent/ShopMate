@@ -2,26 +2,32 @@ package com.litmus7.shopmate.catalog.dto;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ResponseCatalogDto {
 	
-	private List<ProductDto> products;
-	
 	private String categoryName;
+	
+	private List<ResponseSubCategoryProductDto> subCategoryProducts;
 
-	public String getCategory() {
+	public String getCategoryName() {
 		return categoryName;
 	}
 
-	public void setCategory(String category) {
-		categoryName = category;
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
 	}
 
-	public List<ProductDto> getProducts() {
-		return products;
+	public List<ResponseSubCategoryProductDto> getSubCategoryProducts() {
+		return subCategoryProducts;
 	}
 
-	public void setProducts(List<ProductDto> products) {
-		this.products = products;
+	public void setSubCategoryProducts(List<ResponseSubCategoryProductDto> subCategoryProducts) {
+		this.subCategoryProducts = subCategoryProducts;
 	}
+	
+
+
 
 }

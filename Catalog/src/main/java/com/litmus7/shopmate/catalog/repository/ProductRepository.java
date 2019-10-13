@@ -10,9 +10,10 @@ import com.litmus7.shopmate.catalog.dto.ProductDto;
 
 public interface ProductRepository extends JpaRepository<ProductDto, Integer> {
 	
-	@Query(value = "select DISTINCT pm.* from product_master pm inner join "
-			+ "category_product pc on pm.product_id=pc.product_id where pc.category_id in :categoryList and pm.active_status=0"
+	@Query(value = "select pm.* from product_master pm inner join"
+			+ " category_product cp on pm.product_id=cp.product_id "
+			+ "where pm.active_status=0 and cp.category_id=:categoryId"
 			, nativeQuery = true)
-	public List<ProductDto> findActiveProductsByCategory(@Param("categoryList") List<Integer> categoryList);
+	public List<ProductDto> findActiveProductsByCategory(@Param("categoryId") int categoryId);
 
 }
