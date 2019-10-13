@@ -24,6 +24,7 @@ public class CatalogController {
 	public Response_Info getCatalog() {
 
 		response_Info.setPayload(retrieveCatalogServiceImpl.findAllCatalog());
+		
 
 		return response_Info;
 	}
@@ -31,7 +32,7 @@ public class CatalogController {
 	@GetMapping("/sku/{productId}")
 	public Response_Info getSku(@PathVariable int productId) {
 		
-		System.out.println(productId);
+		
 		response_Info.setPayload(retrieveSkuServiceImpl.RetrieveSkuFromProductId(productId));
 		
 		return response_Info;

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.litmus7.shopmate.catalog.dao.RetrieveCatalogServiceDao;
 import com.litmus7.shopmate.catalog.dto.CatalogDto;
 import com.litmus7.shopmate.catalog.dto.ResponseCatalogDto;
+import com.litmus7.shopmate.catalog.dto.ResponseSubCategoryProductDto;
 import com.litmus7.shopmate.catalog.dto.CategoryDto;
 import com.litmus7.shopmate.catalog.repository.CatalogRepository;
 import com.litmus7.shopmate.catalog.repository.CategoryRepository;
@@ -28,26 +29,38 @@ public class RetrieveCatalogServiceImpl implements RetrieveCatalogServiceDao {
 
 	@Override
 	public List<ResponseCatalogDto> findAllCatalog() {
-		// TODO Auto-generated method stub
 		
 		List<ResponseCatalogDto> response_Catalog=new ArrayList<ResponseCatalogDto>();
+		List<CategoryDto> subCategories;
+		
+		ResponseCatalogDto responseCatalogDto;
+		
+		
+		
+		ResponseSubCategoryProductDto subCategoryProduct;
+		List<ResponseSubCategoryProductDto> subCategoryProductList;
+		
 		
 		CatalogDto catalog =catalogRepository.findByActiveStatus(1);
 		
 		
 		List<CategoryDto> categories=categoryRepository.findActiveCategories(catalog.getCatalog_Id());
 
-		
-		List<Integer> activeSubCategoryList;
-		
+				
 		for(CategoryDto category:categories) {
-			activeSubCategoryList=new ArrayList<Integer>();
-			activeSubCategoryList.add(category.getCategoryId());
-			activeSubCategoryList.addAll(categoryRepository.findActiveSubCategories(category.getCategoryId()));
-			ResponseCatalogDto catelogResponse=new ResponseCatalogDto();
-			catelogResponse.setCategory(category.getCategoryName());
-			catelogResponse.setProducts(ProductRepository.findActiveProductsByCategory(activeSubCategoryList));
-			response_Catalog.add(catelogResponse);
+			responseCatalogDto=new ResponseCatalogDto();
+			responseCatalogDto.setCategoryName(category.getCategoryName());
+			subCategories=new ArrayList<>();
+			subCategories.addAll(categoryRepository.findActiveSubCategories(category.getCategoryId()));
+			subCategoryProductList=new ArrayList<>();
+			for(CategoryDto subCategory:subCategories) {
+				subCategoryProduct=new ResponseSubCategoryProductDto();
+				subCategoryProduct.setSubCategory(subCategory.getCategoryName());
+				subCategoryProduct.setProducts(ProductRepository.findActiveProductsByCategory(subCategory.getCategoryId()));
+				subCategoryProductList.add(subCategoryProduct);
+			}
+			responseCatalogDto.setSubCategoryProducts(subCategoryProductList);
+			response_Catalog.add(responseCatalogDto);
 		}
 		
 		
@@ -55,3 +68,6 @@ public class RetrieveCatalogServiceImpl implements RetrieveCatalogServiceDao {
 	}
 
 }
+
+
+
