@@ -4,11 +4,11 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.litmus7.shopmate.order.dto.Payment;
+import com.litmus7.shopmate.order.dto.PaymentDto;
 
 @Service
 public interface GetPaymentMethodServiceDao {
 
-	public List<Payment> retrievePayments(); 
+	public List<PaymentDto> retrievePayments(); 
 	
 }

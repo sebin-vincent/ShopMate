@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.litmus7.shopmate.order.dao.RetrieveShipingMethodDao;
 import com.litmus7.shopmate.order.dto.ShipmentDto;
-import com.litmus7.shopmate.order.repositorydao.GetShipmentMethodRepoDao;
+import com.litmus7.shopmate.order.repository.GetShipmentMethodRepoDao;
 
 @Service
 public class RetrieveShipingMethodServiceImpl implements RetrieveShipingMethodDao {
