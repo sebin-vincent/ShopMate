@@ -4,16 +4,20 @@ import com.l7.shopmate.inventory.entity.Item;
 import com.l7.shopmate.inventory.entity.State;
 import com.l7.shopmate.inventory.entity.Stock;
 import com.l7.shopmate.inventory.exception.DataNotFoundException;
+import com.l7.shopmate.inventory.model.LatestArrivedItem;
 import com.l7.shopmate.inventory.repository.ItemRepository;
 import com.l7.shopmate.inventory.repository.impl.ItemRepositoryImpl;
 import com.l7.shopmate.inventory.service.ItemService;
+import com.l7.shopmate.inventory.service.urlbuilder.PdpUrlBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class ItemServiceImpl implements ItemService {
@@ -73,6 +77,24 @@ public class ItemServiceImpl implements ItemService {
     public Stock UnreserveItem(int id, int quantity) {
         Stock updatedStock = itemRepositoryImpl.unreserveItem(id, quantity);
         return updatedStock;
+    }
+
+    @Override
+    public List<LatestArrivedItem> getLatestArrivedItems(int itemsCount) {
+        List<LatestArrivedItem> latestArrivedItems = new ArrayList<>();
+        List<Item> latestItems = itemRepositoryImpl.getLatestArrivals(itemsCount);
+//        latestArrivedItems.add(new LatestArrivedItem("skuid", "url", "imgurl", 10));
+//        return latestArrivedItems;
+
+        PdpUrlBuilder pdpUrlBuilder = new PdpUrlBuilder();
+
+        for (Item item : latestItems) {
+            //TODO retrieve real price, image url from catalog db.
+            LatestArrivedItem latestArrivedItem = new LatestArrivedItem(item.getItemName(), pdpUrlBuilder.build(item.getItemName()), "image_url", 110);
+            latestArrivedItems.add(latestArrivedItem);
+        }
+
+        return latestArrivedItems;
     }
 
 

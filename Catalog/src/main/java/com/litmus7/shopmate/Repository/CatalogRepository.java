@@ -8,4 +8,5 @@ import com.litmus7.shopmate.Dto.Catalog;
 @Repository
 public interface CatalogRepository extends JpaRepository<Catalog, Long> {
 
+
 }

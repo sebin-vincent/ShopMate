@@ -4,12 +4,14 @@ import com.l7.shopmate.inventory.entity.Item;
 import com.l7.shopmate.inventory.entity.State;
 import com.l7.shopmate.inventory.entity.Stock;
 import com.l7.shopmate.inventory.exception.DataNotFoundException;
+import com.l7.shopmate.inventory.model.LatestArrivedItem;
 import com.l7.shopmate.inventory.repository.ItemRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Transactional
@@ -55,5 +57,16 @@ public class ItemRepositoryImpl implements ItemRepository {
         Stock updatedStock = entityManager.find(Item.class, String.valueOf(skuid)).getStock();
         return updatedStock;
 
+    }
+
+    @Override
+    public List<Item> getLatestArrivals(int itemCount) {
+        List<Item> latestArrivedItems = new ArrayList<>();
+
+        latestArrivedItems  = entityManager.createQuery("SELECT a FROM Item a WHERE a.startDate <= CURDATE() ORDER BY a.startDate ", Item.class)
+                .setMaxResults(itemCount)
+                .getResultList();
+
+        return latestArrivedItems;
     }
 }
