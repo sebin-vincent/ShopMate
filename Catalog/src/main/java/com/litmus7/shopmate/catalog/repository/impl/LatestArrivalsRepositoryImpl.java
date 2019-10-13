@@ -1,22 +1,20 @@
-package com.litmus7.shopmate.Repository.impl;
+package com.litmus7.shopmate.catalog.repository.impl;
 
-import com.litmus7.shopmate.Dto.SkuDetailForLatestArrivals;
-import com.litmus7.shopmate.Repository.LatestArrivalsRepository;
-import org.springframework.stereotype.Component;
+import com.litmus7.shopmate.catalog.dto.StockKeepingUnitDto;
+import com.litmus7.shopmate.catalog.repository.LatestArrivalsRepository;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-@Component
+@Repository
 public class LatestArrivalsRepositoryImpl implements LatestArrivalsRepository {
 
     @PersistenceContext
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Override
-    public SkuDetailForLatestArrivals getSkuDetails(String skuName) {
-
-        SkuDetailForLatestArrivals skuDetailForLatestArrivals = new SkuDetailForLatestArrivals((float) 999.99, "test");
-        return skuDetailForLatestArrivals;
+    public StockKeepingUnitDto getSkuDetailsById(int skuId) {
+        return entityManager.find(StockKeepingUnitDto.class, skuId);
     }
 }

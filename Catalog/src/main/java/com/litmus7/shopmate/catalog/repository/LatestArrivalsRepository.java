@@ -1,9 +1,9 @@
-package com.litmus7.shopmate.Repository;
+package com.litmus7.shopmate.catalog.repository;
 
-import com.litmus7.shopmate.Dto.SkuDetailForLatestArrivals;
+import com.litmus7.shopmate.catalog.dto.StockKeepingUnitDto;
 
-public interface LatestArrivalsRepository {
+public interface LatestArrivalsRepository  {
 
-    public SkuDetailForLatestArrivals getSkuDetails(String skuName);
+    public StockKeepingUnitDto getSkuDetailsById(int skuId);
 
 }

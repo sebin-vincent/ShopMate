@@ -2,12 +2,23 @@ package com.l7.shopmate.inventory.model;
 
 public class LatestArrivedItem {
 
+    private String skuId;
+
+    public String getSkuId() {
+        return skuId;
+    }
+
+    public void setSkuId(String skuId) {
+        this.skuId = skuId;
+    }
+
     private String skuName;
     private String skuPDPUrl;
     private String SkuImageUrl;
     private int price;
 
-    public LatestArrivedItem(String skuName, String skuPDPUrl, String skuImageUrl, int price) {
+    public LatestArrivedItem(String skuId, String skuName, String skuPDPUrl, String skuImageUrl, int price) {
+        this.skuId = skuId;
         this.skuName = skuName;
         this.skuPDPUrl = skuPDPUrl;
         SkuImageUrl = skuImageUrl;

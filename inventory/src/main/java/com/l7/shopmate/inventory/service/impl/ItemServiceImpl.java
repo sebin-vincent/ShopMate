@@ -90,7 +90,7 @@ public class ItemServiceImpl implements ItemService {
 
         for (Item item : latestItems) {
             //TODO retrieve real price, image url from catalog db.
-            LatestArrivedItem latestArrivedItem = new LatestArrivedItem(item.getItemName(), pdpUrlBuilder.build(item.getItemName()), "image_url", 110);
+            LatestArrivedItem latestArrivedItem = new LatestArrivedItem(item.getItemId(), item.getItemName(), pdpUrlBuilder.build(item.getItemName()), "image_url", 110);
             latestArrivedItems.add(latestArrivedItem);
         }
 
