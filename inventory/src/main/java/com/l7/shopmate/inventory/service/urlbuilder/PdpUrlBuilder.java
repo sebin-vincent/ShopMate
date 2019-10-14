@@ -1,6 +1,9 @@
 package com.l7.shopmate.inventory.service.urlbuilder;
 
-public class PdpUrlBuilder {
+import org.springframework.stereotype.Component;
+
+@Component
+public class PdpUrlBuilder implements UrlBuilder{
 
     public static final String BASE_URL = "products/";
 

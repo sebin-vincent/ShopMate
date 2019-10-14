@@ -8,6 +8,7 @@ import com.l7.shopmate.inventory.model.LatestArrivedItem;
 import com.l7.shopmate.inventory.repository.ItemRepository;
 import com.l7.shopmate.inventory.service.ItemService;
 import com.l7.shopmate.inventory.service.urlbuilder.PdpUrlBuilder;
+import com.l7.shopmate.inventory.service.urlbuilder.UrlBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +24,9 @@ public class ItemServiceImpl implements ItemService {
 
     @Autowired
     ItemRepository itemRepositoryImpl;
+
+    @Autowired
+    UrlBuilder pdpUrlBuilder;
 
     @Override
     public Item getItemById(int id) {
@@ -85,7 +89,7 @@ public class ItemServiceImpl implements ItemService {
 //        latestArrivedItems.add(new LatestArrivedItem("skuid", "url", "imgurl", 10));
 //        return latestArrivedItems;
 
-        PdpUrlBuilder pdpUrlBuilder = new PdpUrlBuilder();
+//        PdpUrlBuilder pdpUrlBuilder = new PdpUrlBuilder();
 
         for (Item item : latestItems) {
             //TODO retrieve real price, image url from catalog db.
