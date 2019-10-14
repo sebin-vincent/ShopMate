@@ -44,7 +44,7 @@ public class OrderController {
 		response.setPayload(retrieveShipmentMethodImpl.retrieveShippingMethods());
 		return response;
 	}
-	
+	//get new or existing order id
 	@GetMapping("/order/get/orderid/{profileId}")
 	public Response createOrGetOrderId(@PathVariable int profileId) {
 		response.setMessage("success");
@@ -60,5 +60,6 @@ public class OrderController {
 		response.setPayload(orderServiceDao.fetchAllOrderByProfileId(profileId));
 		return response;
 	}
+
 
 }
