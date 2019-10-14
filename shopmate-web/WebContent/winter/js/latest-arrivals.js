@@ -2,7 +2,7 @@ $(document).ready(function () {
     
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/items/latest-arrivals/20",
+        url: "http://localhost:8080/items/latest-arrivals/6",
     
         success: function (responseFromInventory) {
 

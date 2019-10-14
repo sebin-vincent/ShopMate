@@ -1,6 +1,5 @@
 .latest-arrivals-container {
 
-    /* border: red solid; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
