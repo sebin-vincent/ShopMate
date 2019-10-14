@@ -12,4 +12,4 @@ public class CatalogApplication {
 
 }
 
-//comment for sachin to solve conflict
+//comment for sachin to solve conflicts
