@@ -1,12 +1,20 @@
 package com.litmus7.shopmate.cart.dto;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ResponseInfo {
 	
 	    private int statusCode;
 	    private String message;
 	    private Object payload;
+	    
 
-	    public ResponseInfo(int statusCode, String message, Object payload) {
+	    public ResponseInfo() {
+			
+		}
+
+		public ResponseInfo(int statusCode, String message, Object payload) {
 	        this.statusCode = statusCode;
 	        this.message = message;
 	        this.payload = payload;

@@ -1,3 +1,4 @@
+
 package com.litmus7.shopmate.cart.dto;
 
 
@@ -13,48 +14,49 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
-import org.springframework.data.annotation.LastModifiedDate;
-
 @Entity
 @Table(name = "order_detail")
 public class Cart {
-	
+	@Transient
 	private Long profileId;
 	@Id
+	@Column(name="no")
+	private int num;
+	
 	@Column(name="order_id")
 	private int orderId;
+	
 	
 	@Column(name="sku_id")
 	private String skuId;
 	
-	@Column(name="unit_price")
-	private int unitPrice;
-	
-	@Transient
-	private List<Cart> cartList= new ArrayList<Cart>();
-	
 	@Column(name="quantity")
 	private int quantity;
 	
+	@Column(name="unit_price")
+	private int unitPrice;
+	
 	@Column(name="last_modified_date")
 	@Temporal(TemporalType.TIMESTAMP)
-	@LastModifiedDate
+	
 	private Date lastModifiedDate ;
 	
+	@Transient
+	private List<Cart> cartList= new ArrayList<Cart>();
+		
 	public Cart() {
 		
 	}
 
 	public Cart(Long profileId, int orderId, String skuId, int totalPrice, List<Cart> cartList, int quantity,
 			Date lastModified) {
-		super();
 		this.profileId = profileId;
 		this.orderId = orderId;
 		this.skuId = skuId;
 		this.unitPrice = totalPrice;
 		this.cartList = cartList;
 		this.quantity = quantity;
-		this.lastModifiedDate = lastModifiedDate;
+		this.lastModifiedDate = lastModified;
 	}
 
 	public Long getProfileId() {
@@ -111,11 +113,5 @@ public class Cart {
 
 	public void setLastModifiedDate(Date lastModifiedDate) {
 		this.lastModifiedDate = lastModifiedDate;
-	}
-	
-	
-	
-	
-	
-	
+	}	
 }

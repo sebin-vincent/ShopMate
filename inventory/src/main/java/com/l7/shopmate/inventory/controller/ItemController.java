@@ -3,6 +3,7 @@ package com.l7.shopmate.inventory.controller;
 import com.l7.shopmate.inventory.entity.Item;
 import com.l7.shopmate.inventory.entity.State;
 import com.l7.shopmate.inventory.entity.Stock;
+import com.l7.shopmate.inventory.model.LatestArrivedItem;
 import com.l7.shopmate.inventory.model.ReserveBodyDto;
 import com.l7.shopmate.inventory.model.ResponseInfo;
 import com.l7.shopmate.inventory.service.ItemService;
@@ -42,6 +43,13 @@ public class ItemController {
     public ResponseInfo unreserveItem(@RequestBody ReserveBodyDto reserveBodyDto) {
         Stock updatedStock = itemServiceImpl.UnreserveItem(Integer.parseInt(reserveBodyDto.getSkuId()), reserveBodyDto.getQuantity());
         ResponseInfo responseInfo = new ResponseInfo(200, "Stock updated", updatedStock);
+        return responseInfo;
+    }
+
+    @GetMapping("latest-arrivals/{itemCount}")
+    public ResponseInfo getLatestArrivals(@PathVariable int itemCount) {
+        List<LatestArrivedItem> latestArrivedItems = itemServiceImpl.getLatestArrivedItems(itemCount);
+        ResponseInfo responseInfo = new ResponseInfo(200, "test", latestArrivedItems);
         return responseInfo;
     }
 }
