@@ -46,6 +46,7 @@ public class ItemController {
         return responseInfo;
     }
 
+    @CrossOrigin
     @GetMapping("latest-arrivals/{itemCount}")
     public ResponseInfo getLatestArrivals(@PathVariable int itemCount) {
         List<LatestArrivedItem> latestArrivedItems = itemServiceImpl.getLatestArrivedItems(itemCount);
