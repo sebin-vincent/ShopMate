@@ -9,5 +9,6 @@ public interface OrderServiceDao {
 	public Response getAllOrdersByStatus(int profileId,int status);
 	public List<OrderDto> createOrderId(int profileId);
 	public List<OrderDto> fetchAllOrderByProfileId(int profileId);
+	public String updateOrder(int orderId,int status);
 
 }

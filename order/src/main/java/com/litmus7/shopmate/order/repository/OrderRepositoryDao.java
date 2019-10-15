@@ -20,5 +20,8 @@ public interface OrderRepositoryDao extends JpaRepository<OrderDto, Integer> {
 
 	@Query(value = "select * from manager m where m.profile_id =:profileId", nativeQuery = true)
 	List<OrderDto> getAllOrderByProfileId(@Param("profileId") int profileId);
+	
+	@Query(value = "select * from manager m where m.order_id =:orderId", nativeQuery = true)
+	List<OrderDto> getOrderByOrderId(@Param("orderId") int orderId);
 
 }

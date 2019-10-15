@@ -3,6 +3,7 @@ package com.litmus7.shopmate.order.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.litmus7.shopmate.order.dao.GetPaymentMethodServiceDao;
@@ -58,6 +59,14 @@ public class OrderController {
 		response.setMessage("success");
 		response.setStatus(200);
 		response.setPayload(orderServiceDao.fetchAllOrderByProfileId(profileId));
+		return response;
+	}
+	
+	@PutMapping("/order/update/status/{orderId}/{status}")
+	public Response updateOrderStatus(@PathVariable int orderId,@PathVariable int status) {
+		response.setMessage(orderServiceDao.updateOrder(orderId, status));
+		response.setStatus(200);
+		response.setPayload("ok");
 		return response;
 	}
 
