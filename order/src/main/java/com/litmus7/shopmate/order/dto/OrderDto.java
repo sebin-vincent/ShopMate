@@ -12,6 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "manager")
 public class OrderDto {
+	
 	@Id
 	@Column(name = "order_id")
 	private int orderId;

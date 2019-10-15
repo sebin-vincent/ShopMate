@@ -51,6 +51,7 @@ public class CatalogController {
 		return response_Info;
 	}
 
+	@CrossOrigin
 	@GetMapping("/sku/latest/{skuId}")
 	public LatestArrivalsDto getLatestArrivedItemDetails(@PathVariable int skuId) {
 		return latestArrivalsService.getLatestArrivedDto(skuId);
