@@ -27,7 +27,18 @@ public class LoginDto {
 	
 	@Column(name="password")
 	private String password;
-	
+
+	@Column(name = "token")
+	private String token;
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+
 	@Transient
 	private Map<String,Object> extra;
 	
@@ -56,4 +67,11 @@ public class LoginDto {
 		this.password = password;
 	}
 
+	public LoginDto(String profile_Id, String login_Id, String password, String token, Map<String, Object> extra) {
+		this.profile_Id = profile_Id;
+		this.login_Id = login_Id;
+		this.password = password;
+		this.token = token;
+		this.extra = extra;
+	}
 }
