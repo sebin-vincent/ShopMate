@@ -53,4 +53,9 @@ public class ItemController {
         ResponseInfo responseInfo = new ResponseInfo(200, "test", latestArrivedItems);
         return responseInfo;
     }
+    
+    @GetMapping("message")
+    public String testMessage() {
+    	return "message from inventory";
+    }
 }
