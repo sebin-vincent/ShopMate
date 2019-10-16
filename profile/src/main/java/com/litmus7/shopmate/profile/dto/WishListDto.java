@@ -1,15 +1,16 @@
 package com.litmus7.shopmate.profile.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "wish_list")
 public class WishListDto {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int wishlistId;
+
+
     @Column(name = "profile_id")
     private int profileId;
 
@@ -32,8 +33,20 @@ public class WishListDto {
         this.skuId = skuId;
     }
 
+    public int getWishlistId() {
+        return wishlistId;
+    }
+
+    public void setWishlistId(int wishlistId) {
+        this.wishlistId = wishlistId;
+    }
+
     public WishListDto(int profileId, int skuId) {
         this.profileId = profileId;
         this.skuId = skuId;
+    }
+
+    public WishListDto() {
+
     }
 }

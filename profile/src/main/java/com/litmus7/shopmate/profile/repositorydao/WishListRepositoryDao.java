@@ -1,9 +1,13 @@
 package com.litmus7.shopmate.profile.repositorydao;
 
 import com.litmus7.shopmate.profile.dto.WishListDto;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface WishListRepositoryDao {
+import java.util.List;
 
-    public WishListDto addWishlist(WishListDto wishlist);
+public interface WishListRepositoryDao extends JpaRepository<WishListDto, Integer> {
+
+//    public WishListDto addWishlist(WishListDto wishlist);
+    public List<WishListDto> findByProfileId(int profileId);
 
 }
