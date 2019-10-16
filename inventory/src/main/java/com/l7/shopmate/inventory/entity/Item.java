@@ -33,6 +33,7 @@ public class Item {
     private String HSNCode;
 
     @OneToOne
+    //or @JoinColumn(name = <name from currrent table>, referncedColumnName = <referenced>)
     @JoinColumn(name = "unit_id")  //mapping of foreign keys
     private Unit unit;
 

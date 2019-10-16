@@ -1,0 +1,49 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CatalogApplication<Catalog>",
+            "request": "launch",
+            "mainClass": "com.litmus7.shopmate.catalog.CatalogApplication",
+            "projectName": "Catalog"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CartApplication<cart>",
+            "request": "launch",
+            "mainClass": "com.litmus7.shopmate.cart.CartApplication",
+            "projectName": "cart"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-InventoryApplication<inventory>",
+            "request": "launch",
+            "mainClass": "com.l7.shopmate.inventory.InventoryApplication",
+            "projectName": "inventory"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-OrderApplication<order>",
+            "request": "launch",
+            "mainClass": "com.litmus7.shopmate.order.OrderApplication",
+            "projectName": "order"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ProfileApplication<profile>",
+            "request": "launch",
+            "mainClass": "com.litmus7.shopmate.profile.ProfileApplication",
+            "projectName": "profile"
+        }
+    ]
+}
