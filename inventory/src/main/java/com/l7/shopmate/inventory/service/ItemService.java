@@ -14,4 +14,5 @@ public interface ItemService {
     public Stock ReserveItem(int id, int quantity);
     public Stock UnreserveItem(int id, int quantity);
     public List<LatestArrivedItem> getLatestArrivedItems(int itemsCount);
+    public String getItemNameBySkuId(int skuId);
 }

@@ -53,4 +53,10 @@ public class ItemController {
         ResponseInfo responseInfo = new ResponseInfo(200, "test", latestArrivedItems);
         return responseInfo;
     }
+
+    @CrossOrigin
+    @GetMapping("{skuId}/name")
+    public ResponseInfo getItemName(@PathVariable String skuId) {
+        return new ResponseInfo(200, "retrieved", itemServiceImpl.getItemNameBySkuId(Integer.parseInt(skuId)));
+    }
 }
