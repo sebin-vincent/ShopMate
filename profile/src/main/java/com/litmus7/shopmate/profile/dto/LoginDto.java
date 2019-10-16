@@ -74,4 +74,7 @@ public class LoginDto {
 		this.token = token;
 		this.extra = extra;
 	}
+
+	public LoginDto() {
+	}
 }

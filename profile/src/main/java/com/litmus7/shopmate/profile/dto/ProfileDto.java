@@ -3,11 +3,7 @@ package com.litmus7.shopmate.profile.dto;
 import java.util.Date;
 import java.util.Map;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
@@ -26,6 +22,10 @@ public class ProfileDto {
 	@Id
 	@Column(name = "profile_id")
 	private String profileId;
+
+	@OneToOne
+	@JoinColumn(name = "profile_id")
+	private LoginDto authCredentials;
 
 	@Column(name = "auto_login")
 	private int auto_Login;
@@ -155,4 +155,16 @@ public class ProfileDto {
 		this.security_Answer = security_Answer;
 	}
 
+	public ProfileDto(String email_Id, String name) {
+		this.email_Id = email_Id;
+		this.name = name;
+	}
+
+	public LoginDto getAuthCredentials() {
+		return authCredentials;
+	}
+
+	public void setAuthCredentials(LoginDto authCredentials) {
+		this.authCredentials = authCredentials;
+	}
 }
