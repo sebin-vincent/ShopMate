@@ -11,6 +11,9 @@ public class Response_Info {
 	private String status_Message;
 	private List<Object> payload;
 	
+	
+	
+	
 	public int getStatus_Code() {
 		return status_Code;
 	}

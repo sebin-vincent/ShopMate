@@ -22,6 +22,19 @@ body {
   background-color: #f4f4f4;
 }
 
+.column {
+  float: left;
+  width: 80.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 /* line 12, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_common.scss */
 .message_submit_form:focus {
   outline: none;

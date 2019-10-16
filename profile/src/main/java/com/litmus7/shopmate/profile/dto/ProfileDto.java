@@ -1,5 +1,4 @@
 package com.litmus7.shopmate.profile.dto;
-
 import java.util.Date;
 import java.util.Map;
 
