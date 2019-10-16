@@ -1,4 +1,4 @@
-package com.litmus7.shopmate.catalog.dto;
+package com.litmus7.shopmate.Catalog.dto;
 
 import org.springframework.stereotype.Component;
 

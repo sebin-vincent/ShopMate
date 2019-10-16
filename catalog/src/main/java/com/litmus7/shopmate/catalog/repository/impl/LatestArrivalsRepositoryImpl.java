@@ -1,11 +1,12 @@
-package com.litmus7.shopmate.catalog.repository.impl;
-
-import com.litmus7.shopmate.catalog.dto.StockKeepingUnitDto;
-import com.litmus7.shopmate.catalog.repository.LatestArrivalsRepository;
-import org.springframework.stereotype.Repository;
+package com.litmus7.shopmate.Catalog.repository.impl;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+
+import com.litmus7.shopmate.Catalog.dto.StockKeepingUnitDto;
+import com.litmus7.shopmate.Catalog.repository.LatestArrivalsRepository;
 
 @Repository
 public class LatestArrivalsRepositoryImpl implements LatestArrivalsRepository {

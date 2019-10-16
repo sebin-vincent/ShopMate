@@ -1,11 +1,10 @@
-package com.litmus7.shopmate.catalog.dao;
+package com.litmus7.shopmate.Catalog.dao;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.litmus7.shopmate.catalog.dto.CatalogDto;
-import com.litmus7.shopmate.catalog.dto.ResponseCatalogDto;
+import com.litmus7.shopmate.Catalog.dto.ResponseCatalogDto;
 
 
 @Service

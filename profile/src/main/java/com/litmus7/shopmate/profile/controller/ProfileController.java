@@ -36,4 +36,6 @@ public class ProfileController {
 		
 		return changePasswordService.changePassword(login);
 	}
+	
+	
 }

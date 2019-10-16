@@ -1,6 +1,6 @@
-package com.litmus7.shopmate.catalog.repository;
+package com.litmus7.shopmate.Catalog.repository;
 
-import com.litmus7.shopmate.catalog.dto.StockKeepingUnitDto;
+import com.litmus7.shopmate.Catalog.dto.StockKeepingUnitDto;
 
 public interface LatestArrivalsRepository  {
 

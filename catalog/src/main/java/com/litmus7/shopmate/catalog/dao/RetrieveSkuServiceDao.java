@@ -1,10 +1,10 @@
-package com.litmus7.shopmate.catalog.dao;
+package com.litmus7.shopmate.Catalog.dao;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.litmus7.shopmate.catalog.dto.StockKeepingUnitDto;
+import com.litmus7.shopmate.Catalog.dto.StockKeepingUnitDto;
 
 @Service
 public interface RetrieveSkuServiceDao {

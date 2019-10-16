@@ -1,4 +1,4 @@
-package com.litmus7.shopmate.catalog.repository;
+package com.litmus7.shopmate.Catalog.repository;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.litmus7.shopmate.catalog.dto.ProductDto;
+import com.litmus7.shopmate.Catalog.dto.ProductDto;
 
 public interface ProductRepository extends JpaRepository<ProductDto, Integer> {
 	

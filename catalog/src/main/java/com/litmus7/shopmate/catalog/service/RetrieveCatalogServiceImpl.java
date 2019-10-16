@@ -1,4 +1,4 @@
-package com.litmus7.shopmate.catalog.service;
+package com.litmus7.shopmate.Catalog.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,14 +6,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.litmus7.shopmate.catalog.dao.RetrieveCatalogServiceDao;
-import com.litmus7.shopmate.catalog.dto.CatalogDto;
-import com.litmus7.shopmate.catalog.dto.ResponseCatalogDto;
-import com.litmus7.shopmate.catalog.dto.ResponseSubCategoryProductDto;
-import com.litmus7.shopmate.catalog.dto.CategoryDto;
-import com.litmus7.shopmate.catalog.repository.CatalogRepository;
-import com.litmus7.shopmate.catalog.repository.CategoryRepository;
-import com.litmus7.shopmate.catalog.repository.ProductRepository;
+import com.litmus7.shopmate.Catalog.dao.RetrieveCatalogServiceDao;
+import com.litmus7.shopmate.Catalog.dto.CatalogDto;
+import com.litmus7.shopmate.Catalog.dto.CategoryDto;
+import com.litmus7.shopmate.Catalog.dto.ResponseCatalogDto;
+import com.litmus7.shopmate.Catalog.dto.ResponseSubCategoryProductDto;
+import com.litmus7.shopmate.Catalog.repository.CatalogRepository;
+import com.litmus7.shopmate.Catalog.repository.CategoryRepository;
+import com.litmus7.shopmate.Catalog.repository.ProductRepository;
 
 @Service
 public class RetrieveCatalogServiceImpl implements RetrieveCatalogServiceDao {

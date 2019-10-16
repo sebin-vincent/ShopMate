@@ -1,11 +1,11 @@
-package com.litmus7.shopmate.catalog.service;
+package com.litmus7.shopmate.Catalog.service;
 
-import com.litmus7.shopmate.catalog.dto.LatestArrivalsDto;
-import com.litmus7.shopmate.catalog.dto.StockKeepingUnitDto;
-import com.litmus7.shopmate.catalog.repository.LatestArrivalsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+
+import com.litmus7.shopmate.Catalog.dto.LatestArrivalsDto;
+import com.litmus7.shopmate.Catalog.dto.StockKeepingUnitDto;
+import com.litmus7.shopmate.Catalog.repository.LatestArrivalsRepository;
 
 @Service
 public class LatestArrivalsServiceImpl implements LatestArrivalsService{

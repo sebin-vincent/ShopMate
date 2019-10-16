@@ -1,15 +1,15 @@
-package com.litmus7.shopmate.catalog.controller;
+package com.litmus7.shopmate.Catalog.controller;
 
-import com.litmus7.shopmate.catalog.dto.LatestArrivalsDto;
-import com.litmus7.shopmate.catalog.service.LatestArrivalsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.litmus7.shopmate.catalog.dto.Response_Info;
-import com.litmus7.shopmate.catalog.service.RetrieveCatalogServiceImpl;
-import com.litmus7.shopmate.catalog.service.RetrieveSkuServiceImpl;
+import com.litmus7.shopmate.Catalog.dto.LatestArrivalsDto;
+import com.litmus7.shopmate.Catalog.dto.Response_Info;
+import com.litmus7.shopmate.Catalog.service.LatestArrivalsService;
+import com.litmus7.shopmate.Catalog.service.RetrieveCatalogServiceImpl;
+import com.litmus7.shopmate.Catalog.service.RetrieveSkuServiceImpl;
 
 @RestController
 public class CatalogController {

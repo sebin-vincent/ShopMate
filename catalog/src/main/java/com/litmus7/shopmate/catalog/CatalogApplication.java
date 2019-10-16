@@ -1,4 +1,4 @@
-package com.litmus7.shopmate.catalog;
+package com.litmus7.shopmate.Catalog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
