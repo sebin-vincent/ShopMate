@@ -6,5 +6,7 @@
 .springBeans
 .sts4-cache
 /Servers
+<<<<<<< HEAD
+/login
+/signup
 /Test
-profile/
