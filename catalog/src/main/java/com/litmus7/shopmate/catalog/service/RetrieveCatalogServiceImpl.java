@@ -46,7 +46,8 @@ public class RetrieveCatalogServiceImpl implements RetrieveCatalogServiceDao {
 		
 		List<CategoryDto> categories=categoryRepository.findActiveCategories(catalog.getCatalog_Id());
 
-				
+		
+		
 		for(CategoryDto category:categories) {
 			responseCatalogDto=new ResponseCatalogDto();
 			responseCatalogDto.setCategoryName(category.getCategoryName());
