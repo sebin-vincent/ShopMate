@@ -32,6 +32,7 @@ public class WishListController {
 
     }
 
+    @CrossOrigin
     @GetMapping("/{profileId}/retrieve")
     public Response_Info retriveWishList(@PathVariable int profileId) {
 
