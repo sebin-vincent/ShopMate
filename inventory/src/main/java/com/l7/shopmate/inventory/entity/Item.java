@@ -15,14 +15,6 @@ public class Item {
     @JoinColumn(name = "item_id")
     private Stock stock;
 
-    public Stock getStock() {
-        return stock;
-    }
-
-    public void setStock(Stock stock) {
-        this.stock = stock;
-    }
-
     @Column(name = "item_name")
     private String itemName;
 
@@ -33,6 +25,7 @@ public class Item {
     private String HSNCode;
 
     @OneToOne
+    //or @JoinColumn(name = <name from currrent table>, referncedColumnName = <referenced>)
     @JoinColumn(name = "unit_id")  //mapping of foreign keys
     private Unit unit;
 
@@ -103,4 +96,13 @@ public class Item {
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
+
+    public Stock getStock() {
+        return stock;
+    }
+
+    public void setStock(Stock stock) {
+        this.stock = stock;
+    }
+
 }

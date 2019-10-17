@@ -100,5 +100,12 @@ public class ItemServiceImpl implements ItemService {
         return latestArrivedItems;
     }
 
+    @Override
+    public String getItemNameBySkuId(int skuId) {
+
+        return itemRepositoryImpl.getItemById(skuId).getItemName();
+
+    }
+
 
 }

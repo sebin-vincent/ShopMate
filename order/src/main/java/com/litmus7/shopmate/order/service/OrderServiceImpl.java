@@ -12,11 +12,12 @@ import com.litmus7.shopmate.order.repository.OrderRepositoryDao;
 
 @Service
 public class OrderServiceImpl implements OrderServiceDao {
-	
+
 	@Autowired
 	OrderRepositoryDao orderRepositoryDao;
-	
-	public Response getAllOrdersByStatus(int profileId,int status){
+
+
+	public Response getAllOrdersByStatus(int profileId, int status) {
 		List<OrderDto> order = orderRepositoryDao.getAllOrdersByStatus(profileId, status);
 		Response resp = new Response();
 		resp.setMessage("success");
@@ -24,7 +25,7 @@ public class OrderServiceImpl implements OrderServiceDao {
 		resp.setStatus(200);
 		return resp;
 	}
-	
+
 	public List<OrderDto> createOrderId(int profileId) {
 		int status = 1;
 		List<OrderDto> orderId = orderRepositoryDao.getOrderIdByProfileId(profileId, status);
@@ -46,4 +47,14 @@ public class OrderServiceImpl implements OrderServiceDao {
 		List<OrderDto> allOrder = orderRepositoryDao.getAllOrderByProfileId(profileId);
 		return allOrder;
 	}
+	//update order status by order id and status
+	@Override
+	public String updateOrder(int orderId, int status) {
+		List<OrderDto> order = orderRepositoryDao.getOrderByOrderId(orderId);
+		OrderDto orderDto = order.get(0);
+		orderDto.setOrderStatusId(status);
+		orderRepositoryDao.save(orderDto);
+		return "success";
+	}
+
 }
