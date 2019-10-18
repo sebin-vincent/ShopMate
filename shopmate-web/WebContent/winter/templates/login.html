@@ -222,10 +222,10 @@
                                         <input type="checkbox" id="f-option" name="selector">
                                         <label for="f-option">Remember me</label>
                                     </div>
-                                    <button type="submit" value="submit" class="btn_3">
+                                    <button type="submit" value="submit" class="btn_3" id="login-button">
                                         log in
                                     </button>
-                                    <a class="lost_pass" href="#" id="forgot_pswd">forgot password?</a>
+                                    <a class="lost_pass" href="#" id="forgot_pswd" > forgot password?</a>
                                     
                                 </div>
                             </form>
@@ -235,29 +235,42 @@
                             <h3>Please fill it!</h3>
                             <form class="row contact_form" id="forgot_password_form">                                
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="email" class="form-control" id="fp_email" name="email" value=""
+                                    <input type="email" class="form-control" id="fp_email" name="email_c" value=""
                                         placeholder="Email" required>
                                 </div>
-                                <div class="col-md-12 form-group p_star">
-                                        <select class="security" id="sec_quest" name="security_quest"  required>
+                         
+                                 <div class="col-md-12 form-group p_star" id="forgot_password_questions">
+                                        <select class="security" id="sec_quest" name="security_quest" style="display: block;
+                                        width: 100%;
+                                        height: calc(1.5em + .75rem + 2px);
+                                        padding: .375rem .75rem;
+                                        font-size: 1rem;
+                                        font-weight: 400;
+                                        line-height: 1.5;
+                                        color: #495057;
+                                        background-color: #fff;
+                                        background-clip: padding-box;
+                                        border: 1px solid #ced4da;
+                                        border-radius: .25rem;
+                                        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;"  required>
                                             <option value=""hidden>Select the question from the following options</option>
-                                            <option value="1">Who's your daddy?</option>
-                                            <option value="2">What is your favorite color?</option>
+                                            
+                                            <!-- <option value="2">What is your favorite color?</option>
                                             <option value="3">What is your favorite book?</option>                            
-                                            <option value="4">What brand of food did your first pet eat?</option>
-                                         </select>
-                                </div>
+                                            <option value="4">What brand of food did your first pet eat?</option> -->
+                                         </select> 
+                                </div>  
 
                                 <div class="col-md-12 form-group p_star">
                                     <input type="text" class="form-control" id="Sec_ans" name="sec_ans" value=""
                                         placeholder="Answer" required>
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="password" class="form-control" id="fp_new_password" name="password" value=""
+                                    <input type="password" class="form-control" id="fp_new_password" name="password1" value=""
                                         placeholder="New Password" required>
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="password" class="form-control" id="fp_conf_password" name="password" value=""
+                                    <input type="password" class="form-control" id="fp_conf_password" name="password2" value=""
                                         placeholder="Confirm Password" required>
                                 </div>
                                 <div class="col-md-12 form-group">
@@ -276,16 +289,16 @@
                                 <h3>Please enter new password!</h3>
                                 <form class="row contact_form" id="change_password_form">                                
                                     <div class="col-md-12 form-group p_star">
-                                            <input type="password" class="form-control" id="chng_old_password" name="password" value=""
+                                            <input type="password" class="form-control" id="chng_old_password" name="password1" value=""
                                                     placeholder="Old Password" required>
                                     </div>
                         
                                     <div class="col-md-12 form-group p_star">
-                                        <input type="password" class="form-control" id="chng_new_password" name="password" value=""
+                                        <input type="password" class="form-control" id="chng_new_password" name="password2" value=""
                                             placeholder="New Password" required>
                                     </div>
                                     <div class="col-md-12 form-group p_star">
-                                        <input type="password" class="form-control" id="chng_conf_password" name="password" value=""
+                                        <input type="password" class="form-control" id="chng_conf_password" name="password3" value=""
                                             placeholder="Confirm Password" required>
                                     </div>
                                     <div class="col-md-12 form-group">
@@ -455,7 +468,7 @@
 
   <!-- particles js -->
   <script src="../js/owl.carousel.min.js"></script>
-  <script src="../js/jquery.nice-select.min.js"></script>
+  <!-- <script src="../js/jquery.nice-select.min.js"></script> -->
   <!-- slick js -->
   <script src="../js/slick.min.js"></script>
   <script src="../js/jquery.counterup.min.js"></script>
@@ -470,6 +483,7 @@
   <script src="../js/custom.js"></script>
   <script src="../js/login.js"></script>
   <script src="../js/login_integration.js"></script>
+  
 </body>
 
 </html>

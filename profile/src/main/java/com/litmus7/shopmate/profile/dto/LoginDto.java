@@ -20,7 +20,7 @@ public class LoginDto {
 	
 	@Id
 	@Column(name="profile_id")
-	private String profile_Id;
+	private int profile_Id;
 	
 	@Column(name="login_id")
 	private String login_Id;
@@ -37,10 +37,10 @@ public class LoginDto {
 	public void setExtra(Map<String, Object> extra) {
 		this.extra = extra;
 	}
-	public String getProfile_Id() {
+	public int getProfile_Id() {
 		return profile_Id;
 	}
-	public void setProfile_Id(String profile_Id) {
+	public void setProfile_Id(int profile_Id) {
 		this.profile_Id = profile_Id;
 	}
 	public String getLogin_Id() {
