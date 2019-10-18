@@ -21,7 +21,7 @@ public class SecurityQuestionRepositoryImpl implements SecurityQuestionRepositor
 	@Override
 	public List<Security_Question> fetchAllQuestions() {
 		// TODO Auto-generated method stub
-		Query query = entityManager.createQuery("Select question_Id,question from Security_Question");
+		Query query = entityManager.createQuery("Select q.question_Id,q.question from Security_Question q");
 		return query.getResultList();
 	}
 }

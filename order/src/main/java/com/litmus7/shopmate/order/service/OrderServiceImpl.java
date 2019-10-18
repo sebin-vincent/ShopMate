@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import com.litmus7.shopmate.order.dao.OrderServiceDao;
 import com.litmus7.shopmate.order.dto.OrderDto;
@@ -17,8 +16,6 @@ public class OrderServiceImpl implements OrderServiceDao {
 	@Autowired
 	OrderRepositoryDao orderRepositoryDao;
 
-	@Autowired
-	RestTemplate restTemplate;
 
 	public Response getAllOrdersByStatus(int profileId, int status) {
 		List<OrderDto> order = orderRepositoryDao.getAllOrdersByStatus(profileId, status);
@@ -50,23 +47,13 @@ public class OrderServiceImpl implements OrderServiceDao {
 		List<OrderDto> allOrder = orderRepositoryDao.getAllOrderByProfileId(profileId);
 		return allOrder;
 	}
-
+	//update order status by order id and status
 	@Override
 	public String updateOrder(int orderId, int status) {
 		List<OrderDto> order = orderRepositoryDao.getOrderByOrderId(orderId);
 		OrderDto orderDto = order.get(0);
 		orderDto.setOrderStatusId(status);
 		orderRepositoryDao.save(orderDto);
-		// TODO call inventory based on status
-
-		/*
-		 * HttpHeaders headers = new HttpHeaders();
-		 * headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON)); HttpEntity<I>
-		 * entity = new HttpEntity<Product>(product, headers); return
-		 * restTemplate.exchange("http://localhost:8080/products/" + id, HttpMethod.PUT,
-		 * entity, String.class) .getBody();
-		 */
-
 		return "success";
 	}
 

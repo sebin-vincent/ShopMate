@@ -18,39 +18,53 @@ import java.util.List;
 @RequestMapping("/items")
 public class ItemController {
 
-    @Autowired
-    ItemService itemServiceImpl;
+	@Autowired
+	ItemService itemServiceImpl;
 
-    @GetMapping("/{id}")
-    public Item getItem(@PathVariable String id) {
-        return itemServiceImpl.getItemById(Integer.parseInt(id));
-    }
+	@GetMapping("/{id}")
+	public Item getItem(@PathVariable String id) {
+		return itemServiceImpl.getItemById(Integer.parseInt(id));
+	}
 
-    @GetMapping("{id}/state")
-    public ResponseInfo getState(@PathVariable String id){
-        ResponseInfo responseInfo = new ResponseInfo(200, "Availability info", itemServiceImpl.getItemAvailabilityById(Integer.parseInt(id)));
-        return responseInfo;
-    }
+	@GetMapping("{id}/state")
+	public ResponseInfo getState(@PathVariable String id) {
+		ResponseInfo responseInfo = new ResponseInfo(200, "Availability info",
+				itemServiceImpl.getItemAvailabilityById(Integer.parseInt(id)));
+		return responseInfo;
+	}
 
-   @PutMapping("reserve")
-    public ResponseInfo reserveItem(@RequestBody ReserveBodyDto reserveBodyDto) {
-       Stock updatedStock = itemServiceImpl.ReserveItem(Integer.parseInt(reserveBodyDto.getSkuId()), reserveBodyDto.getQuantity());
-       ResponseInfo responseInfo = new ResponseInfo(200, "Stock updated", updatedStock);
-       return responseInfo;
-   }
+	@PutMapping("reserve")
+	public ResponseInfo reserveItem(@RequestBody ReserveBodyDto reserveBodyDto) {
+		Stock updatedStock = itemServiceImpl.ReserveItem(Integer.parseInt(reserveBodyDto.getSkuId()),
+				reserveBodyDto.getQuantity());
+		ResponseInfo responseInfo = new ResponseInfo(200, "Stock updated", updatedStock);
+		return responseInfo;
+	}
 
-    @PutMapping("unreserve")
-    public ResponseInfo unreserveItem(@RequestBody ReserveBodyDto reserveBodyDto) {
-        Stock updatedStock = itemServiceImpl.UnreserveItem(Integer.parseInt(reserveBodyDto.getSkuId()), reserveBodyDto.getQuantity());
-        ResponseInfo responseInfo = new ResponseInfo(200, "Stock updated", updatedStock);
-        return responseInfo;
-    }
+	@PutMapping("unreserve")
+	public ResponseInfo unreserveItem(@RequestBody ReserveBodyDto reserveBodyDto) {
+		Stock updatedStock = itemServiceImpl.UnreserveItem(Integer.parseInt(reserveBodyDto.getSkuId()),
+				reserveBodyDto.getQuantity());
+		ResponseInfo responseInfo = new ResponseInfo(200, "Stock updated", updatedStock);
+		return responseInfo;
+	}
 
-    @CrossOrigin
-    @GetMapping("latest-arrivals/{itemCount}")
-    public ResponseInfo getLatestArrivals(@PathVariable int itemCount) {
-        List<LatestArrivedItem> latestArrivedItems = itemServiceImpl.getLatestArrivedItems(itemCount);
-        ResponseInfo responseInfo = new ResponseInfo(200, "test", latestArrivedItems);
-        return responseInfo;
-    }
+	@CrossOrigin
+	@GetMapping("latest-arrivals/{itemCount}")
+	public ResponseInfo getLatestArrivals(@PathVariable int itemCount) {
+		List<LatestArrivedItem> latestArrivedItems = itemServiceImpl.getLatestArrivedItems(itemCount);
+		ResponseInfo responseInfo = new ResponseInfo(200, "test", latestArrivedItems);
+		return responseInfo;
+	}
+
+	@GetMapping("message")
+	public String testMessage() {
+		return "message from inventory";
+	}
+
+	@CrossOrigin
+	@GetMapping("{skuId}/name")
+	public ResponseInfo getItemName(@PathVariable String skuId) {
+		return new ResponseInfo(200, "retrieved", itemServiceImpl.getItemNameBySkuId(Integer.parseInt(skuId)));
+	}
 }
