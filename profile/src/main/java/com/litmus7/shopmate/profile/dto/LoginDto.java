@@ -67,7 +67,7 @@ public class LoginDto {
 		this.password = password;
 	}
 
-	public LoginDto(String profile_Id, String login_Id, String password, String token, Map<String, Object> extra) {
+	public LoginDto(int profile_Id, String login_Id, String password, String token, Map<String, Object> extra) {
 		this.profile_Id = profile_Id;
 		this.login_Id = login_Id;
 		this.password = password;
