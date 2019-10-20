@@ -1,13 +1,23 @@
 package com.litmus7.shopmate.order.controller;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
+import com.litmsu7.shopmate.order.feignclient.ServiceInventoryClient;
+import com.litmsu7.shopmate.order.model.Item;
+import com.litmsu7.shopmate.order.model.ReserveBodyDto;
 import com.litmus7.shopmate.order.dao.GetPaymentMethodServiceDao;
 import com.litmus7.shopmate.order.dao.ItemServiceDao;
 import com.litmus7.shopmate.order.dao.OrderServiceDao;
@@ -27,16 +37,20 @@ public class OrderController {
 
 	@Autowired
 	OrderServiceDao orderServiceDao;
-	
+
 	@Autowired
 	ItemServiceDao itemServiceDao;
+
+	@Autowired
+	RestTemplate restTemplate;
 
 //	@Autowired
 //	ServiceInventoryClient serviceInventoryClient;
 
 	@Autowired
 	Response response;
-	//return orders by profile id and status
+
+	// return orders by profile id and status
 	@GetMapping("/order/cart/{profileId}/{status}")
 	public Response getOrderBytest(@PathVariable int profileId, @PathVariable int status) {
 		return orderServiceDao.getAllOrdersByStatus(profileId, status);
@@ -64,7 +78,8 @@ public class OrderController {
 		response.setPayload(orderServiceDao.createOrderId(profileId));
 		return response;
 	}
-	//retrive all order by profile id
+
+	// retrive all order by profile id
 	@GetMapping("/order/get/allorder/{profileId}")
 	public Response getOrderByProfileId(@PathVariable int profileId) {
 		response.setMessage("success");
@@ -72,8 +87,8 @@ public class OrderController {
 		response.setPayload(orderServiceDao.fetchAllOrderByProfileId(profileId));
 		return response;
 	}
-	
-	//update status of order with order id and statusid 
+
+	// update status of order with order id and statusid
 	@PutMapping("/order/update/status/{orderId}/{status}")
 	public Response updateOrderStatus(@PathVariable int orderId, @PathVariable int status) {
 		response.setMessage(orderServiceDao.updateOrder(orderId, status));
@@ -87,16 +102,50 @@ public class OrderController {
 //		//return "order project";
 //		return serviceInventoryClient.getMessage();
 //	}
-	
-	//api for place order which update all the data to new data
+
+	// api for place order which update all the data to new data
 	@PutMapping("order/Update")
 	public Response updateOrder(@RequestBody OrderDto order) {
 		response.setMessage("Ok");
 		response.setStatus(200);
 		response.setPayload(itemServiceDao.updateOrder(order));
 		return response;
+
+	}
+
+	@GetMapping("/api/test")
+	public Response returnResult() {
+		HttpHeaders headers = new HttpHeaders();
+		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+		HttpEntity<Item> entity = new HttpEntity<Item>(headers);
+		response.setPayload(restTemplate
+				.exchange("http://localHost:8080/items/10013", HttpMethod.GET, entity, Item.class).getBody());
+		response.setMessage("sucess");
+		return response;
+	}
+
+	@PutMapping("/update")
+	public Response update() {
+		response.setPayload(null);
+		ReserveBodyDto reserve =new ReserveBodyDto();
+		reserve.setQuantity(10);
+		reserve.setSkuId("10014");
+		HttpHeaders headers = new HttpHeaders();
+	    headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+	    HttpEntity<ReserveBodyDto> entity = new HttpEntity<ReserveBodyDto>(reserve,headers);
+	    restTemplate.exchange("http://localHost:8080/items/unreserve", HttpMethod.PUT, entity, Item.class).getBody();
+	    response.setMessage("invoked");
+	    return response;
 		
 	}
 
+	@PutMapping("/order/cancel/{orderId}")
+	public Response cancelOrder(@PathVariable int orderId) {
+		response.setStatus(200);
+		orderServiceDao.cancelOrder(orderId);
+		response.setMessage("success");
+		response.setPayload(null);
+		return response;
 
+	}
 }

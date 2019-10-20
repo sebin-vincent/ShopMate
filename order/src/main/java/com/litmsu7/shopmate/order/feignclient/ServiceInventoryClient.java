@@ -7,7 +7,7 @@ import feign.RequestLine;
 @FeignClient(name = "inventory",url = "http://localhost:8080",configuration = ServiceInventoryClientConfig.class)
 public interface ServiceInventoryClient {
 	
-	@RequestLine("/items/message")
+	@RequestLine("GET /items/message")
 	public String getMessage();
 
 }
