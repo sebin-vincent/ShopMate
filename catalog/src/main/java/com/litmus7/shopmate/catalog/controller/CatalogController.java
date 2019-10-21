@@ -33,6 +33,7 @@ public class CatalogController {
 	@Autowired
 	SliderImageService sliderService;
 
+	@CrossOrigin
 	@GetMapping("/catalog")
 	public Response_Info getCatalog() {
 
