@@ -2,6 +2,7 @@ package com.litmus7.shopmate.order.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -37,6 +38,7 @@ public class OrderController {
 	@Autowired
 	Response response;
 	//return orders by profile id and status
+	@CrossOrigin
 	@GetMapping("/order/cart/{profileId}/{status}")
 	public Response getOrderBytest(@PathVariable int profileId, @PathVariable int status) {
 		return orderServiceDao.getAllOrdersByStatus(profileId, status);
