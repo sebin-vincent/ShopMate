@@ -2,6 +2,8 @@ package com.litmus7.shopmate.profile.dto;
 
 
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.Email;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
@@ -32,17 +35,29 @@ public class UserDto {
 	@Column(name = "last_name")
 	private String lastName;
 	
-	
+	//@Email(message = "enter a valid email")
 	@Column(name = "email_id",unique=true)
 	private String email;
-
 
 	@Transient
 	@Column(name = "password")
 	private String password;
 	
+	
+	@Column(name="registration_date")
+	private Date date;
+	
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
 	@Column(name = "question_id")
 	private String questionId;
+	
 	
 	@Column(name = "security_answer")
 	private String answer;
@@ -50,6 +65,11 @@ public class UserDto {
 	@Column(name = "primary_phone_mumber")
 	private int mobile;
 
+//	@Column(name = "question_id")
+//	private String question_id;
+//	
+//	
+	
 	public int getMobile() {
 		return mobile;
 	}
