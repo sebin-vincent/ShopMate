@@ -70,7 +70,7 @@
                                             
                                         </a>
                                         <a class="dropdown-item" href="tracking.html">tracking</a>
-                                        <a class="dropdown-item" href="mycheckout.html">product checkout</a>
+                                        <a class="dropdown-item" href="checkout.html">product checkout</a>
                                         <a class="dropdown-item" href="cart.html">shopping cart</a>
                                         <a class="dropdown-item" href="confirmation.html">confirmation</a>
                                         <a class="dropdown-item" href="elements.html">elements</a>
@@ -106,7 +106,12 @@
                                         <i class="fa fa-heart" aria-hidden="true" style="color:white"></i>
                                         <span id="XXX">Wish list</span>
                                       </a>
-                  
+                                      
+                                      <a class="dropdown-item"  href="cart.html">
+                                        <i class="fa fa-key" aria-hidden="true" style="color:white"></i>
+                                        <span id="XXX">Change Password</span>
+                                        
+                                      </a>
                                       <a class="dropdown-item"  href="cart.html">
                                         <i class="fa fa-sign-out" aria-hidden="true" style="color:white"></i>
                                         <span id="XXX">Logout</span>
@@ -179,159 +184,28 @@
     <div class="container">
       <div class="billing_details">
         <div class="row">
-          <div class="col-lg-8">
-            <h3>Billing Details</h3>
-
-            <form class="row contact_form" action="#" method="post" novalidate="novalidate">
-              <div class="col-md-6 form-group p_star">
-                <input type="text" class="form-control" id="first" name="name" />
-                <span class="placeholder" data-placeholder="First name"></span>
-              </div>
-              <div class="col-md-6 form-group p_star">
-                <input type="text" class="form-control" id="last" name="name" />
-                <span class="placeholder" data-placeholder="Last name"></span>
-              </div>
-              <div class="col-md-12 form-group">
-                <input type="text" class="form-control" id="company" name="company" placeholder="House name" />
-              </div>
-              <div class="col-md-6 form-group p_star">
-                <input type="text" class="form-control" id="number" name="number" />
-                <span class="placeholder" data-placeholder="Phone number"></span>
-              </div>
-              <div class="col-md-6 form-group p_star">
-                <input type="text" class="form-control" id="email" name="compemailany" />
-                <span class="placeholder" data-placeholder="Email Address"></span>
-              </div>
-              
-              <div class="col-md-12 form-group p_star">
-                <input type="text" class="form-control" id="add1" name="add1" />
-                <span class="placeholder" data-placeholder="Street"></span>
-              </div>
-              <div class="col-md-12 form-group p_star">
-                <input type="text" class="form-control" id="city" name="city" />
-                <span class="placeholder" data-placeholder="City"></span>
-              </div>
-              <div class="col-md-12 form-group p_star">
-                <input type="text" class="form-control" id="State" name="state" />
-                <span class="placeholder" data-placeholder="State"></span>
-              </div>
-
-              <div class="col-md-12 form-group p_star">
-                <select class="country_select" style="display: block;
-                width: 100%;
-                height: calc(1.5em + .75rem + 2px);
-                padding: .375rem .75rem;
-                font-size: 1rem;
-                font-weight: 400;
-                line-height: 1.5;
-                color: #495057;
-                background-color: #fff;
-                background-clip: padding-box;
-                border: 1px solid #ced4da;
-                border-radius: .25rem;
-                transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-                font-size: 14px;
-                height: 40px;
-                  ">
-                  <option value="1">India</option>
-                  <option value="2">China</option>
-                  <option value="3">United States Of America</option>
-                  <option value="3">Australia</option>
-                </select>
-                
-               
-              </div>
-              <div class="col-md-12 form-group p_star">
-                <input type="text" class="form-control" id="zip" name="zip"/>
-                <span class="placeholder" data-placeholder="Postcode/ZIP"></span>
-              </div>
-            </form>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="order_box">
-              <h2>Your Order</h2>
-              <ul class="list">
-                <li>
-                  <a href="#">Product
-                    <span>Total</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">Fresh Blackberry
-                    <span class="middle">x 02</span>
-                    <span class="last">$720.00</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">Fresh Tomatoes
-                    <span class="middle">x 02</span>
-                    <span class="last">$720.00</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">Fresh Brocoli
-                    <span class="middle">x 02</span>
-                    <span class="last">$720.00</span>
-                  </a>
-                </li>
-              </ul>
-              <ul class="list list_2">
-                <li>
-                  <a href="#">Total
-                    <span>$2160.00</span>
-                  </a>
-                </li>
-              </ul>
-             
-              <div class="payment_item col-md-6 form-group p_star" id="selectDivPayment"><br><br>
-
-                   <label for="payment_methods">Payment methods</label>
-                  <img src="../img/product/single-product/card.jpg" alt="" style="padding-bottom: 14px;"/>
-                <select class="payment_select " id="payment_methods" name="payment_methods" style="display: block;
-                width: 100%;
-                height: calc(1.5em + .75rem + 2px);
-                padding: .375rem .75rem;
-                font-size: 1rem;
-                font-weight: 400;
-                line-height: 1.5;
-                color: #495057;
-                background-color: #fff;
-                background-clip: padding-box;
-                border: 1px solid #ced4da;
-                border-radius: .25rem;
-                transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-                font-size: 14px;
-                height: 40px;"
-                  > 
-                
-                  <!-- <option value="1">credit card</option>
-                  <option value="2">debit card</option>
-                  <option value="3">EMI</option> -->
-                   
-                </select>
-                    <br> <br> <br> <br>                      
-              </div>
-              <a class="btn_3" href="#">Proceed to Paypal</a>  
-            </div>
-          </div>
-
+        
           <div class="col-lg-8">
                 <h3>Shipping Details</h3>
                 <div class="col-md-6 form-group p_star">
-                  <div class="creat_account">
+                  <div class="creat_account" id="ship_section_text_area">
                       <input type="radio" id="saved_address" name="selector" />
-                      <label for="saved_address">Show my saved address</label>
-                      <textarea class="form-control" name="message" id="message" rows="5"
-                      placeholder="Shipping Address" style="padding-bottom: 10rem;"></textarea>
+                      <label for="saved_address">Show my saved address</label><br>
+
+                      <div class="creat_account" id="ship_section">
+
+                        <!-- <input type="radio" id="ship_address1" name="selector" />
+                      
+                        <textarea class="form-control" name="message" id="message-textarea" rows="5"
+                        placeholder="Shipping Address" style="padding-bottom: 8rem;"></textarea> -->                        
+                      </div>
+                     
                     <input type="radio" id="f-option3" name="selector" />
                     <label for="f-option3" style="padding-top:21px;">Ship to a different address?</label>
-                  </div>
-                  
+                  </div>                  
                 </div>
 
-
-                <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                <form class="row contact_form" action="#" method="post" novalidate="novalidate" id="new_ship_address">
                   <div class="col-md-6 form-group p_star">
                     <input type="text" class="form-control" id="first" name="name" />
                     <span class="placeholder" data-placeholder="First name"></span>
@@ -393,12 +267,78 @@
                     <span class="placeholder" data-placeholder="Postcode/ZIP"></span>
                   </div>
               </div>
+
+
+
+              <div class="col-lg-4">
+                <div class="order_box">
+                  <h2>Your Order</h2>
+                  <ul class="list">
+                    <li>
+                      <a href="#">Product
+                        <span>Total</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">Fresh Blackberry
+                        <span class="middle">x 02</span>
+                        <span class="last">$720.00</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">Fresh Tomatoes
+                        <span class="middle">x 02</span>
+                        <span class="last">$720.00</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">Fresh Brocoli
+                        <span class="middle">x 02</span>
+                        <span class="last">$720.00</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <ul class="list list_2">
+                    <li>
+                      <a href="#">Total
+                        <span>$2160.00</span>
+                      </a>
+                    </li>
+                  </ul>
+                 
+                  <div class="payment_item col-md-6 form-group p_star" id="selectDivPayment"><br><br>
+    
+                       <label for="payment_methods">Payment methods</label>
+                      <img src="../img/product/single-product/card.jpg" alt="" style="padding-bottom: 14px;"/>
+                    <select class="payment_select " id="payment_methods" name="payment_methods" style="display: block;
+                    width: 100%;
+                    height: calc(1.5em + .75rem + 2px);
+                    padding: .375rem .75rem;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    color: #495057;
+                    background-color: #fff;
+                    background-clip: padding-box;
+                    border: 1px solid #ced4da;
+                    border-radius: .25rem;
+                    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                    font-size: 14px;
+                    height: 40px;"> 
+                    
+                      <!-- <option value="1">credit card</option>
+                      <option value="2">debit card</option>
+                      <option value="3">EMI</option> -->
+                       
+                    </select>
+                        <br> <br> <br> <br>                      
+                  </div>
+                  <a class="btn_3" href="#">Proceed to Payment</a>  
+                </div>
+              </div>
+
             </form>
           </div>
-
-
-
-
 
         </div>
       </div>

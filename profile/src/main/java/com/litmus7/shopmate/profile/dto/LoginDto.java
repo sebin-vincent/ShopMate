@@ -28,6 +28,7 @@ public class LoginDto {
 	@Column(name="password")
 	private String password;
 
+	@Transient
 	@Column(name = "token")
 	private String token;
 
