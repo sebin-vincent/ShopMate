@@ -17,7 +17,7 @@ public class ChangePasswordRepoImpl implements ChangePasswordRepoDao{
 	EntityManager entityManager;
 
 	@Override
-	public boolean updatePassword(String profile_id,String old_Password,String new_Password) {
+	public boolean updatePassword(int profile_id,String old_Password,String new_Password) {
 		// TODO Auto-generated method stub
 		
 		Query query = entityManager.createQuery("update LoginDto login set login.password= :password where login.profile_Id= :profile_id and login.password= :old_password");

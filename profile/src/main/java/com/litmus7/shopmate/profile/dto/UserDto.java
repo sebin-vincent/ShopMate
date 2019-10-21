@@ -27,9 +27,11 @@ public class UserDto {
 
 	@Column(name = "first_name")
 	private String firstName;
-
+	
+	@Transient
 	@Column(name = "last_name")
 	private String lastName;
+	
 	
 	@Column(name = "email_id",unique=true)
 	private String email;
@@ -45,7 +47,16 @@ public class UserDto {
 	@Column(name = "security_answer")
 	private String answer;
 	
-	
+	@Column(name = "primary_phone_mumber")
+	private int mobile;
+
+	public int getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(int mobile) {
+		this.mobile = mobile;
+	}
 
 	public String getQuestionId() {
 		return questionId;
@@ -96,6 +107,14 @@ public class UserDto {
 	}
 
 	
+
+	public int getProfileId() {
+		return profileId;
+	}
+
+	public void setProfileId(int profileId) {
+		this.profileId = profileId;
+	}
 
 	public String getPassword() {
 		return password;

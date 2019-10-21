@@ -28,7 +28,7 @@ public class ItemServiceImpl implements ItemServiceDao {
 		return totalAmount;
 	}
 	
-	//order placed update the data in manager table
+	//when order placed, update the data in manager table
 	@Override
 	public String updateOrder(OrderDto orderDto) {
 		List<ItemDto> list =  itemRepositoryDao.getAllSkuByOrderId(orderDto.getOrderId());

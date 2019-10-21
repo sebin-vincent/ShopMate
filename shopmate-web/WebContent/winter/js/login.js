@@ -48,7 +48,7 @@ document.getElementById("forgot_pswd").addEventListener("click",function() {
   document.getElementById("sign_up").style.display='none';
   document.getElementById("forgot_password_left").style.display='block';
   document.getElementById("forgot_password").style.display='block';
-  document.getElementById("change_password").style.display='none';
+  document.getElementById("change_password_right").style.display='none';
 });
 
 document.getElementById("fp_up_bttn").addEventListener("click",function(){
@@ -61,6 +61,20 @@ document.getElementById("fp_up_bttn").addEventListener("click",function(){
   var answer= document.getElementById("Sec_ans").value;
   var newPassword= document.getElementById("fp_new_password").value;
   var confPassword= document.getElementById("fp_conf_password").value;
+  var datas={
+    
+    email_Id:email,
+    question_Id:value,
+    security_Answer:answer,
+    password:newPassword,
+    extra:{
+      password:newPassword,
+      conf_password:confPassword
+    }
+    
+
+  }
+  console.log(datas);
   if(newPassword!=confPassword){
     alert("Passwords does not match !");
 
@@ -71,16 +85,35 @@ document.getElementById("fp_up_bttn").addEventListener("click",function(){
   }
   else{
 
-    document.getElementById("forgot_password_form").submit();
+    //document.getElementById("forgot_password_form").submit();
+    $.ajax({
+      type: "POST",
+      url: "http://localhost:8080/forgotpassword",
+      contentType: 'application/json',
+      data: JSON.stringify(datas),
+      dataType: "json",
+      
+      success: function (response) {
+        if(response.status_Message==="Password changed"){
+          alert("Please login with new password");
+          $('#forgot_password_form')[0].reset();
+          window.location.href = "F:/shopmate/shopmate-web/WebContent/winter/templates/login.html";
 
-    alert("Please login with new password");
-    document.getElementById("login").style.display='block';
-    document.getElementById("already_our_customer").style.display='block';
-    document.getElementById("new_to_our_shop").style.display='none';
+        }
+        else if(response.status_Message==="Invalid credentials"){
+          alert("invalid credential")
+        }
+          console.log(response)
+      }
+  });
     
-    document.getElementById("forgot_password").style.display='none';
-    document.getElementById("forgot_password_left").style.display='none';
-    document.getElementById("change_password").style.display='none';
+    // document.getElementById("login").style.display='block';
+    // document.getElementById("already_our_customer").style.display='block';
+    // document.getElementById("new_to_our_shop").style.display='none';
+    
+    // document.getElementById("forgot_password").style.display='none';
+    // document.getElementById("forgot_password_left").style.display='none';
+    // document.getElementById("change_password").style.display='none';
     $('#forgot_password_form')[0].reset();
   }
   

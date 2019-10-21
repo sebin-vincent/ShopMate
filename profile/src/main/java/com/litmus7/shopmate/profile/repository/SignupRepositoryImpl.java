@@ -11,6 +11,7 @@ import javax.transaction.Transactional;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.stereotype.Repository;
 
+import com.litmus7.shopmate.profile.dto.LoginDto;
 import com.litmus7.shopmate.profile.dto.Response_Info;
 import com.litmus7.shopmate.profile.dto.UserDto;
 import com.litmus7.shopmate.profile.exception.UserExistException;
@@ -29,10 +30,15 @@ public class SignupRepositoryImpl implements SignupRepositoryDao {
 	@Override
 	public Response_Info saveNewUser(UserDto userObject) {
 		// TODO Auto-generated method stub
-
+		LoginDto login=new LoginDto();
 		boolean isUserExists = isUserAlreadyExist(userObject);
 		if (isUserExists == true) {
 			entityManager.merge(userObject);
+			login.setProfile_Id(1);
+			login.setLogin_Id(userObject.getEmail());
+			login.setPassword(userObject.getPassword());
+			System.out.println(userObject.getProfileId());
+			entityManager.merge(login);
 			responseInfo.setStatus_Code(200);
 			responseInfo.setStatus_Message("User added successfully");
 			responseInfo.setPayload(null);
@@ -49,6 +55,7 @@ public class SignupRepositoryImpl implements SignupRepositoryDao {
 	public boolean isUserAlreadyExist(UserDto userObject) {
 		// TODO Auto-generated method stub
 		String email = userObject.getEmail();
+		System.out.println(email);
 		Query query = entityManager.createQuery("select profileId from UserDto where email=?1");
 		query.setParameter(1, email);
 		@SuppressWarnings("unchecked")
