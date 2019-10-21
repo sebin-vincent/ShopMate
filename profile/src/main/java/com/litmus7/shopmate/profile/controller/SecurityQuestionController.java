@@ -18,5 +18,6 @@ public class SecurityQuestionController {
 	@GetMapping(path = "/questions")
 	public List<Security_Question> fetchAll() {
 		return service.fetchAllQuestions();
+		  
 	}
 }

@@ -64,4 +64,11 @@ public class ItemDto {
 	public void setUnitPrice(int unitPrice) {
 		this.unitPrice = unitPrice;
 	}
+
+	@Override
+	public String toString() {
+		return "ItemDto [no=" + no + ", orderId=" + orderId + ", skuId=" + skuId + ", quantity=" + quantity
+				+ ", unitPrice=" + unitPrice + ", lastModifiedDate=" + lastModifiedDate + "]";
+	}
+	
 }

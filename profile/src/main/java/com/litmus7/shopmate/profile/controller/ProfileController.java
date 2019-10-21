@@ -13,29 +13,29 @@ import com.litmus7.shopmate.profile.dto.LoginDto;
 import com.litmus7.shopmate.profile.dto.ProfileDto;
 import com.litmus7.shopmate.profile.dto.Response_Info;
 
-//@RestController
-//@ComponentScan(value="com.litmus7.shopmate.profile")
+@RestController
+
+@ComponentScan(value="com.litmus7.shopmate.profile")
+
 public class ProfileController {
-	
+
 	@Autowired
 	ForgotPasswordDao forgotPasswordService;
-	
+
 	@Autowired
 	ChangePasswordDao changePasswordService;
-	
-	//comment to resolve conflict of resmi
-	
-	
+
+	// comment to resolve conflict of resmi
+
 	@PostMapping("/forgotpassword")
-	public Response_Info forgotPassword(@RequestBody ProfileDto profile){		
+	public Response_Info forgotPassword(@RequestBody ProfileDto profile) {
 		return forgotPasswordService.forgotPassword(profile);
 	}
 
 	@PutMapping("/changepassword")
 	public Response_Info changePassword(@RequestBody LoginDto login) {
-		
+
 		return changePasswordService.changePassword(login);
 	}
-	
-	
+
 }

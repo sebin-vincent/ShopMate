@@ -23,7 +23,7 @@ public class ChangePasswordService implements ChangePasswordDao{
 	public Response_Info changePassword(LoginDto login) {
 		// TODO Auto-generated method stub
 		
-		String profile_id=login.getProfile_Id();
+		int profile_id=login.getProfile_Id();
 		String password=login.getPassword();
 		Map<String,Object> extra=login.getExtra();
 		String new_Password=(String)extra.get("new_password");
