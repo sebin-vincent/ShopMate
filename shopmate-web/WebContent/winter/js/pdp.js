@@ -51,9 +51,9 @@ $(function () {
                <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
            </div>
            <div class="social_icon">
-               <a href="#" class="fb"><i class="ti-facebook"></i></a>
+               <a href="https://www.facebook.com/" class="fb"><i class="ti-facebook"></i></a>
                <a href="#" class="tw"><i class="ti-twitter-alt"></i></a>
-               <a href="#" class="li"><i class="ti-linkedin"></i></a>
+               <a href="https://www.linkedin.com/company" class="li"><i class="ti-linkedin"></i></a>
            </div>
          </div>
        </div>
