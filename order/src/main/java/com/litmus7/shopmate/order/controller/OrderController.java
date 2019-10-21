@@ -79,6 +79,7 @@ public class OrderController {
 	}
 
 	// get new or existing order id
+	@CrossOrigin
 	@GetMapping("/order/get/orderid/{profileId}")
 	public Response createOrGetOrderId(@PathVariable int profileId) {
 		response.setMessage("success");
@@ -88,6 +89,7 @@ public class OrderController {
 	}
 
 	// retrive all order by profile id
+	@CrossOrigin
 	@GetMapping("/order/get/allorder/{profileId}")
 	public Response getOrderByProfileId(@PathVariable int profileId) {
 		response.setMessage("success");

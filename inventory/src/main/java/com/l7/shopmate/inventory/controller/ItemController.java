@@ -33,6 +33,7 @@ public class ItemController {
 		return responseInfo;
 	}
 
+	@CrossOrigin
 	@PutMapping("reserve")
 	public ResponseInfo reserveItem(@RequestBody ReserveBodyDto reserveBodyDto) {
 		Stock updatedStock = itemServiceImpl.ReserveItem(Integer.parseInt(reserveBodyDto.getSkuId()),

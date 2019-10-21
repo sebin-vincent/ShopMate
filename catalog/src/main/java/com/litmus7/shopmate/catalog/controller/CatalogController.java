@@ -42,7 +42,8 @@ public class CatalogController {
 
 		return response_Info;
 	}
-	
+
+	@CrossOrigin
 	@GetMapping("/sku/{productId}")
 	public Response_Info getSku(@PathVariable int productId) {
 		
