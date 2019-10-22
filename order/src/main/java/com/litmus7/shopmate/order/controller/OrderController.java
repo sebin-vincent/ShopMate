@@ -59,11 +59,13 @@ public class OrderController {
 
 	// return orders by profile id and status
 
+	
 	@GetMapping("/order/cart/{profileId}/{status}")
 	public Response getOrderBytest(@PathVariable int profileId, @PathVariable int status) {
 		return orderServiceDao.getAllOrdersByStatus(profileId, status);
 	}
 
+	@CrossOrigin
 	@GetMapping("/paymentmethod")
 	public Response retrievepaymentMethods() {
 		response.setStatus(200);
@@ -71,6 +73,7 @@ public class OrderController {
 		return response;
 	}
 
+	@CrossOrigin
 	@GetMapping("/shipmentmethod")
 	public Response retreiveResponse() {
 		response.setStatus(200);
@@ -78,6 +81,7 @@ public class OrderController {
 		return response;
 	}
 
+	@CrossOrigin
 	// get new or existing order id
 	@GetMapping("/order/get/orderid/{profileId}")
 	public Response createOrGetOrderId(@PathVariable int profileId) {
@@ -87,6 +91,7 @@ public class OrderController {
 		return response;
 	}
 
+	@CrossOrigin
 	// retrive all order by profile id
 	@GetMapping("/order/get/allorder/{profileId}")
 	public Response getOrderByProfileId(@PathVariable int profileId) {
@@ -96,6 +101,7 @@ public class OrderController {
 		return response;
 	}
 
+	@CrossOrigin
 	// update status of order with order id and statusid
 	@PutMapping("/order/update/status/{orderId}/{status}")
 	public Response updateOrderStatus(@PathVariable int orderId, @PathVariable int status) {
@@ -111,6 +117,7 @@ public class OrderController {
 //		return serviceInventoryClient.getMessage();
 //	}
 
+	@CrossOrigin
 	// api for place order which update all the data to new data
 	@PutMapping("order/Update")
 	public Response updateOrder(@RequestBody OrderDto order) {
@@ -121,6 +128,7 @@ public class OrderController {
 
 	}
 
+	@CrossOrigin
 	@GetMapping("/api/test")
 	public Response returnResult() {
 		HttpHeaders headers = new HttpHeaders();
@@ -132,6 +140,7 @@ public class OrderController {
 		return response;
 	}
 
+	@CrossOrigin
 	@PutMapping("/update")
 	public Response update() {
 		response.setPayload(null);
@@ -147,6 +156,7 @@ public class OrderController {
 		
 	}
 
+	@CrossOrigin
 	@PutMapping("/order/cancel/{orderId}")
 	public Response cancelOrder(@PathVariable int orderId) {
 		response.setStatus(200);

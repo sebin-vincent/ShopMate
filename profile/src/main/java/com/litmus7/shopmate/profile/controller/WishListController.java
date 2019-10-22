@@ -18,6 +18,7 @@ public class WishListController {
     @Autowired
     private WishListServiceDao wishListService;
 
+    @CrossOrigin
     @PostMapping("/add")
     public Response_Info addToWishList(@RequestBody WishListDto wishList) {
 

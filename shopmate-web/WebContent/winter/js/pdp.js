@@ -5,7 +5,7 @@ $(function(){
     var status="active"
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/sku/248",
+        url: "http://localhost:8082/sku/248",
         success: function (response) {
             $.each(response, function (indexInArray, payload ) { 
                 
