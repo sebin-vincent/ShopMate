@@ -32,7 +32,8 @@ $(document).ready(function () {
           
           var aTag = document.createElement("a")
           aTag.setAttribute("class","dropdown-item")
-          aTag.setAttribute("href","category.html")
+          console.log(response.payload[i].subCategoryProducts[i].products[j].productId);
+          aTag.setAttribute("href",`category.html?${response.payload[i].subCategoryProducts[i].products[j].productId}`)
           var hTag = document.createElement("h5")
           
           var subCategoryName = `  ${response.payload[i].subCategoryProducts[j].subCategory}`
