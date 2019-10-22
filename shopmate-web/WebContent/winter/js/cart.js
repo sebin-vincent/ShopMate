@@ -3,13 +3,13 @@ $(document).ready(function () {
     
     $.ajax({
         type: "GET",
-        url: "http://localhost:8081/order/cart/1001/1",
+        url: "http://localhost:8084/order/cart/1001/1",
         success: function (response) {
             
             
             for (let i = 0; i < response.payload[0].item.length; i++)      
-            {        var skuName;
-                
+            {        
+
                            var trTag= document.createElement("tr")
                            trTag.setAttribute("class","cart-row")
                             var tdTag1=document.createElement("td")
@@ -56,7 +56,7 @@ $(document).ready(function () {
                        </div>`
                             var temp = subDivTag.getElementsByClassName("cart-quantity-input")[0]
                             var quan = (temp.value)*itemPrice
-                          //console.log(quan)
+                          
                            tdTag4.innerHTML=`<h5> ${quan} </h5>`
                             trTag.appendChild(tdTag1);
                             trTag.appendChild(tdTag2);
@@ -66,7 +66,7 @@ $(document).ready(function () {
                            
                            $(trTag).prependTo(document.getElementById("cart-item"));
                            
-                            //console.log(trTag);
+                           
 
             
                         
@@ -108,7 +108,7 @@ $(document).ready(function () {
                 var cartItems = document.getElementById("cart-item")
                 
                 var cartRows = cartItems.getElementsByClassName("cart-row")
-                //console.log(cartRows)
+                
                 var total=0
                 for (let k = 0; k < cartRows.length; k++) {
                     var cartRow = cartRows[k]
@@ -120,7 +120,7 @@ $(document).ready(function () {
                     
                     
                 }
-                //$(total).appendTo(document.getElementById("subtotal"));
+                
                 document.getElementById("subtotal").innerHTML=`${total}`
             }
 

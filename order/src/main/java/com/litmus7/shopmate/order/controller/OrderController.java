@@ -55,10 +55,7 @@ public class OrderController {
 	Response response;
 	//return orders by profile id and status
 	@CrossOrigin
-
-
 	// return orders by profile id and status
-
 	@GetMapping("/order/cart/{profileId}/{status}")
 	public Response getOrderBytest(@PathVariable int profileId, @PathVariable int status) {
 		return orderServiceDao.getAllOrdersByStatus(profileId, status);
