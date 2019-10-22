@@ -56,7 +56,7 @@ if (typeof(Storage) !== "undefined") {
 
 //change password
 
-function change_password(){
+window.change_password= function (){
     
     //works when change button pressed
     $("#change_paswd_bttn").click(function (e) { 
@@ -73,8 +73,6 @@ function change_password(){
 		        conf_new_Password:"new_password"
 	        }
         }
-
-            
         $.ajax({
             type: "POST",
             contentType: 'application/json',
