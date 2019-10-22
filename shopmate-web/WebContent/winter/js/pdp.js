@@ -1,11 +1,17 @@
+
 $(function(){
+  var url      = window.location.href;
+    //var url = $(location).attr('href')
+    parts = url.split("?");
+    last_part = parts[parts.length-1];
+    console.log(last_part);
     //var $parent =$('.col-lg-12')
     var $parent_image =$('#product')
     var $product_feature=$('#product_feature')
     var status="active"
     $.ajax({
         type: "GET",
-        url: "http://localhost:8082/sku/details/10014",
+        url: "http://localhost:8082/sku/details/"+last_part,
         success: function (response) {
             $.each(response, function (indexInArray, payload ) { 
                 
