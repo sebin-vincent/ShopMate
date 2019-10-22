@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.litmus7.shopmate.catalog.dto.LatestArrivalsDto;
 import com.litmus7.shopmate.catalog.dto.Response_Info;
 import com.litmus7.shopmate.catalog.dto.SliderImage;
+import com.litmus7.shopmate.catalog.dto.StockKeepingUnitDto;
 import com.litmus7.shopmate.catalog.service.LatestArrivalsService;
 import com.litmus7.shopmate.catalog.service.RetrieveCatalogServiceImpl;
 import com.litmus7.shopmate.catalog.service.RetrieveSkuServiceImpl;
@@ -58,7 +59,11 @@ public class CatalogController {
 	public LatestArrivalsDto getLatestArrivedItemDetails(@PathVariable int skuId) {
 		return latestArrivalsService.getLatestArrivedDto(skuId);
 	}
-	
+	@CrossOrigin
+	@GetMapping("/sku/details/{skuId}")
+	public StockKeepingUnitDto getSkuDetails(@PathVariable int skuId) {
+		return latestArrivalsService.getSkuDetails(skuId);
+	}
 	
 	
 	
