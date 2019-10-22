@@ -5,7 +5,7 @@ $(document).ready(function () {
 
   $.ajax({
     type: "GET",
-    url: "http://localhost:8080/catalog",
+    url: "http://localhost:8082/catalog",
 
     success: function (response) {
       for (var i = 0; i < response.payload.length; i++) {
