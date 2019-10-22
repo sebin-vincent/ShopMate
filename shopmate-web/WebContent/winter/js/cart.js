@@ -6,15 +6,21 @@ $(document).ready(function () {
         url: "http://localhost:8084/order/cart/1001/1",
         success: function (response) {
             
-            
-            
-
-            for (let i = 0; i < response.payload[0].item.length; i++)      
-            {    var name     
+            var items = response.payload[0].item
+            for (let m = 0; m < items.length; m++) {
                 
-                var skuId= response.payload[0].item[i].skuId
-            var url = "http://localhost:8083/items/"+skuId
-               
+                
+            
+            var skuId= items[m].skuId
+            var url = "http://localhost:8082/sku/details/"+skuId
+
+
+            $.ajax({
+                type: "GET",
+                url: url,
+                success: function (response) {
+                    //for (let i = 0; i < items.length; i++)      
+                         
             
                 
                
@@ -54,24 +60,16 @@ $(document).ready(function () {
                             tdTag3.appendChild(subDivTag);
                             
                             
-                            divTag2.innerHTML="<img src='../img/arrivel/arrivel_1.png ' alt=''>" 
+                            divTag2.innerHTML=`<img src='${response.imageUrl} ' alt=''>` 
                            
-                            tdTag2.innerHTML=`<h5>${response.payload[0].item[i].unitPrice}</h5>`
+                            tdTag2.innerHTML=`<h5>${items[m].unitPrice}</h5>`
+                            divTag3.innerHTML=`<p id="item-name">${response.skuName}</p>`
+
                            
-                            $.ajax({
-                                type: "GET",
-                                url: url,
-                                success: function (response) {
-                                    //document.getElementsByClassName("media-body").innerHTML=`<p>${response.itemName}</p>`
-                                    divTag3.innerHTML=`<p id="item-name">${response.itemName}</p>`
-                                    console.log(response.itemName)
-                                }
-                            });
-                           
-                            var itemPrice = `${response.payload[0].item[i].unitPrice}`
+                            var itemPrice = `${items[m].unitPrice}`
                             
                            subDivTag.innerHTML=`<div class="cart-quantity cart-column">
-                           <input class="cart-quantity-input" type="number" value="${response.payload[0].item[i].quantity}">
+                           <input class="cart-quantity-input" type="number" value="${items[m].quantity}">
                            <button class="btn btn-danger" type="button">REMOVE</button>
                        </div>`
                             var temp = subDivTag.getElementsByClassName("cart-quantity-input")[0]
@@ -90,7 +88,7 @@ $(document).ready(function () {
 
             
                         
-            }
+            
             subTotal()
 
             var removeCartItem = document.getElementsByClassName('btn-danger')
@@ -142,15 +140,16 @@ $(document).ready(function () {
                 }
                 
                 document.getElementById("subtotal").innerHTML=`${total}`
+            }          
+
+        
+                }
+            });
+
+            
             }
-            function itemName(){
-                
+           
             }
-
-
-          
-
-        }
     });
 });
 
