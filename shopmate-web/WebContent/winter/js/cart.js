@@ -7,8 +7,17 @@ $(document).ready(function () {
         success: function (response) {
             
             
+            
+
             for (let i = 0; i < response.payload[0].item.length; i++)      
-            {        
+            {    var name     
+                
+                var skuId= response.payload[0].item[i].skuId
+            var url = "http://localhost:8083/items/"+skuId
+               
+            
+                
+               
 
                            var trTag= document.createElement("tr")
                            trTag.setAttribute("class","cart-row")
@@ -46,8 +55,18 @@ $(document).ready(function () {
                             
                             
                             divTag2.innerHTML="<img src='../img/arrivel/arrivel_1.png ' alt=''>" 
-                            divTag3.innerHTML=`<p>${response.payload[0].item[i].skuId}</p>`
+                           
                             tdTag2.innerHTML=`<h5>${response.payload[0].item[i].unitPrice}</h5>`
+                           
+                            $.ajax({
+                                type: "GET",
+                                url: url,
+                                success: function (response) {
+                                    //document.getElementsByClassName("media-body").innerHTML=`<p>${response.itemName}</p>`
+                                    divTag3.innerHTML=`<p id="item-name">${response.itemName}</p>`
+                                    console.log(response.itemName)
+                                }
+                            });
                            
                             var itemPrice = `${response.payload[0].item[i].unitPrice}`
                             
@@ -64,7 +83,7 @@ $(document).ready(function () {
                             trTag.appendChild(tdTag3);
                             trTag.appendChild(tdTag4);
 
-                           
+                            
                            $(trTag).prependTo(document.getElementById("cart-item"));
                            
                            
@@ -124,6 +143,10 @@ $(document).ready(function () {
                 
                 document.getElementById("subtotal").innerHTML=`${total}`
             }
+            function itemName(){
+                
+            }
+
 
           
 
