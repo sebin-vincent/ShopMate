@@ -17,6 +17,7 @@ $(document).ready(function () {
                             tdTag2.setAttribute("class","item-price")
                             var tdTag3=document.createElement("td")
                             var tdTag4=document.createElement("td")
+                            var tdTag5 = document.createElement("td")
                            
             
                           

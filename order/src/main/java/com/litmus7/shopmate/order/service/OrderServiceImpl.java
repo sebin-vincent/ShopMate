@@ -13,7 +13,6 @@ import org.springframework.web.client.RestTemplate;
 
 import com.litmsu7.shopmate.order.model.Item;
 import com.litmsu7.shopmate.order.model.ReserveBodyDto;
-import com.litmsu7.shopmate.order.model.Stock;
 import com.litmus7.shopmate.order.dao.OrderServiceDao;
 import com.litmus7.shopmate.order.dto.ItemDto;
 import com.litmus7.shopmate.order.dto.OrderDto;
@@ -82,13 +81,11 @@ public class OrderServiceImpl implements OrderServiceDao {
 			for (ItemDto itemDto : orderList) {
 				respbody.setSkuId(itemDto.getSkuId());
 				respbody.setQuantity(itemDto.getQuantity());
-				System.out.println("=============resp body=================");
 				System.out.println(respbody);
 				HttpHeaders headers = new HttpHeaders();
 				headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 				HttpEntity<ReserveBodyDto> entity = new HttpEntity<ReserveBodyDto>(respbody, headers);
-				restTemplate.exchange("http://localHost:8080/items/unreserve", HttpMethod.PUT, entity, Item.class).getBody();
-				System.out.println("===============check text=========================");
+				restTemplate.exchange("http://localHost:8083/items/unreserve", HttpMethod.PUT, entity, Item.class).getBody();
 			}
 			updateOrder(orderId, 3);
 			return "Success";

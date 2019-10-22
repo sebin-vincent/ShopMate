@@ -4,14 +4,11 @@ import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
-
-import org.springframework.web.bind.annotation.CrossOrigin;
-
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -19,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.litmsu7.shopmate.order.feignclient.ServiceInventoryClient;
 import com.litmsu7.shopmate.order.model.Item;
 import com.litmsu7.shopmate.order.model.ReserveBodyDto;
 import com.litmus7.shopmate.order.dao.GetPaymentMethodServiceDao;
@@ -54,12 +50,12 @@ public class OrderController {
 	@Autowired
 	Response response;
 	//return orders by profile id and status
-	@CrossOrigin
 
 
 	// return orders by profile id and status
 
-	
+	@CrossOrigin
+
 	@GetMapping("/order/cart/{profileId}/{status}")
 	public Response getOrderBytest(@PathVariable int profileId, @PathVariable int status) {
 		return orderServiceDao.getAllOrdersByStatus(profileId, status);
@@ -81,7 +77,7 @@ public class OrderController {
 		return response;
 	}
 
-	@CrossOrigin
+	
 	// get new or existing order id
 	@CrossOrigin
 	@GetMapping("/order/get/orderid/{profileId}")
@@ -92,7 +88,7 @@ public class OrderController {
 		return response;
 	}
 
-	@CrossOrigin
+	
 	// retrive all order by profile id
 	@CrossOrigin
 	@GetMapping("/order/get/allorder/{profileId}")
@@ -103,8 +99,9 @@ public class OrderController {
 		return response;
 	}
 
-	@CrossOrigin
+	
 	// update status of order with order id and statusid
+	@CrossOrigin
 	@PutMapping("/order/update/status/{orderId}/{status}")
 	public Response updateOrderStatus(@PathVariable int orderId, @PathVariable int status) {
 		response.setMessage(orderServiceDao.updateOrder(orderId, status));
@@ -119,8 +116,9 @@ public class OrderController {
 //		return serviceInventoryClient.getMessage();
 //	}
 
-	@CrossOrigin
+	
 	// api for place order which update all the data to new data
+	@CrossOrigin
 	@PutMapping("order/Update")
 	public Response updateOrder(@RequestBody OrderDto order) {
 		response.setMessage("Ok");
@@ -157,6 +155,8 @@ public class OrderController {
 	    return response;
 		
 	}
+
+	//cancel order by order id
 
 	@CrossOrigin
 	@PutMapping("/order/cancel/{orderId}")
