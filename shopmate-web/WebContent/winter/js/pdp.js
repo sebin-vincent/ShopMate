@@ -5,14 +5,14 @@ $(function(){
     var status="active"
     $.ajax({
         type: "GET",
-        url: "http://localhost:8082/sku/248",
+        url: "http://localhost:8082/sku/details/10014",
         success: function (response) {
             $.each(response, function (indexInArray, payload ) { 
                 
             });
 
 
-      if (response.payload[0].onSale == 0) {
+      if (response.onSale == 0) {
         status = "Out of stock";
 
       }
@@ -22,12 +22,12 @@ $(function(){
       //append sku imaage
 
       $parent_image.append(`<div data-thumb="img/product_details/prodect_details_1.png">
-           <img src="${response.payload[10].imageUrl}" style="    margin-left: 149px;
+           <img src="${response.imageUrl}" style="    margin-left: 149px;
            " />
          </div>`);
       //append sku details
-      $product_feature.append(`<h3>${response.payload[0].skuName}</h3>
-         <h2>$${response.payload[0].salePrice}</h2> 
+      $product_feature.append(`<h3>${response.skuName}</h3>
+         <h2>$${response.salePrice}</h2> 
          <ul class="list">
            <li>
              <a class="active" href="#">
@@ -38,7 +38,7 @@ $(function(){
            </li>
          </ul>
          <p>
-            ${response.payload[0].discription}
+            ${response.discription}
         </p>
          <div class="card_area">
            <div class="product_count d-inline-block">

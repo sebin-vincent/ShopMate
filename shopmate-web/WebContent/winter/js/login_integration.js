@@ -56,7 +56,7 @@ if (typeof(Storage) !== "undefined") {
 
 //change password
 
-window.change_password= function (){
+function change_password(){
     
     //works when change button pressed
     $("#change_paswd_bttn").click(function (e) { 
@@ -73,6 +73,16 @@ window.change_password= function (){
 		        conf_new_Password:"new_password"
 	        }
         }
+
+         
+                
+            
+            // profileId:1,
+            // login_id:"resmi.puthirippadath@gmail.com",
+            // password=$("input[name=password1]").val(),
+            // new_password=$("input[name=password2]").val(),
+            // conf_password=$("input[name=password3]").val()
+            
         $.ajax({
             type: "POST",
             contentType: 'application/json',
@@ -86,7 +96,7 @@ window.change_password= function (){
                     window.location.href = "F:/shopmate/shopmate-web/WebContent/winter/templates/index.html";
                 }
                 else if(status_Message=="User already exist"){
-                    alert("user already exist");
+                    alert("user already exist")
                     window.location.href = "F:/shopmate/shopmate-web/WebContent/winter/templates/login.html";
                 }
             }

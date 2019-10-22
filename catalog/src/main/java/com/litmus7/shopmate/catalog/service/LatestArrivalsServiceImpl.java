@@ -18,4 +18,11 @@ public class LatestArrivalsServiceImpl implements LatestArrivalsService{
         StockKeepingUnitDto stockKeepingUnitDto = latestArrivalsRepository.getSkuDetailsById(skuId);
         return new LatestArrivalsDto(stockKeepingUnitDto.getSalePrice(), stockKeepingUnitDto.getImageUrl());
     }
+
+	@Override
+	public StockKeepingUnitDto getSkuDetails(int skuId) {
+		// TODO Auto-generated method stub
+		StockKeepingUnitDto stockKeepingUnitDto = latestArrivalsRepository.getSkuDetailsById(skuId);
+		return stockKeepingUnitDto;
+	}
 }
