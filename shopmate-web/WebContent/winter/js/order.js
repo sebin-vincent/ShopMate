@@ -1,13 +1,14 @@
 $(document).ready(function () {
+  sessionStorage.setItem("profile_id", "1001")
+  var profileid = sessionStorage.getItem("profile_id")
     $.ajax({
-      url: "http://localhost:8084/order/get/allorder/1001",
+      url: "http://localhost:8084/order/get/allorder/"+profileid,
   
       success: function (response) {
 
         for (let i = 0; i < response.payload.length; i++)      
         {
         // console.log(result);
-
             var trTag = document.createElement("tr")
             var tdTag1 = document.createElement("td")
             var tdTag2 = document.createElement("td")
@@ -16,7 +17,7 @@ $(document).ready(function () {
             var tdTag5 = document.createElement("td")
 
             var divTag = document.createElement("div")
-            divTag.setAttribute("class","media")
+            // divTag.setAttribute("class","media")
 
             var pTag = document.createElement("p")
             pTag.innerHTML = `${response.payload[i].orderId}`;
@@ -56,7 +57,6 @@ $(document).ready(function () {
 
                 trTag.appendChild(tdTag5)
             }
-
             if(`${response.payload[i].orderStatusId}` == 2){
                 var completed = document.createElement("h5")
                 completed.innerHTML="completed"
@@ -64,23 +64,34 @@ $(document).ready(function () {
                 trTag.appendChild(tdTag5)
 
             }
-
             if(`${response.payload[i].orderStatusId}` == 3){
                 var cancel = document.createElement("h5")
                 cancel.innerHTML="cancelled"
                 tdTag5.appendChild(cancel)
                 trTag.appendChild(tdTag5)
-
             }
 
+            for (let j = 0; j < response.payload[i].item.length; j++){
+              var trTag123 = document.createElement("tr")
+              var tdTag123 = document.createElement("td")
+              var ptag123 = document.createElement("h1")
 
-            
+              $.ajax({
+                url: "http://localhost:8084/order/get/allorder/"+profileid,
+                success: function (response) {
+                  console.log(profileid)
+                }
+              });
 
-        
-
-            
-            
+              ptag123.innerHTML="test"
+              tdTag123.appendChild(ptag123)
+              
+              trTag123.appendChild(tdTag123)
+              orderlist.append(trTag123)
+      
+            } 
         }
+        console.log(response.payload[0].item.length)
       }
     });
   });

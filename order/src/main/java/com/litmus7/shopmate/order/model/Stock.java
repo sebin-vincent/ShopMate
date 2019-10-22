@@ -1,4 +1,4 @@
-package com.litmsu7.shopmate.order.model;
+package com.litmus7.shopmate.order.model;
 
 import javax.persistence.*;
 
