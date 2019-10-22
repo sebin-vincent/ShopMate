@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
 import com.litmus7.shopmate.cart.dto.Cart;
 import com.litmus7.shopmate.cart.dto.ResponseInfo;
 import com.litmus7.shopmate.cart.service.CartServiceImpl;
@@ -26,8 +26,10 @@ public class CartController {
 	  ResponseInfo responseInfo = new ResponseInfo(200, "All items in cart", serviceImpl.findAll());
 	  return responseInfo;
 	  }
-	
-	@CrossOrigin  		
+
+
+	  @CrossOrigin
+
 	@PostMapping(path="/cart/add")
 	public ResponseInfo addSku(@RequestBody Cart cart) {
 	serviceImpl.addToCart(cart);

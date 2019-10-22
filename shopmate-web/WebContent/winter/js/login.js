@@ -22,6 +22,8 @@ document.getElementById("sign_up_bttn").addEventListener("click",function() {
   var name=document.getElementById("name").value;
   var email=document.getElementById("email").value;
   var phone=document.getElementById("tel-num").value;
+  var question=document.getElementById("sec_quest_").value;
+  var answer=document.getElementById("Sec_ans_").value;
 
   if(pass1!=pass2){
     alert("Passwords does not match !");
@@ -32,7 +34,50 @@ document.getElementById("sign_up_bttn").addEventListener("click",function() {
 
   }
   else{
-    document.getElementById("sign_up_form").submit();
+    signup();
+    //document.getElementById("sign_up_form").submit();
+  //   $("#sign_up_bttn").click(function (e) { 
+  //     e.preventDefault();
+  //     signup();
+  // });
+  function signup(){
+     
+          datas={
+          
+
+            firstName:name,
+            email:email,
+            password:pass1,
+            questionId:question,
+            answer:answer,
+            mobile:phone,
+          
+     
+         }
+      
+  
+      console.log(datas)
+      $.ajax({
+          type: "POST",
+          url: "http://localhost:8080/signup",
+          contentType: 'application/json',
+          data: JSON.stringify(datas),
+          dataType: "json",
+          
+          success: function (response) {
+              console.log(response);
+              if(response.status_Message=="User added successfully"){
+                alert("signup successfull");
+              }
+              else{
+                alert("Invalid credential");
+              }
+              
+              
+          }
+      });
+  }
+  
   }
 
 
@@ -128,7 +173,7 @@ document.getElementById("change_paswd_show_bttn").addEventListener("click",funct
   document.getElementById("new_to_our_shop").style.display='none'; 
   document.getElementById("forgot_password").style.display='none';
   document.getElementById("forgot_password_left").style.display='none';
-  document.getElementById("change_password").style.display='none';
+  //document.getElementById("change_password").style.display='none';
 });
 document.getElementById("change_paswd_bttn").addEventListener("click",function() {
   var oldPaswd=document.getElementById("chng_old_password").value;
