@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>aranaz</title>
+  <title>order</title>
   <link rel="icon" href="../img/favicon.png">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="../css/slick.css">
   <link rel="stylesheet" href="../css/price_rangs.css">
   <!-- style CSS -->
+  <link rel="stylesheet" href="../css/cancelbutton.css">
 
   <!-- icon CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -33,7 +34,6 @@
 </head>
 
 <body class="bg-white">
-  
   <!--::header part start::-->
   <header class="main_menu home_menu">
       <div class="container-fluid">
@@ -101,25 +101,20 @@
                 
                                         <span id="XXX">  My Profile</span>
                                      </a>
-                                    <a class="dropdown-item" href="order.html">
+                                    <a class="dropdown-item" href="index.html">
                                         <i class="fa fa-cart-plus" aria-hidden="true"  style="color:white"></i>
                                         <span id="XXX"> My orders</span>
                                     </a>
                                     
-                                    <a class="dropdown-item" href="wishlist.html">
+                                    <a class="dropdown-item" href="index.html">
                                       <i class="fa fa-heart" aria-hidden="true" style="color:white"></i>
                                       <span id="XXX">Wish list</span>
-                                    </a>
-
-                                    <a class="dropdown-item"  href="cart.html">
-                                      <i class="fa fa-key" aria-hidden="true" style="color:white"></i>
-                                      <span id="XXX">Change Password</span>
-                                      
                                     </a>
                 
                                     <a class="dropdown-item"  href="index.html">
                                       <i class="fa fa-sign-out" aria-hidden="true" style="color:white"></i>
                                       <span id="XXX">Logout</span>
+                                      
                                     </a>
                                    
                                     
@@ -168,7 +163,7 @@
               <div class="col-lg-12">
                   <div class="breadcrumb_iner">
                       <div class="breadcrumb_iner_item">
-                          <p>Home/Shop/Single product/Cart list</p>
+                          <p>Home/My orders</p>
                       </div>
                   </div>
               </div>
@@ -185,33 +180,19 @@
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">Product</th>
-                <th scope="col">Price</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Total</th>
-              </tr>
-            </thead>
-            <tbody id="cart-item">
-              
-              <tr class="bottom_button">
+                <th scope="col"><h1>Order</h1></th>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
-                <td>
-                  <h3>Subtotal</h3>
-                </td>
-                <td>
-                  <h3 id="subtotal"></h3>
-                </td>
+                <th scope="col">Order Id</th>
+                <th scope="col">Amount</th>
+                <!-- <th scope="col">Status</th> -->
+                <th scope="col">Delivery Date</th>
               </tr>
-             
+            </thead>
+            
+            <tbody id="orderList">
             </tbody>
           </table>
-          <div class="checkout_btn_inner float-right">
-            <a class="btn_1" href="#">Continue Shopping</a>
-            <a class="btn_1 checkout_btn_1" href="#">Proceed to checkout</a>
-          </div>
         </div>
       </div>
   </section>
@@ -316,7 +297,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   <script src="../js/mail-script.js"></script>
   <!-- custom js -->
   <script src="../js/custom.js"></script>
-  <script src="../js/cart.js"></script>
+  <script src="../js/order.js"></script>
 </body>
 
 </html>

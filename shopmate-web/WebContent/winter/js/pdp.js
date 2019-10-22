@@ -1,15 +1,15 @@
-$(function () {
-  //var $parent =$('.col-lg-12')
-  var $parent_image = $('#product')
-  var $product_feature = $('#product_feature')
-  var status = "active"
-  $.ajax({
-    type: "GET",
-    url: "http://localhost:8082/sku/248",
-    success: function (response) {
-      $.each(response, function (indexInArray, payload) {
-
-      });
+$(function(){
+    //var $parent =$('.col-lg-12')
+    var $parent_image =$('#product')
+    var $product_feature=$('#product_feature')
+    var status="active"
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:8082/sku/248",
+        success: function (response) {
+            $.each(response, function (indexInArray, payload ) { 
+                
+            });
 
 
       if (response.payload[0].onSale == 0) {

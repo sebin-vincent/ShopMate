@@ -20,12 +20,14 @@ public class ItemController {
 
 	@Autowired
 	ItemService itemServiceImpl;
-
+	
+	@CrossOrigin
 	@GetMapping("/{id}")
 	public Item getItem(@PathVariable String id) {
 		return itemServiceImpl.getItemById(Integer.parseInt(id));
 	}
 
+	@CrossOrigin
 	@GetMapping("{id}/state")
 	public ResponseInfo getState(@PathVariable String id) {
 		ResponseInfo responseInfo = new ResponseInfo(200, "Availability info",
@@ -42,6 +44,7 @@ public class ItemController {
 		return responseInfo;
 	}
 
+	@CrossOrigin
 	@PutMapping("unreserve")
 	public ResponseInfo unreserveItem(@RequestBody ReserveBodyDto reserveBodyDto) {
 		Stock updatedStock = itemServiceImpl.UnreserveItem(Integer.parseInt(reserveBodyDto.getSkuId()),
@@ -58,6 +61,7 @@ public class ItemController {
 		return responseInfo;
 	}
 
+	@CrossOrigin
 	@GetMapping("message")
 	public String testMessage() {
 		return "message from inventory";
