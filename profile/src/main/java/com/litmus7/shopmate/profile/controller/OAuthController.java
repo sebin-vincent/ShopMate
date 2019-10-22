@@ -5,6 +5,7 @@ import com.litmus7.shopmate.profile.dto.Response_Info;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,7 @@ public class OAuthController {
     @Autowired
     private OAuthServiceDao oAuthService;
 
+    @CrossOrigin
     @RequestMapping("user")
     @ResponseBody
     public Response_Info getUser(Principal principal) {

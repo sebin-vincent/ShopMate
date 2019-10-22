@@ -4,7 +4,7 @@ $(function(){
     console.log($parent)
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/sku/248",
+        url: "http://localhost:8082/sku/248",
         success: function (response) {
             $.each(response, function (indexInArray, payload ) { 
                 $parent.append(`<div class="row">   <div class="column">  <img src="${response.payload[0].imageUrl}" alt="Snow" style="width:100%">              <div class="category_social_icon">  <ul>  <li><a href="#"><i class="ti-heart"></i></a></li>   <li><a href="#"><i class="ti-bag"></i></a></li>   </ul><a href="single-product.html"><h5 style="margin-left: 40px;">${response.payload[0].skuName}</h5></a>              </div>  <p style="margin-left: 69px;">$${response.payload[0].listPrice}</p>          </div> </div>`);

@@ -15,18 +15,60 @@ $(document).ready(function () {
 
             for (let index = 0; index < responseFromProfile.payload[0].length; index++) {
 
-                //console.log(responseFromProfile.payload[0][index]);
+                console.log(responseFromProfile.payload[0][index]);
                 $.ajax({
                     type: "GET",
                     url: `http://localhost:8082/sku/latest/${responseFromProfile.payload[0][index]}`,
 
                     success: function (responseFromCatalog) {
 
-                        //index = index + 1;
-                        // skuPrice = responseFromCatalog.skuPrice;
-                        // // console.log(skuPrice);
-                        // skuImage = responseFromCatalog.skuImage;
-                        //  console.log(skuImage)
+                        index = index + 1;
+                        skuPrice = responseFromCatalog.skuPrice;
+                        // console.log(skuPrice);
+                        skuImage = responseFromCatalog.skuImage;
+                         console.log(skuImage)
+
+                         $.ajax({
+                            type: "GET",
+                            url: `http://localhost:8083/items/${responseFromProfile.payload[0][index]}/name`,
+        
+                            success: function (responseFromInventory) {
+        
+                                skuName = responseFromInventory.payload;
+                                // console.log(skuName);
+        
+                                var baseTemplate = `
+        
+                                        <div class="wish-list-item">
+                                        <div class="wish-list-image-container"><img src="${skuImage}" alt="${skuName}"/>
+        
+                                        </div>
+        
+                                        <div class="wish-list-item-title">${skuName}<br>
+        
+                                        <span class="span-price">₹ ${skuPrice}</span>
+        
+                                        <div class="interaction-section">
+                                        <button class="cart-btn"><i class="fa fa-shopping-cart"></i>    Add to Cart</button>    
+                                        </div>
+                                        </div>
+        
+        
+                                        </div>
+        
+                                    </div>
+        
+                                        `;
+        
+                                //console.log(baseTemplate);
+                                // console.log(skuPrice);
+        
+                                $("#wish-list-parent").append(baseTemplate);
+        
+                            }
+        
+                        });
+
 
                         $.ajax({
                             type: "GET",
@@ -72,10 +114,6 @@ $(document).ready(function () {
 
                     }
                 });
-
-
-
-
 
             }
 
