@@ -2,6 +2,7 @@ package com.litmus7.shopmate.profile.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,8 +14,8 @@ import com.litmus7.shopmate.profile.dto.LoginDto;
 import com.litmus7.shopmate.profile.dto.ProfileDto;
 import com.litmus7.shopmate.profile.dto.Response_Info;
 
-@RestController
 
+@RestController
 @ComponentScan(value="com.litmus7.shopmate.profile")
 
 public class ProfileController {
@@ -27,11 +28,13 @@ public class ProfileController {
 
 	// comment to resolve conflict of resmi
 
+	@CrossOrigin
 	@PostMapping("/forgotpassword")
 	public Response_Info forgotPassword(@RequestBody ProfileDto profile) {
 		return forgotPasswordService.forgotPassword(profile);
 	}
 
+	@CrossOrigin
 	@PutMapping("/changepassword")
 	public Response_Info changePassword(@RequestBody LoginDto login) {
 

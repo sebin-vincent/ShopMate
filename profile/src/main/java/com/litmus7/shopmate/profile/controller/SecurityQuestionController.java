@@ -3,6 +3,7 @@ package com.litmus7.shopmate.profile.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,7 +15,8 @@ public class SecurityQuestionController {
 
 	@Autowired
 	SecurityQuestionDAO service;
-
+	
+	@CrossOrigin
 	@GetMapping(path = "/questions")
 	public List<Security_Question> fetchAll() {
 		return service.fetchAllQuestions();
