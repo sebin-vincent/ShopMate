@@ -15,6 +15,7 @@ public class SecurityQuestionController {
 
 	@Autowired
 	SecurityQuestionDAO service;
+
 	@CrossOrigin
 	@GetMapping(path = "/questions")
 	public List<Security_Question> fetchAll() {

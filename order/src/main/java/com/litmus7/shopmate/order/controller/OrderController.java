@@ -53,12 +53,14 @@ public class OrderController {
 
 
 	// return orders by profile id and status
+
 	@CrossOrigin
+
 	@GetMapping("/order/cart/{profileId}/{status}")
 	public Response getOrderBytest(@PathVariable int profileId, @PathVariable int status) {
 		return orderServiceDao.getAllOrdersByStatus(profileId, status);
 	}
-	
+
 	@CrossOrigin
 	@GetMapping("/paymentmethod")
 	public Response retrievepaymentMethods() {
@@ -66,7 +68,7 @@ public class OrderController {
 		response.setPayload(getPaymentMethodServiceImpl.retrievePayments());
 		return response;
 	}
-	
+
 	@CrossOrigin
 	@GetMapping("/shipmentmethod")
 	public Response retreiveResponse() {
@@ -75,6 +77,7 @@ public class OrderController {
 		return response;
 	}
 
+	
 	// get new or existing order id
 	@CrossOrigin
 	@GetMapping("/order/get/orderid/{profileId}")
@@ -85,6 +88,7 @@ public class OrderController {
 		return response;
 	}
 
+	
 	// retrive all order by profile id
 	@CrossOrigin
 	@GetMapping("/order/get/allorder/{profileId}")
@@ -95,6 +99,7 @@ public class OrderController {
 		return response;
 	}
 
+	
 	// update status of order with order id and statusid
 	@CrossOrigin
 	@PutMapping("/order/update/status/{orderId}/{status}")
@@ -111,6 +116,7 @@ public class OrderController {
 //		return serviceInventoryClient.getMessage();
 //	}
 
+	
 	// api for place order which update all the data to new data
 	@CrossOrigin
 	@PutMapping("order/Update")
@@ -121,7 +127,7 @@ public class OrderController {
 		return response;
 
 	}
-	
+
 	@CrossOrigin
 	@GetMapping("/api/test")
 	public Response returnResult() {
@@ -133,7 +139,7 @@ public class OrderController {
 		response.setMessage("sucess");
 		return response;
 	}
-	
+
 	@CrossOrigin
 	@PutMapping("/update")
 	public Response update() {
@@ -149,7 +155,9 @@ public class OrderController {
 	    return response;
 		
 	}
+
 	//cancel order by order id
+
 	@CrossOrigin
 	@PutMapping("/order/cancel/{orderId}")
 	public Response cancelOrder(@PathVariable int orderId) {

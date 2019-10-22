@@ -27,12 +27,13 @@ public class ProfileController {
 	ChangePasswordDao changePasswordService;
 
 	// comment to resolve conflict of resmi
+
 	@CrossOrigin
 	@PostMapping("/forgotpassword")
 	public Response_Info forgotPassword(@RequestBody ProfileDto profile) {
 		return forgotPasswordService.forgotPassword(profile);
 	}
-	
+
 	@CrossOrigin
 	@PutMapping("/changepassword")
 	public Response_Info changePassword(@RequestBody LoginDto login) {
