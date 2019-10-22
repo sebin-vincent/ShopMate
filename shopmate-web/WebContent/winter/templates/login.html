@@ -24,7 +24,9 @@
   <link rel="stylesheet" href="../css/price_rangs.css">
   <!-- style CSS -->
   <link rel="stylesheet" href="../css/style.css">
-
+ <!-- icon CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+   
   <link rel="stylesheet" href="../css/custom_login.css">
 </head>
 
@@ -96,9 +98,15 @@
                           <span id="XXX"> My orders</span>
                       </a>
                       
-                      <a class="dropdown-item" href="checkout.html">
+                      <a class="dropdown-item" href="wishlist.html">
                         <i class="fa fa-heart" aria-hidden="true" style="color:white"></i>
                         <span id="XXX">Wish list</span>
+                      </a>
+
+                      <a class="dropdown-item"  href="cart.html">
+                        <i class="fa fa-key" aria-hidden="true" style="color:white"></i>
+                        <span id="XXX">Change Password</span>
+                        
                       </a>
   
                       <a class="dropdown-item"  href="cart.html">
@@ -187,7 +195,7 @@
                             <h2>New to our Shop?</h2>
                             <p>There are advances being made in science and technology
                                 everyday, and a good example of this is the</p>
-                            <a href="#" class="btn_3" id="new_to_shop">Create an Account</a>
+                            <a href="#" class="btn_3" id="new_to_shop" >Create an Account</a>
                         </div>
                         <div class="login_part_text_iner" id="already_our_customer"  style="display:none">
                             <h2>Already our customer?</h2>
@@ -254,10 +262,10 @@
                                         border-radius: .25rem;
                                         transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;"  required>
                                             <option value=""hidden>Select the question from the following options</option>
-                                            <option value="1">Who's your daddy?</option>
+                                            <!-- <option value="1">Who's your daddy?</option>
                                             <option value="2">What is your favorite color?</option>
                                             <option value="3">What is your favorite book?</option>
-                                            <option value="4">What brand of food did your first pet eat?</option>
+                                            <option value="4">What brand of food did your first pet eat?</option> -->
                                          </select>
                                 </div>
 
@@ -274,7 +282,7 @@
                                         placeholder="Confirm Password" required>
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    <button type="submit" value="submit" class="btn_3" id="fp_up_bttn">
+                                    <button type="button" value="submit" class="btn_3" id="fp_up_bttn">
                                         Update
                                     </button>
                                 </div>
@@ -327,18 +335,30 @@
                                     <input type="tel" class="form-control" id="tel-num" name="tel-num" value=""
                                         placeholder="Mobile number" required>
                                 </div>
+                                
+                                <div class="col-md-12 form-group p_star" id="forgot_password_questions">
+                                    <select class="security" id="sec_quest_" name="security_quest" style="display: block;
+                                    width: 100%;
+                                    height: calc(1.5em + .75rem + 2px);
+                                    padding: .375rem .75rem;
+                                    font-size: 1rem;
+                                    font-weight: 400;
+                                    line-height: 1.5;
+                                    color: #495057;
+                                    background-color: #fff;
+                                    background-clip: padding-box;
+                                    border: 1px solid #ced4da;
+                                    border-radius: .25rem;
+                                    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;"  required>
+                                         <option value=""hidden>Select the question from the following options</option>
+                                         <!-- <option value="1">Who's your daddy?</option> 
+                                        <option value="2">What is your favorite color?</option>
+                                        <option value="3">What is your favorite book?</option>
+                                        <option value="4">What brand of food did your first pet eat?</option> -->
+                                     </select>
+                            </div>
                                 <div class="col-md-12 form-group p_star">
-                                        <select class="security" id="sec_quest" name="security_quest"  required>
-                                            <option value="0"hidden>Select the question from the following options</option>
-                                            <option value="1">Who's your daddy?</option>
-                                            <option value="2">What is your favorite color?</option>
-                                            <option value="3">What is your favorite book?</option>
-                                            <option value="4">What brand of food did your first pet eat?</option>
-                                         </select>
-                                </div>
-
-                                <div class="col-md-12 form-group p_star">
-                                    <input type="text" class="form-control" id="Sec_ans" name="sec_ans" value=""
+                                    <input type="text" class="form-control" id="Sec_ans_" name="sec_ans" value=""
                                         placeholder="Answer" required>
                                 </div>
                                 <div class="col-md-12 form-group p_star">
