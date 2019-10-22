@@ -2,7 +2,7 @@ $(document).ready(function () {
     
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/items/latest-arrivals/6",
+        url: "http://localhost:8083/items/latest-arrivals/6",
     
         success: function (responseFromInventory) {
 
@@ -10,7 +10,7 @@ $(document).ready(function () {
                 
                 $.ajax({
                     type: "GET",
-                    url: "http://localhost:8081/sku/latest/" + element.skuId,
+                    url: "http://localhost:8082/sku/latest/" + element.skuId,
                    
                     success: function (responseFromCatalog) {
 
