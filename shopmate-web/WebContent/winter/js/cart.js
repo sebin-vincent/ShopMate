@@ -16,6 +16,7 @@ $(document).ready(function () {
                             var tdTag2=document.createElement("td")
                             var tdTag3=document.createElement("td")
                             var tdTag4=document.createElement("td")
+                            var tdTag5 = document.createElement("td")
                            
                             var spanDecrementTag = document.createElement("span")
                             spanDecrementTag.setAttribute("class","input-number-decrement") 
