@@ -12,5 +12,6 @@ public interface OrderServiceDao {
 	public List<OrderDto> createOrderId(int profileId);
 	public List<OrderDto> fetchAllOrderByProfileId(int profileId);
 	public String updateOrder(int orderId,int status);
+	public String cancelOrder(int orderId);
 
 }

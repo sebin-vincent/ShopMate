@@ -26,6 +26,7 @@ public class ProfileController {
 	@Autowired
 	ChangePasswordDao changePasswordService;
 
+
 	@CrossOrigin
 	@PostMapping("/forgotpassword")
 	public Response_Info forgotPassword(@RequestBody ProfileDto profile) {
