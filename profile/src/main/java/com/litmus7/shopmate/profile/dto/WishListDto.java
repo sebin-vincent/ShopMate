@@ -46,7 +46,12 @@ public class WishListDto {
         this.skuId = skuId;
     }
 
-    public WishListDto() {
+    @Override
+	public String toString() {
+		return "WishListDto [wishlistId=" + wishlistId + ", profileId=" + profileId + ", skuId=" + skuId + "]";
+	}
+
+	public WishListDto() {
 
     }
 }

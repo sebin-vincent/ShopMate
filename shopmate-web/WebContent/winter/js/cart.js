@@ -36,9 +36,7 @@ $(document).ready(function () {
                            
             
                           
-                          
-
-                           
+               
                             var divTag1=document.createElement("div")
                             divTag1.setAttribute("class","media")
                             

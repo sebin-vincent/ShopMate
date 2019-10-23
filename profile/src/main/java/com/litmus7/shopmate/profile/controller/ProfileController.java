@@ -14,8 +14,8 @@ import com.litmus7.shopmate.profile.dto.LoginDto;
 import com.litmus7.shopmate.profile.dto.ProfileDto;
 import com.litmus7.shopmate.profile.dto.Response_Info;
 
-@RestController
 
+@RestController
 @ComponentScan(value="com.litmus7.shopmate.profile")
 
 public class ProfileController {
@@ -26,7 +26,6 @@ public class ProfileController {
 	@Autowired
 	ChangePasswordDao changePasswordService;
 
-	// comment to resolve conflict of resmi
 
 	@CrossOrigin
 	@PostMapping("/forgotpassword")
