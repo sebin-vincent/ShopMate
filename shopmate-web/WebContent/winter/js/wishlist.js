@@ -8,7 +8,7 @@ $(document).ready(function () {
     //TODO work with ordering stuff
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/wishlist/1234/retrieve", //TODO replace 1234 with profile id
+        url: "http://localhost:8080/wishlist/4/retrieve", //TODO replace 1234 with profile id
 
         success: function (responseFromProfile) {
 

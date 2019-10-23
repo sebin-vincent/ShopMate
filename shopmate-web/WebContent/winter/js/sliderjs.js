@@ -20,7 +20,7 @@ $(document).ready(function () {
 
 
   $.ajax({
-    url: "http://localhost:8080/sliderimages",
+    url: "http://localhost:8082/sliderimages",
 
     success: function (result) {
      // console.log(result);
