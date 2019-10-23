@@ -8,7 +8,7 @@ $(document).ready(function () {
     //TODO work with ordering stuff
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/wishlist/1234/retrieve", //TODO replace 1234 with profile id
+        url: "http://localhost:8080/wishlist/4/retrieve", //TODO replace 1234 with profile id
 
         success: function (responseFromProfile) {
 
@@ -22,52 +22,52 @@ $(document).ready(function () {
 
                     success: function (responseFromCatalog) {
 
-                        index = index + 1;
+                        // index = index + 1;
                         skuPrice = responseFromCatalog.skuPrice;
                         // console.log(skuPrice);
                         skuImage = responseFromCatalog.skuImage;
                          console.log(skuImage)
 
-                         $.ajax({
-                            type: "GET",
-                            url: `http://localhost:8083/items/${responseFromProfile.payload[0][index]}/name`,
+                        //  $.ajax({
+                        //     type: "GET",
+                        //     url: `http://localhost:8083/items/${responseFromProfile.payload[0][index]}/name`,
         
-                            success: function (responseFromInventory) {
+                        //     success: function (responseFromInventory) {
         
-                                skuName = responseFromInventory.payload;
-                                // console.log(skuName);
+                        //         skuName = responseFromInventory.payload;
+                        //         // console.log(skuName);
         
-                                var baseTemplate = `
+                        //         var baseTemplate = `
         
-                                        <div class="wish-list-item">
-                                        <div class="wish-list-image-container"><img src="${skuImage}" alt="${skuName}"/>
+                        //                 <div class="wish-list-item">
+                        //                 <div class="wish-list-image-container"><img src="${responseFromCatalog.skuImage}" alt="${responseFromInventory.payload}"/>
         
-                                        </div>
+                        //                 </div>
         
-                                        <div class="wish-list-item-title">${skuName}<br>
+                        //                 <div class="wish-list-item-title">${responseFromInventory.payload}<br>
         
-                                        <span class="span-price">₹ ${skuPrice}</span>
+                        //                 <span class="span-price">₹ ${responseFromCatalog.skuPrice}</span>
         
-                                        <div class="interaction-section">
-                                        <button class="cart-btn"><i class="fa fa-shopping-cart"></i>    Add to Cart</button>    
-                                        </div>
-                                        </div>
+                        //                 <div class="interaction-section">
+                        //                 <button class="cart-btn"><i class="fa fa-shopping-cart"></i>    Add to Cart</button>    
+                        //                 </div>
+                        //                 </div>
         
         
-                                        </div>
+                        //                 </div>
         
-                                    </div>
+                        //             </div>
         
-                                        `;
+                        //                 `;
         
-                                //console.log(baseTemplate);
-                                // console.log(skuPrice);
+                        //         //console.log(baseTemplate);
+                        //         // console.log(skuPrice);
         
-                                $("#wish-list-parent").append(baseTemplate);
+                        //         $("#wish-list-parent").append(baseTemplate);
         
-                            }
+                        //     }
         
-                        });
+                        // });
 
 
                         $.ajax({
