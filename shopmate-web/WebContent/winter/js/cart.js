@@ -3,13 +3,28 @@ $(document).ready(function () {
     
     $.ajax({
         type: "GET",
-        url: "http://localhost:8081/order/cart/1001/1",
+        url: "http://localhost:8084/order/cart/1001/1",
         success: function (response) {
             
-            
-            for (let i = 0; i < response.payload[0].item.length; i++)      
-            {        var skuName;
+            var items = response.payload[0].item
+            for (let m = 0; m < items.length; m++) {
                 
+                
+            
+            var skuId= items[m].skuId
+            var url = "http://localhost:8082/sku/details/"+skuId
+
+
+            $.ajax({
+                type: "GET",
+                url: url,
+                success: function (response) {
+                    //for (let i = 0; i < items.length; i++)      
+                         
+            
+                
+               
+
                            var trTag= document.createElement("tr")
                            trTag.setAttribute("class","cart-row")
                             var tdTag1=document.createElement("td")
@@ -21,9 +36,7 @@ $(document).ready(function () {
                            
             
                           
-                          
-
-                           
+               
                             var divTag1=document.createElement("div")
                             divTag1.setAttribute("class","media")
                             
@@ -45,33 +58,35 @@ $(document).ready(function () {
                             tdTag3.appendChild(subDivTag);
                             
                             
-                            divTag2.innerHTML="<img src='../img/arrivel/arrivel_1.png ' alt=''>" 
-                            divTag3.innerHTML=`<p>${response.payload[0].item[i].skuId}</p>`
-                            tdTag2.innerHTML=`<h5>${response.payload[0].item[i].unitPrice}</h5>`
+                            divTag2.innerHTML=`<img src='${response.imageUrl} ' alt=''>` 
                            
-                            var itemPrice = `${response.payload[0].item[i].unitPrice}`
+                            tdTag2.innerHTML=`<h5>${items[m].unitPrice}</h5>`
+                            divTag3.innerHTML=`<p id="item-name">${response.skuName}</p>`
+
+                           
+                            var itemPrice = `${items[m].unitPrice}`
                             
                            subDivTag.innerHTML=`<div class="cart-quantity cart-column">
-                           <input class="cart-quantity-input" type="number" value="${response.payload[0].item[i].quantity}">
+                           <input class="cart-quantity-input" type="number" value="${items[m].quantity}">
                            <button class="btn btn-danger" type="button">REMOVE</button>
                        </div>`
                             var temp = subDivTag.getElementsByClassName("cart-quantity-input")[0]
                             var quan = (temp.value)*itemPrice
-                          //console.log(quan)
+                          
                            tdTag4.innerHTML=`<h5> ${quan} </h5>`
                             trTag.appendChild(tdTag1);
                             trTag.appendChild(tdTag2);
                             trTag.appendChild(tdTag3);
                             trTag.appendChild(tdTag4);
 
-                           
+                            
                            $(trTag).prependTo(document.getElementById("cart-item"));
                            
-                            //console.log(trTag);
+                           
 
             
                         
-            }
+            
             subTotal()
 
             var removeCartItem = document.getElementsByClassName('btn-danger')
@@ -109,7 +124,7 @@ $(document).ready(function () {
                 var cartItems = document.getElementById("cart-item")
                 
                 var cartRows = cartItems.getElementsByClassName("cart-row")
-                //console.log(cartRows)
+                
                 var total=0
                 for (let k = 0; k < cartRows.length; k++) {
                     var cartRow = cartRows[k]
@@ -121,13 +136,18 @@ $(document).ready(function () {
                     
                     
                 }
-                //$(total).appendTo(document.getElementById("subtotal"));
+                
                 document.getElementById("subtotal").innerHTML=`${total}`
+            }          
+
+        
+                }
+            });
+
+            
             }
-
-          
-
-        }
+           
+            }
     });
 });
 

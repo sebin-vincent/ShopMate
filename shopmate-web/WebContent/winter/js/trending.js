@@ -2,16 +2,17 @@ $(document).ready(function () {
 
     $.ajax({
         type: "GET",
-        url: "http://localhost:8081/order/trending/3",
+        url: "http://localhost:8084/order/trending/3",
 
         success: function (responseFromOrder) {
 
+            console.log(responseFromOrder);
             responseFromOrder.payload.forEach(element => {
-                // console.log(element.skuId);
+                 
 
                 $.ajax({
                     type: "GET",
-                    url: `http://localhost:8080/items/${element.skuId}/name`,
+                    url: `http://localhost:8083/items/${element.skuId}/name`,
 
                     success: function (responseFromInventory) {
 
