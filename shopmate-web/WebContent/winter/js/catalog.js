@@ -32,8 +32,11 @@ $(document).ready(function () {
           
           var aTag = document.createElement("a")
           aTag.setAttribute("class","dropdown-item")
-          console.log(response.payload[i].subCategoryProducts[i].products[j].productId);
+
+         // var url_category=`category.html?${response.payload[i].subCategoryProducts[i].products[j].productId}`
+          //console.log(response.payload[i].subCategoryProducts[j].products[j].productId)
           aTag.setAttribute("href",`category.html?${response.payload[i].subCategoryProducts[i].products[j].productId}`)
+          //console.log(`category.html?${response.payload[i].subCategoryProducts[i].products[j].productId}`)
           var hTag = document.createElement("h5")
           
           var subCategoryName = `  ${response.payload[i].subCategoryProducts[j].subCategory}`
