@@ -32,8 +32,8 @@ $(document).ready(function () {
           
           var aTag = document.createElement("a")
           aTag.setAttribute("class","dropdown-item")
-          console.log(response.payload[i].subCategoryProducts[i].products[j].productId);
-          aTag.setAttribute("href",`category.html?${response.payload[i].subCategoryProducts[i].products[j].productId}`)
+         // aTag.setAttribute("href","category.html")
+          
           var hTag = document.createElement("h5")
           
           var subCategoryName = `  ${response.payload[i].subCategoryProducts[j].subCategory}`
@@ -45,8 +45,15 @@ $(document).ready(function () {
            
           for (let k = 0; k < response.payload[i].subCategoryProducts[j].products.length; k++) {
             var product = `  ${response.payload[i].subCategoryProducts[j].products[k].productName}`
+            var productId= `category.html?${response.payload[i].subCategoryProducts[j].products[k].productId}`
+            console.log(productId)
             var subLiTag = document.createElement("li")
-            subLiTag.innerHTML= product
+            var subATag = document.createElement("a")
+            subATag.setAttribute("href",productId)
+            subATag.setAttribute("style","text-decoration : none; color : #fff;")
+
+            subLiTag.appendChild(subATag)
+            subATag.innerHTML= product
             subUlTag.appendChild(subLiTag)
             aTag.appendChild(subUlTag)
             
@@ -70,21 +77,8 @@ $(document).ready(function () {
         
         
         $(liTag).appendTo(document.getElementById("temp"));
-      console.log(liTag)
-       
-        
-        
-
-       
-
-
-
-
-
-
-
-
-
+      //console.log(liTag)
+     
       }
 
 
