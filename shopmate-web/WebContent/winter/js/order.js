@@ -1,92 +1,112 @@
 $(document).ready(function () {
   sessionStorage.setItem("profile_id", "1001")
   var profileid = sessionStorage.getItem("profile_id")
+  var temp
+  var emptycart = document.getElementById('table')
+  if (profileid == null) {
+    alert("please login")
+    window.location.href = "D:/shopmate/shopmate-web/WebContent/winter/templates/login.html";
+  } else {
+    console.log("-----------------------------------hai-----------------------------------------")
     $.ajax({
-      url: "http://localhost:8084/order/get/allorder/"+profileid,
-  
+      url: "http://localhost:8084/order/get/allorder/" + profileid,
+
       success: function (response) {
-        var temp = response.payload
-        for (let i = 0; i < temp.length; i++)      
-        {
-        // console.log(result);
-            var trTag = document.createElement("tr")
-            var tdTag1 = document.createElement("td")
+        temp = response.payload
+
+        for (let i = 0; i < temp.length; i++) {
+          var trTag = document.createElement("tr")
+          var tdTag1 = document.createElement("td")
+          var tdTagEmpty = document.createElement("td")
+          var tdTag5 = document.createElement("td")
+
+          var divTag = document.createElement("div")
+          var pTag = document.createElement("h5")
+          pTag.setAttribute("style", "background-color:rgb(34, 122, 253);height: 30px;width: 100px;border-radius:5px ;text-align: center;align-content: center; padding-top: 0.3rem;color: white;")
+          pTag.innerHTML = "Order Id:" + temp[i].orderId
+          divTag.appendChild(pTag);
+          tdTag1.appendChild(divTag);
+
+          trTag.appendChild(tdTag1)
+          trTag.appendChild(tdTagEmpty)
+
+          var orderlist = document.getElementById("orderList")
+          orderlist.append(trTag);
+
+          if (temp[i].orderStatusId == 1) {
+            var cancelbutton = document.createElement("button");
+            cancelbutton.setAttribute("class", "cancelbutton")
+            cancelbutton.innerHTML = "incomplete"
+            tdTag1.appendChild(cancelbutton)
+            trTag.appendChild(tdTag5)
+          }
+          if (temp[i].orderStatusId == 2) {
+            var completed = document.createElement("h5")
+            completed.setAttribute("style", "background-color:green;height: 30px;width: 100px;border-radius:5px ;text-align: center;align-content: center; padding-top: 0.3rem;color: white;")
+            completed.innerHTML = "completed"
+            tdTag1.appendChild(completed)
+            trTag.appendChild(tdTag5)
+
+          }
+          if (temp[i].orderStatusId == 3) {
+            var cancel = document.createElement("h5")
+            cancel.setAttribute("style", "background-color:red;height: 30px;width: 100px;border-radius:5px ;text-align: center;align-content: center; padding-top: 0.3rem;color: white;")
+            cancel.innerHTML = "cancelled"
+            tdTag1.appendChild(cancel)
+            trTag.appendChild(tdTag5)
+          }
+
+
+          for (let j = 0; j < temp[i].item.length; j++) {
+            var trTag123 = document.createElement("tr")
+
+            var tdTagItemName = document.createElement("td")
+            tdTagItemName.setAttribute("style", "padding-left: 10%; ")
+            var h5tagitemName = document.createElement("h5")
+
             var tdTag2 = document.createElement("td")
+            var h5tagQuantity = document.createElement("h5")
+
             var tdTag3 = document.createElement("td")
-            var tdTag4 = document.createElement("td")
-            var tdTag5 = document.createElement("td")
+            var h5tagAmount = document.createElement("h5")
 
-            var divTag = document.createElement("div")
-            // divTag.setAttribute("class","media")
-            var pTag = document.createElement("p")
-            pTag.innerHTML = `${temp[i].orderId}`;
-            divTag.appendChild(pTag);
-            tdTag1.appendChild(divTag);
-            var h5Tag = document.createElement("h5")
-            h5Tag.innerHTML=`$${response.payload[i].totalAmount}`;
-            tdTag2.appendChild(h5Tag);
+            var imgTag1 = document.createElement("img")
 
-            // var h5Tag2 = document.createElement("h5")
-            // h5Tag2.innerHTML=`${response.payload[i].orderStatusId}`
+            var url = "http://localhost:8082/sku/details/" + temp[i].item[j].skuId
+            $.ajax({
+              type: "GET",
+              url: url,
+              async: false,
+              success: function (response2) {
+                var resp2 = response2
+                console.log(resp2)
+                imgTag1.setAttribute("src",resp2.imageUrl)
+                imgTag1.setAttribute("style", "height: 100px;width: 60px;border-radius:5px ;align-content: center; padding-top: 0.3rem;")
+                tdTagItemName.appendChild(imgTag1)
 
-            // tdTag3.appendChild(h5Tag2);
+                h5tagitemName.innerHTML = resp2.skuName
+                tdTagItemName.appendChild(h5tagitemName)
 
-            var h5Tag3 =document.createElement("h5");
-            h5Tag3.innerHTML=`${response.payload[i].deliveryDate}`
+                h5tagQuantity.innerHTML = temp[i].item[j].quantity
+                tdTag2.appendChild(h5tagQuantity)
 
-            tdTag4.appendChild(h5Tag3);
+                h5tagAmount.innerHTML = resp2.salePrice
+                tdTag3.appendChild(h5tagAmount)
 
-            trTag.appendChild(tdTag1)
-            trTag.appendChild(tdTag2)
-            // trTag.appendChild(tdTag3)
-            trTag.appendChild(tdTag4)
 
-            var orderlist = document.getElementById("orderList")
-            orderlist.append(trTag);
-
-            if(`${response.payload[i].orderStatusId}` == 1){
-                var cancelbutton = document.createElement("button");
-                cancelbutton.setAttribute("class","cancelbutton")
-                cancelbutton.innerHTML="incomplete"
-                tdTag5.appendChild(cancelbutton)
-
-                trTag.appendChild(tdTag5)
-            }
-            if(`${response.payload[i].orderStatusId}` == 2){
-                var completed = document.createElement("h5")
-                completed.innerHTML="completed"
-                tdTag5.appendChild(completed)
-                trTag.appendChild(tdTag5)
-
-            }
-            if(`${response.payload[i].orderStatusId}` == 3){
-                var cancel = document.createElement("h5")
-                cancel.innerHTML="cancelled"
-                tdTag5.appendChild(cancel)
-                trTag.appendChild(tdTag5)
-            }
-            // var skuId = response.payload[0].item[0].skuId
-            // console.log(skuId)
-            for (let j = 0; j < response.payload[i].item.length; j++){
-              var trTag123 = document.createElement("tr")
-              var tdTag123 = document.createElement("td")
-              var ptag123 = document.createElement("h5")
-              $.ajax({
-                type: "GET",
-                url: "http://localhost:8083/items/"+`${response.payload[i].item[j].skuId}`,
-                success: function (response2) {
-                  
-                  console.log(response2.itemName)
-                  ptag123.innerHTML=response2.itemName
-                  
-                 
-                }
-              });
-              tdTag123.appendChild(ptag123)
-              trTag123.appendChild(tdTag123)
-            } 
+                trTag123.appendChild(tdTagItemName)
+                trTag123.appendChild(tdTag2)
+                trTag123.appendChild(tdTag3)
+              }
+            });
             orderlist.append(trTag123)
+            var newLine = document.createElement("br")
+            orderlist.append(newLine)
+
+          }
+
         }
       }
     });
-  });
+  }
+});
