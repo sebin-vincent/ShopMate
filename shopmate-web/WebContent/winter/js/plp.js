@@ -17,17 +17,17 @@ $(function(){
             // });
             for(var i=0;i<response.payload.length;i++){
                 $parent.append(`<div class="row">   <div class="column" >  
+                <a href="single-product.html?${response.payload[i].skuId}">
                 <img src="${response.payload[i].imageUrl}" alt="Snow" style="width:185px;height:350px">
                               <div class="category_social_icon">  <ul>  <li><a href="#">
                               <i class="ti-heart"></i></a></li>   <li><a href="#"><i class="ti-bag">
                               </i></a></li>   </ul>
-                              <a href="single-product.html?${response.payload[i].skuId}">
+                              
                                 <h5 style="margin-left: 40px;">${response.payload[i].skuName}</h5></a>  
                                 </div>  <p style="margin-left: 69px;">$${response.payload[0].listPrice}</p>
                                   </div> </div>`);
             }
-            console.log(response.payload[0]);
-             
+            
         }
     });
 });
