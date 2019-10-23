@@ -1,0 +1,1439 @@
+{
+    "status_Code": 200,
+    "message": "Ok",
+    "payload": [
+        {
+            "categoryName": "Electronics",
+            "subCategoryProducts": [
+                {
+                    "products": [
+                        {
+                            "productId": 248,
+                            "productName": "Mi",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 249,
+                            "productName": "Realme",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 250,
+                            "productName": "Samsung",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 251,
+                            "productName": "Infinix",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 252,
+                            "productName": "OPPO",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 253,
+                            "productName": "Apple",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 254,
+                            "productName": "Vivo",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 255,
+                            "productName": "Honor",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 256,
+                            "productName": "Asus",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 257,
+                            "productName": "Google_Pixel_3|3XL",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 258,
+                            "productName": "Asus_Zenfone_Max_Pro_M2",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 259,
+                            "productName": "Redmi_Note_6_Pro",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 260,
+                            "productName": "POCO F1",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 261,
+                            "productName": "Realme_2_Pro",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 262,
+                            "productName": "Asus_Zenfone_Max_M2",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 263,
+                            "productName": "iPhone_XR",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "Mobiles"
+                },
+                {
+                    "products": [
+                        {
+                            "productId": 264,
+                            "productName": "Mobile_Cases",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 265,
+                            "productName": "Headphones&Headsets",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 266,
+                            "productName": "Power_Banks",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 267,
+                            "productName": "Screenguards",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 268,
+                            "productName": "Memory_Cards",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 269,
+                            "productName": "Smart_Headphones",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 270,
+                            "productName": "Mobile_Cables",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 271,
+                            "productName": "Mobile_Chargers",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 272,
+                            "productName": "Mobile_Holders",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "MobileAccessories"
+                },
+                {
+                    "products": [
+                        {
+                            "productId": 273,
+                            "productName": "Smart_Watches",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 274,
+                            "productName": "Smart_Glasses_(VR)",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 275,
+                            "productName": "Smart_Bands",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "SmartWearableTech"
+                },
+                {
+                    "products": [
+                        {
+                            "productId": 276,
+                            "productName": "Bp_Monitors",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 277,
+                            "productName": "Weighing_Scale",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "HealthCareAppliances"
+                },
+                {
+                    "products": [
+                        {
+                            "productId": 278,
+                            "productName": "Gaming_Laptops",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "Laptops"
+                },
+                {
+                    "products": [],
+                    "subCategory": "DesktopPCs"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Gaming&Accessories"
+                },
+                {
+                    "products": [
+                        {
+                            "productId": 279,
+                            "productName": "External_Hard_Disks",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 280,
+                            "productName": "Pendrives",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 281,
+                            "productName": "Laptop_Skins&Decals",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 282,
+                            "productName": "Laptop_Bags",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 283,
+                            "productName": "Mouse",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "ComputerAccessories"
+                },
+                {
+                    "products": [
+                        {
+                            "productId": 284,
+                            "productName": "Printers&Ink_Cartridges",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 285,
+                            "productName": "Monitors",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "ComputerPeripherals"
+                },
+                {
+                    "products": [
+                        {
+                            "productId": 286,
+                            "productName": "Apple_iPads",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 287,
+                            "productName": "Televisions",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "Tablets"
+                },
+                {
+                    "products": [
+                        {
+                            "productId": 288,
+                            "productName": "Home_Audio_Speakers",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 289,
+                            "productName": "Home_Theatres",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 290,
+                            "productName": "Bluetooth_Speakers",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 291,
+                            "productName": "DTH_Set_Top_Box",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "HomeEntertainment"
+                },
+                {
+                    "products": [
+                        {
+                            "productId": 292,
+                            "productName": "Google_Home",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "SmartHomeAutomation"
+                },
+                {
+                    "products": [
+                        {
+                            "productId": 293,
+                            "productName": "DSLR",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 294,
+                            "productName": "Compact&Bridge_Cameras",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 295,
+                            "productName": "Sports&Action",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "Camera"
+                },
+                {
+                    "products": [
+                        {
+                            "productId": 296,
+                            "productName": "Lens",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 297,
+                            "productName": "Tripods",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "CameraAccessories"
+                },
+                {
+                    "products": [
+                        {
+                            "productId": 298,
+                            "productName": "Routers",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 299,
+                            "productName": "Li-Polymer_Power_Banks",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 300,
+                            "productName": "Sony_PS4_Pro&Slim",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 301,
+                            "productName": "Apple_Products",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 302,
+                            "productName": "Microsoft_Store",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 303,
+                            "productName": "Lenovo_Phab_Series",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 304,
+                            "productName": "JBL_Speakers",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 305,
+                            "productName": "Philips",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 306,
+                            "productName": "Dr.Morepen",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "NetworkComponents"
+                }
+            ]
+        },
+        {
+            "categoryName": "TVs&Appliances",
+            "subCategoryProducts": [
+                {
+                    "products": [],
+                    "subCategory": "Television"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Official_Android_TVs"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Smart&Ultra_HD"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Washing_Machine"
+                },
+                {
+                    "products": [
+                        {
+                            "productId": 307,
+                            "productName": "Single_Door",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 308,
+                            "productName": "Double_Door",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 309,
+                            "productName": "Triple_door",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 310,
+                            "productName": "Side_by_Side",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 311,
+                            "productName": "Convertible",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "Refrigerators"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Air_Conditioners"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Kitchen_Appliances"
+                }
+            ]
+        },
+        {
+            "categoryName": "Men",
+            "subCategoryProducts": [
+                {
+                    "products": [
+                        {
+                            "productId": 312,
+                            "productName": "Sports Shoes",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 313,
+                            "productName": "Casual Shoes",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 314,
+                            "productName": "Formal Shoes",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 315,
+                            "productName": "Sandals & Floaters",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 316,
+                            "productName": "Flip- Flops",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 317,
+                            "productName": "Loafers",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 318,
+                            "productName": "Boots",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 319,
+                            "productName": "Running Shoes",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 320,
+                            "productName": "Sneakers",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "Footwear"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Men's Grooming"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Clothing"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Top wear"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Bottom wear"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Ties"
+                },
+                {
+                    "products": [],
+                    "subCategory": " Socks"
+                },
+                {
+                    "products": [],
+                    "subCategory": " Caps & more"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Kurta"
+                },
+                {
+                    "products": [],
+                    "subCategory": " Pyjama & more"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Fabrics"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Winter wear"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Sports wear"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Innerwear & Sleepwear"
+                },
+                {
+                    "products": [
+                        {
+                            "productId": 321,
+                            "productName": "Fastrack",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 322,
+                            "productName": "Casio",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 323,
+                            "productName": "Titan",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 324,
+                            "productName": "Fossil",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 325,
+                            "productName": "Sonata",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "Watches"
+                },
+                {
+                    "products": [
+                        {
+                            "productId": 321,
+                            "productName": "Fastrack",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 326,
+                            "productName": "Smart Bands",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 327,
+                            "productName": "Handbags",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 328,
+                            "productName": "Shoulder Bags",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 329,
+                            "productName": "Totes",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 330,
+                            "productName": "Sling bags",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 331,
+                            "productName": "Clutches",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 332,
+                            "productName": "Wallets & Belts",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 333,
+                            "productName": "Luggage & Travel",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 334,
+                            "productName": "Sunglasses",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 335,
+                            "productName": "Frames",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 336,
+                            "productName": "Featured",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 337,
+                            "productName": "Forever 21",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 338,
+                            "productName": "Accessorize",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 339,
+                            "productName": "W",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 340,
+                            "productName": "Pantaloons",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 341,
+                            "productName": "Chemistry",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 342,
+                            "productName": "Lakme",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 343,
+                            "productName": "Nivea",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 344,
+                            "productName": "Catwalk",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 345,
+                            "productName": "Titan-Raga",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 346,
+                            "productName": "Divastri",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 347,
+                            "productName": "Rare Roots",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 348,
+                            "productName": "Anmi",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 349,
+                            "productName": "Coins & Bars",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 350,
+                            "productName": "Trending today!",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 351,
+                            "productName": "Ruffles & Frills",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 352,
+                            "productName": "Pastel Kurtas & Kurtis",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 353,
+                            "productName": "Designer Net Sarees",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "Accessories"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Sports & Fitness Store"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Smart Watches"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Smart Bands"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Personal Care Appliances"
+                }
+            ]
+        },
+        {
+            "categoryName": "Women",
+            "subCategoryProducts": [
+                {
+                    "products": [
+                        {
+                            "productId": 312,
+                            "productName": "Sports Shoes",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 313,
+                            "productName": "Casual Shoes",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 314,
+                            "productName": "Formal Shoes",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 315,
+                            "productName": "Sandals & Floaters",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 316,
+                            "productName": "Flip- Flops",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 317,
+                            "productName": "Loafers",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 318,
+                            "productName": "Boots",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 319,
+                            "productName": "Running Shoes",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 320,
+                            "productName": "Sneakers",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "Footwear"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Clothing"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Sports wear"
+                },
+                {
+                    "products": [
+                        {
+                            "productId": 321,
+                            "productName": "Fastrack",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 322,
+                            "productName": "Casio",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 323,
+                            "productName": "Titan",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 324,
+                            "productName": "Fossil",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 325,
+                            "productName": "Sonata",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "Watches"
+                },
+                {
+                    "products": [
+                        {
+                            "productId": 321,
+                            "productName": "Fastrack",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 326,
+                            "productName": "Smart Bands",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 327,
+                            "productName": "Handbags",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 328,
+                            "productName": "Shoulder Bags",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 329,
+                            "productName": "Totes",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 330,
+                            "productName": "Sling bags",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 331,
+                            "productName": "Clutches",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 332,
+                            "productName": "Wallets & Belts",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 333,
+                            "productName": "Luggage & Travel",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 334,
+                            "productName": "Sunglasses",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 335,
+                            "productName": "Frames",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 336,
+                            "productName": "Featured",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 337,
+                            "productName": "Forever 21",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 338,
+                            "productName": "Accessorize",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 339,
+                            "productName": "W",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 340,
+                            "productName": "Pantaloons",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 341,
+                            "productName": "Chemistry",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 342,
+                            "productName": "Lakme",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 343,
+                            "productName": "Nivea",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 344,
+                            "productName": "Catwalk",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 345,
+                            "productName": "Titan-Raga",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 346,
+                            "productName": "Divastri",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 347,
+                            "productName": "Rare Roots",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 348,
+                            "productName": "Anmi",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 349,
+                            "productName": "Coins & Bars",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 350,
+                            "productName": "Trending today!",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 351,
+                            "productName": "Ruffles & Frills",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 352,
+                            "productName": "Pastel Kurtas & Kurtis",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 353,
+                            "productName": "Designer Net Sarees",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "Accessories"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Smart Watches"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Personal Care Appliances"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Winter & Seasonal Wear"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Western Wear"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Lingerie & Sleepwear"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Ethnic Wear"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Swim & Beachwear"
+                },
+                {
+                    "products": [],
+                    "subCategory": "International Brands"
+                },
+                {
+                    "products": [],
+                    "subCategory": "New arrivals !"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Exclusive Collection"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Under 499"
+                },
+                {
+                    "products": [
+                        {
+                            "productId": 354,
+                            "productName": "Flats",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 355,
+                            "productName": "Heels",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 356,
+                            "productName": "Wedges",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "Sandals"
+                },
+                {
+                    "products": [
+                        {
+                            "productId": 312,
+                            "productName": "Sports Shoes",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 313,
+                            "productName": "Casual Shoes",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 318,
+                            "productName": "Boots",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "Shoes"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Ballerinas"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Slippers & Flip- Flop's"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Beauty & Grooming"
+                },
+                {
+                    "products": [
+                        {
+                            "productId": 357,
+                            "productName": "Precious Jewellery",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 358,
+                            "productName": "Artificial Jewellery",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        },
+                        {
+                            "productId": 359,
+                            "productName": "Silver Jewellery",
+                            "activeStatus": 0,
+                            "startDate": "2018-08-14T00:00:00.000+0000",
+                            "endDate": "2018-10-14T00:00:00.000+0000"
+                        }
+                    ],
+                    "subCategory": "Jewellery"
+                }
+            ]
+        },
+        {
+            "categoryName": "Sports",
+            "subCategoryProducts": [
+                {
+                    "products": [],
+                    "subCategory": "wear:Sports T-Shirts"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Track Pants"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Track Suits"
+                },
+                {
+                    "products": [],
+                    "subCategory": "Shorts"
+                }
+            ]
+        }
+    ]
+}
