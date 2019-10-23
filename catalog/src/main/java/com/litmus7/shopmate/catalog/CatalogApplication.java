@@ -12,4 +12,3 @@ public class CatalogApplication {
 
 }
 
-//comment for sachin to solve conflicts
