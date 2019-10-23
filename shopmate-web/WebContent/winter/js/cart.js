@@ -3,7 +3,7 @@ $(document).ready(function () {
     
     $.ajax({
         type: "GET",
-        url: "http://localhost:8084/order/cart/1001/1",
+        url: "http://localhost:8084/order/cart/1001/1", //Todo get profile id from session 
         success: function (response) {
             
             var items = response.payload[0].item
