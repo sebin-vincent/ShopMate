@@ -45,9 +45,9 @@ $(document).ready(function () {
 
           for (let k = 0; k < response.payload[i].subCategoryProducts[j].products.length; k++) {
             var product = `  ${response.payload[i].subCategoryProducts[j].products[k].productName}`
-            var productId= `winter/templates/category.html?${response.payload[i].subCategoryProducts[j].products[k].productId}`
+            var productId= `category.html?${response.payload[i].subCategoryProducts[j].products[k].productId}`
 
-            
+
 
             var subLiTag = document.createElement("li")
             var subATag = document.createElement("a")
