@@ -4,7 +4,7 @@ $(function(){
     //var url = $(location).attr('href')
     parts = url.split("?");
     last_part = parts[parts.length-1];
-    console.log(last_part);
+    // console.log(last_part);
     //var $parent =$('.col-lg-12')
     var $parent_image =$('#product')
     var $product_feature=$('#product_feature')
@@ -76,11 +76,13 @@ $(function(){
 
           success: function (responseFromOrder) {
 
+            console.log(responseFromOrder);
+
             var orderId = responseFromOrder.payload[0].orderId;
             var profileId = '1234'; //TODO fetch from session
-            var skuId = response.payload[0].skuId;
+            var skuId = response.skuId;
             var skuQty = 1;
-            var unitPrice = response.payload[0].salePrice;
+            var unitPrice = response.salePrice;
 
             var addToCartRequestData = {
 
@@ -91,6 +93,7 @@ $(function(){
               "lastModifiedDate": null
 
             };
+
 
             $.ajax({
               type: "POST",

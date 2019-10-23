@@ -6,8 +6,9 @@ $(document).ready(function () {
 
         success: function (responseFromOrder) {
 
+            console.log(responseFromOrder);
             responseFromOrder.payload.forEach(element => {
-                // console.log(element.skuId);
+                 
 
                 $.ajax({
                     type: "GET",
