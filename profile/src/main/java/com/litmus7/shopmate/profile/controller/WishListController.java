@@ -22,14 +22,7 @@ public class WishListController {
     @PostMapping("/add")
     public Response_Info addToWishList(@RequestBody WishListDto wishList) {
 
-        WishListDto addedResponse = wishListService.addToUserWishList(wishList);
-        List<Object> payload = new ArrayList<>();
-        Response_Info response_info = new Response_Info();
-        response_info.setStatus_Message("added");
-        response_info.setStatus_Code(200);
-        payload.add(addedResponse);
-        response_info.setPayload((payload));
-        return response_info;
+        return wishListService.addToUserWishList(wishList);
 
     }
 
