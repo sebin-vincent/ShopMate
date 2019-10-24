@@ -17,7 +17,7 @@ $(function(){
       success: function (response) {
         for(var i=0;i<response.payload[0].length;i++){
           skulist.push(response.payload[0][i]);
-          
+          console.log(response.payload[0][i]);
         }
       }
       
@@ -44,12 +44,17 @@ $(function(){
                                 </div>  <p style="margin-left: 69px;">$${response.payload[0].listPrice}</p>
                                   </div> </div>`);
             }
-            var wish_icon=document.getElementById("wish");
-     for(var i=0;i<skulist.length;i++){
-       if(skulist[i]==response.payload[0].skuId){
-         wish_icon.setAttribute("style","color:red;");
-       }    
-     }
+    console.log(response.payload[10].skuId[0]);
+    var wish_icon=document.getElementById("wish");
+    for(var j=0;j<response.payload.length;j++){
+        for(var i=0;i<skulist.length;i++){
+            if(response.payload[j].skuId==skulist[i]){
+                wish_icon.setAttribute("style","color:red;");
+            }
+        }
+    }
+
+    
      $("#wish-list-button").click(function (e) { 
         e.preventDefault();
         var wish_icon=document.getElementById("wish");
