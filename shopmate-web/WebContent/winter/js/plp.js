@@ -22,6 +22,7 @@ $(function(){
       }
       
     });
+    console.log(skulist);
     $.ajax({
         type: "GET",
         url: "http://localhost:8082/sku/"+last_part,
