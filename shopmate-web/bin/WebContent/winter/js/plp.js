@@ -22,7 +22,6 @@ $(function(){
                               <div class="category_social_icon">  <ul>  <li><a href="#">
                               <i class="ti-heart"></i></a></li>   <li><a href="#"><i class="ti-bag">
                               </i></a></li>   </ul>
-                              
                                 <h5 style="margin-left: 40px;">${response.payload[i].skuName}</h5></a>  
                                 </div>  <p style="margin-left: 69px;">$${response.payload[0].listPrice}</p>
                                   </div> </div>`);

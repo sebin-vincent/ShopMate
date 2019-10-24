@@ -1,4 +1,4 @@
-package com.litmsu7.shopmate.order.feignclient;
+package com.litmus7.shopmate.order.feignclient;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
