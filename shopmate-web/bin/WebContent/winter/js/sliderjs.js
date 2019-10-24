@@ -5,8 +5,8 @@ var myTimer;
 var slideshowContainer;
 
 var imagesSRC = [];
-var pdp_url=[];
 
+var sku=[];
 
 
 
@@ -20,13 +20,14 @@ $(document).ready(function () {
 
 
   $.ajax({
-    url: "http://localhost:8080/sliderimages",
+    url: "http://localhost:8082/sliderimages",
 
     success: function (result) {
      // console.log(result);
       for (i = 0; i < result.length; i++) {
         imagesSRC.push(result[i].image_url)
-        pdp_url.push(result[i].pdp_url)
+        //pdp_url.push(result[i].pdp_url)
+        sku.push(result[i].sku_id);
       }
       //console.log(imagesSRC)
     }
@@ -49,8 +50,8 @@ $(window).on('load', function () {
 
 
   slideshowContainer = document.getElementById('container');
-  slideshowContainer.addEventListener('mouseenter', pause)
-  slideshowContainer.addEventListener('mouseleave', resume)
+  //slideshowContainer.addEventListener('mouseenter', pause)
+  //slideshowContainer.addEventListener('mouseleave', resume)
 
 
 
@@ -83,7 +84,8 @@ function showSlides(n) {
   if (n < 1) { slideIndex = imagesSRC.length }
 
   document.getElementById('imgSEQ_NUM').src = imagesSRC[slideIndex - 1];
-  document.getElementById('pdplink').href = pdp_url[slideIndex - 1];
+  document.getElementById('pdplink').href="single-product.html?"+sku[slideIndex-1];
+  
   if ($(".imgSEQ_NUM").is(":hidden")) {
     $(".imgSEQ_NUM").show();
   }
@@ -91,14 +93,14 @@ function showSlides(n) {
 
 }
 
-pause = () => {
-  clearInterval(myTimer);
-}
+// pause = () => {
+//   clearInterval(myTimer);
+// }
 
-resume = () => {
-  clearInterval(myTimer);
-  myTimer = setInterval(function () { plusSlides(slideIndex) }, 4000);
-}
+// resume = () => {
+//   clearInterval(myTimer);
+//   myTimer = setInterval(function () { plusSlides(slideIndex) }, 4000);
+// }
 
 
 

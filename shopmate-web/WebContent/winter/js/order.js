@@ -36,7 +36,7 @@ $(document).ready(function () {
           if (temp[i].orderStatusId == 1) {
             var cancelbutton = document.createElement("button");
             cancelbutton.setAttribute("class", "cancelbutton")
-            cancelbutton.innerHTML = "incomplete"
+            cancelbutton.innerHTML = "Cart Items"
             tdTag1.appendChild(cancelbutton)
             trTag.appendChild(tdTag5)
           }
@@ -61,7 +61,7 @@ $(document).ready(function () {
             var trTag123 = document.createElement("tr")
 
             var tdTagItemName = document.createElement("td")
-            tdTagItemName.setAttribute("style", "padding-left: 10%; ")
+            tdTagItemName.setAttribute("style", "padding-left: 20%; ")
             var h5tagitemName = document.createElement("h5")
 
             var tdTag2 = document.createElement("td")
