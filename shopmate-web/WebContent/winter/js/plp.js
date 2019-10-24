@@ -37,28 +37,32 @@ $(function(){
                  <div class="column" >  
                     <a href="single-product.html?${response.payload[i].skuId}">
                     <img src="${response.payload[i].imageUrl}" alt="Snow" style="width:185px;height:350px">
-                              <div class="category_social_icon">  <ul>  <li><a href="#" class="like_us" id="wish-list-button"> 
+                              <div class="category_social_icon">  <ul>  <li><a href="#" class="like_us" id="wish-list-button_${i}"> 
                               <i class="fa fa-heart" id="wish_${i}" ></i></a></li>   </a></li>   </ul>
                               
                                 <h5 style="margin-left: 40px;">${response.payload[i].skuName}</h5></a>  
                                 </div>  <p style="margin-left: 69px;">$${response.payload[0].listPrice}</p>
                                   </div> </div>`);
             }
-    console.log(response.payload[10].skuId[0]);
-   // var wish_icon=document.getElementById("wish");
+   
+    // var wish_icon=document.getElementById("wish_0");
+    // console.log(wish_icon);
     for(var j=0;j<response.payload.length;j++){
-      wish_icon=document.getElementById("wish_"+i);
+      var  wish_icon=document.getElementById("wish_"+j);
+      //console.log(wish_icon);
         for(var i=0;i<skulist.length;i++){
             if(response.payload[j].skuId==skulist[i]){
                 wish_icon.setAttribute("style","color:red;");
             }
         }
     }
-
-    
-     $("#wish-list-button").click(function (e) { 
+// for(var i=0;i<response.payload.length;i++){
+//   var wish_button="#wish-list-button_"+i;
+//   var wish="wish_"+i;
+//   var wish_icon=document.getElementById("wish_"+i);
+      $('i.fa fa-heart').click(function (e) { 
         e.preventDefault();
-        var wish_icon=document.getElementById("wish");
+        var wish_icon=$(this).attr('id');
         console.log(wish_icon);
         var datas={
           "profileId":4,
@@ -89,6 +93,7 @@ $(function(){
         
       });
 
-        }
+       // }
+      }
     });
 });

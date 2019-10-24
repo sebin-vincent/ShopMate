@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.litmus7.shopmate.profile.dao.ChangePasswordDao;
 import com.litmus7.shopmate.profile.dao.ForgotPasswordDao;
+import com.litmus7.shopmate.profile.dao.LoginDao;
 import com.litmus7.shopmate.profile.dto.LoginDto;
 import com.litmus7.shopmate.profile.dto.ProfileDto;
+import com.litmus7.shopmate.profile.dto.Response;
 import com.litmus7.shopmate.profile.dto.Response_Info;
 
 
@@ -38,6 +40,16 @@ public class ProfileController {
 	public Response_Info changePassword(@RequestBody LoginDto login) {
 
 		return changePasswordService.changePassword(login);
+	}
+	
+	
+	@Autowired
+	LoginDao loginDao;
+	@CrossOrigin
+	@PostMapping(path="/login")
+	public Response login(@RequestBody LoginDto loginDto) {
+		return loginDao.fetchUser(loginDto);
+		
 	}
 
 }
