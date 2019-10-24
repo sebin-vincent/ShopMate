@@ -21,6 +21,8 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -30,14 +32,19 @@ import com.litmus7.inventoryscheduler.repository.SchedulerRepository;
 
 @Service
 public class SchedulerService {
+	
+	
+	Logger logger=LoggerFactory.getLogger(SchedulerService.class);
+	
 
 	@Autowired
 	SchedulerRepository repository;
 
-	@Scheduled(cron = "0/10 * * * * *")
+	@Scheduled(cron = "0/30 * * * * *")
 	public void execute() {
-		System.out.println("Inventory Check ");
-		System.out.println("Time now is " + new Date());
+		logger.info("Inventory Check at "+new Date());
+		//System.out.println("Inventory Check ");
+		//System.out.println("Time now is " + new Date());
 
 		try (Stream<Path> walk = Files.walk(Paths.get("src/main/resources/inventory/new"))) {
 
@@ -49,30 +56,34 @@ public class SchedulerService {
 					process(excelsheet);
 
 				} catch (IOException e) {
-					System.out.println(e.getMessage());
+					logger.error(e.getMessage());
+					//System.out.println(e.getMessage());
 				}
 			});
 
 		} catch (IOException e) {
-			System.out.println("IOexception in the directory");
+			//System.out.println("IOexception in the directory");
+			logger.error("IOexception in the directory");
 		}
 
 	}
 
 	private void process(String excelFilePath) throws IOException {
-		System.out.println(excelFilePath + "    getting processed");
+		//System.out.println(excelFilePath + "    getting processed");
+		logger.info(excelFilePath + "    getting processed");
 		FileInputStream inputStream = null;
 		try {
 			inputStream = new FileInputStream(new File(excelFilePath));
 		} catch (FileNotFoundException e) {
-			System.out.println("file not found: File is  " + excelFilePath);
+			//System.out.println("file not found: File is  " + excelFilePath);
+			logger.error("file not found: File is  " + excelFilePath);
 		}
 		Workbook workbook = null;
 		try {
 			workbook = getWorkbook(inputStream, excelFilePath);
 		} catch (IOException e) {
-
-			System.out.println(e.getMessage());
+			//System.out.println(e.getMessage());
+			logger.error(e.getMessage());
 		}
 
 		Sheet sheet = workbook.getSheetAt(0);
@@ -86,8 +97,10 @@ public class SchedulerService {
 
 				Files.move(sourcePath, targetPath.resolve(sourcePath.getFileName()),
 						StandardCopyOption.REPLACE_EXISTING);
-				System.out.println("File contains incorrect number of cells");
-				System.out.println("ERROR::-->File moved from " + sourcePath + "  to " + targetPath);
+				//System.out.println("File contains incorrect number of cells");
+				logger.error("File contains incorrect number of cells");
+				logger.info("File moved from " + sourcePath + "  to " + targetPath);
+				//System.out.println("ERROR::-->File moved from " + sourcePath + "  to " + targetPath);
 				return;
 			}
 			ExcelBean e = new ExcelBean();
@@ -152,8 +165,10 @@ public class SchedulerService {
 					Path targetPath = Paths.get("src/main/resources/inventory/error");
 					inputStream.close();
 					Files.move(sourcePath, targetPath.resolve(sourcePath.getFileName()));
-					System.out.println("Incorrect Format Excel Data");
-					System.out.println("ERROR::-->File moved from " + sourcePath + "  to " + targetPath);
+					//System.out.println("Incorrect Format Excel Data");
+					logger.error("Incorrect Format Excel Data");
+					logger.info("File moved from " + sourcePath + "  to " + targetPath);
+					//System.out.println("ERROR::-->File moved from " + sourcePath + "  to " + targetPath);
 					return;
 				}
 			}
@@ -168,27 +183,32 @@ public class SchedulerService {
 			if (repository.isExisting(item.getItem_id()) == 0) {
 				repository.insertItem(item.getItem_id(), item.getItem_name(), item.getItem_description(),
 						item.getHsn_code(), item.getUnit_id(), item.getStart_datetime(), item.getEnd_datetime());
-				System.out.println("item inserted");
+				//System.out.println("item inserted");
+				logger.info("item inserted");
 				repository.insertStock(item.getItem_id(), item.getAvailble_stock(), item.getReserved_stock(),
 						item.getTotal_stock(), item.getDead_stock(), item.getState_id(), item.getPreorder_level(),
 						item.getReorder_level(), item.getBackorder_level());
-				System.out.println("stock inserted");
+				//System.out.println("stock inserted");
+				logger.info("stock inserted");
 			} else {
 
 				repository.updateItem(item.getItem_id(), item.getItem_name(), item.getItem_description(),
 						item.getHsn_code(), item.getUnit_id(), item.getStart_datetime(), item.getEnd_datetime());
-				System.out.println("item updated");
+				//System.out.println("item updated");
+				logger.info("item updated");
 				repository.updateStock(item.getItem_id(), item.getAvailble_stock(), item.getReserved_stock(),
 						item.getTotal_stock(), item.getDead_stock(), item.getState_id(), item.getPreorder_level(),
 						item.getReorder_level(), item.getBackorder_level());
-				System.out.println("stock updated");
+				//System.out.println("stock updated");
+				logger.info("stock updated");
 			}
 		}
 
 		Path sourcePath = Paths.get(excelFilePath);
 		Path targetPath = Paths.get("src/main/resources/inventory/processed");
 		Files.move(sourcePath, targetPath.resolve(sourcePath.getFileName()), StandardCopyOption.REPLACE_EXISTING);
-		System.out.println("File moved from " + sourcePath + "  to " + targetPath);
+		//System.out.println("File moved from " + sourcePath + "  to " + targetPath);
+		logger.info("File moved from " + sourcePath + "  to " + targetPath);
 		return;
 
 	}
