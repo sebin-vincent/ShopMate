@@ -11,7 +11,10 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 @Service
+@Transactional
 public class WishListService implements WishListServiceDao {
 	boolean isIdexist = true;
 	@Autowired
@@ -36,6 +39,7 @@ public class WishListService implements WishListServiceDao {
 			response.setStatus_Code(200);
 			response.setPayload(null);
 			response.setStatus_Message("item exist");
+			wishListRepositoryDao.deleteBySkuIdAndProfileId(wishListDto.getSkuId(), wishListDto.getProfileId());
 			return response;
 		}
 		
