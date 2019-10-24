@@ -2442,7 +2442,7 @@ ul {
 
 /* line 280, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_menu.scss */
 .dropdown:hover .dropdown-menu {
-  display: block;
+  display: flex;
 }
 
 /* line 285, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_menu.scss */
