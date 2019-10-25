@@ -1,41 +1,39 @@
-window.onload=function(){
-  
-}
-$(function(){
-  var url      = window.location.href;
-    //var url = $(location).attr('href')
-    parts = url.split("?");
-    last_part = parts[parts.length-1];
-    //console.log(last_part);
-    //var $parent =$('.col-lg-12')
-    var $parent_image =$('#product')
-    var $product_feature=$('#product_feature')
-    var status="active"
-    var skulist=[];
-    $.ajax({
-      async:false,
-      type: "GET",
-      dataType: "json",
-      url: "http://localhost:8080/wishlist/4/retrieve",
-    
-      
-      success: function (response) {
-        for(var i=0;i<response.payload[0].length;i++){
-          skulist.push(response.payload[0][i]);
-          
-        }
+
+$(function () {
+  var url = window.location.href;
+  //var url = $(location).attr('href')
+  parts = url.split("?");
+  last_part = parts[parts.length - 1];
+  //console.log(last_part);
+  //var $parent =$('.col-lg-12')
+  var $parent_image = $('#product')
+  var $product_feature = $('#product_feature')
+  var status = "active"
+  var skulist = [];
+  $.ajax({
+    async: false,
+    type: "GET",
+    dataType: "json",
+    url: "http://localhost:8080/wishlist/4/retrieve",
+
+
+    success: function (response) {
+      for (var i = 0; i < response.payload[0].length; i++) {
+        skulist.push(response.payload[0][i]);
+
       }
-      
-    });
-    console.log(skulist[0]);
-    $.ajax({
-      async:false,
-        type: "GET",
-        url: "http://localhost:8082/sku/details/"+last_part,
-        success: function (response) {
-            $.each(response, function (indexInArray, payload ) { 
-                
-            });
+    }
+
+  });
+  console.log(skulist[0]);
+  $.ajax({
+    async: false,
+    type: "GET",
+    url: "http://localhost:8082/sku/details/" + last_part,
+    success: function (response) {
+      $.each(response, function (indexInArray, payload) {
+
+      });
 
 
       if (response.onSale == 1) {
@@ -85,53 +83,53 @@ $(function(){
          </div>
        </div>
      </div>`);
-      
-     var wish_icon=document.getElementById("wish");
-     for(var i=0;i<skulist.length;i++){
-       if(skulist[i]==response.skuId){
-         wish_icon.setAttribute("style","color:red;");
-       }    
-     }
 
-$("#wish-list-button").click(function (e) { 
-  e.preventDefault();
-  var wish_icon=document.getElementById("wish");
-  console.log(wish_icon);
-  var datas={
-    "profileId":4,
-      "skuId":last_part
-  }
-  $.ajax({
-    async:false,
-    type: "POST",
-    contentType: "application/json",
-    dataType: "json",
-    url: "http://localhost:8080/wishlist/add",
-    data: JSON.stringify(datas),
-    success: function (response) {
-      if(response.status_Message=="item added"){
-        alert("Item added to your wish list");
-        wish_icon.setAttribute("style","color:red;");
-      
+      var wish_icon = document.getElementById("wish");
+      for (var i = 0; i < skulist.length; i++) {
+        if (skulist[i] == response.skuId) {
+          wish_icon.setAttribute("style", "color:red;");
+        }
       }
-      else if(response.status_Message=="item exist"){
-        alert("item revoved from your cart");
-        wish_icon.setAttribute("style","color:blue;");
-      }
-      else{
-        alert("try again");
-      }
-    }
-  });
-  
-});
+
+      $("#wish-list-button").click(function (e) {
+        e.preventDefault();
+        var wish_icon = document.getElementById("wish");
+        console.log(wish_icon);
+        var datas = {
+          "profileId": 4,
+          "skuId": last_part
+        }
+        $.ajax({
+          async: false,
+          type: "POST",
+          contentType: "application/json",
+          dataType: "json",
+          url: "http://localhost:8080/wishlist/add",
+          data: JSON.stringify(datas),
+          success: function (response) {
+            if (response.status_Message == "item added") {
+              alert("Item added to your wish list");
+              wish_icon.setAttribute("style", "color:red;");
+
+            }
+            else if (response.status_Message == "item exist") {
+              alert("item revoved from your cart");
+              wish_icon.setAttribute("style", "color:blue;");
+            }
+            else {
+              alert("try again");
+            }
+          }
+        });
+
+      });
 
       $("#add-to-cart-btn").click(function (e) {
 
         e.preventDefault();
 
         $.ajax({
-          async:false,
+          async: false,
           type: "GET",
           url: "http://localhost:8084/order/get/orderid/1234", //TODO paste profile id from session
 
@@ -170,7 +168,7 @@ $("#wish-list-button").click(function (e) {
                 }
 
                 $.ajax({
-                  
+
                   type: "PUT",
                   url: "http://localhost:8083/items/reserve",
                   data: JSON.stringify(updateInventoryData),
@@ -191,7 +189,7 @@ $("#wish-list-button").click(function (e) {
         });
 
       });
-         
+
     }
   });
 
