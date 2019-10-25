@@ -29,6 +29,7 @@ $(function () {
   });
 
   $.ajax({
+    async: false,
     type: "GET",
     url: "http://localhost:8082/sku/" + last_part,
     success: function (response) {

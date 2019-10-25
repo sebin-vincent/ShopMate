@@ -1,7 +1,7 @@
 
 //var profileId=sessionStorage.getItem("profile_id");
 
-var sessionId= sessionStorage.getItem("profile_id"); 
+var sessionId = sessionStorage.getItem("profile_id");
 
 $(function () {
   var url = window.location.href;
@@ -35,7 +35,7 @@ $(function () {
     type: "GET",
     url: "http://localhost:8082/sku/details/" + last_part,
     success: function (response) {
-    
+
       skuId = response.skuId;
       $.each(response, function (indexInArray, payload) {
 
@@ -88,16 +88,16 @@ $(function () {
          </div>
        </div>
      </div>`);
-      // var image=document.getElementById('pdp_image');
-      // var cart_button=document.getElementById('add-to-cart-btn');
-      // console.log(cart_button);
-      // if(status!="Out of stock"){
-      //   image.setAttribute("style","opacity: 0.5");
-      //   cart_button.disabled = true;
-      //  // document.getElementById("add-to-cart-btn").disabled = true;
+      var image = document.getElementById('pdp_image');
+      var cart_button = document.getElementById('add-to-cart-btn');
+      console.log(cart_button);
+      if (status != "Out of stock") {
+        image.setAttribute("style", "opacity: 0.5");
+        cart_button.disabled = true;
+        // document.getElementById("add-to-cart-btn").disabled = true;
 
-      //     console.log(status);
-      // }
+        console.log(status);
+      }
       var wish_icon = document.getElementById("wish");
       for (var i = 0; i < skulist.length; i++) {
         if (skulist[i] == response.skuId) {
@@ -110,7 +110,7 @@ $(function () {
         var wish_icon = document.getElementById("wish");
         console.log(wish_icon);
         var datas = {
-          "profileId": 4,
+          "profileId": sessionId,
           "skuId": last_part
         }
         $.ajax({
@@ -145,7 +145,7 @@ $(function () {
         $.ajax({
           async: false,
           type: "GET",
-          url: "http://localhost:8084/order/get/orderid/"+sessionId, //TODO paste profile id from session
+          url: "http://localhost:8084/order/get/orderid/" + sessionId, //TODO paste profile id from session
 
           success: function (responseFromOrder) {
 
