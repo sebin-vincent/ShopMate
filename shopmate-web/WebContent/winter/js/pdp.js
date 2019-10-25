@@ -78,7 +78,7 @@ $(function () {
            <div class="add_to_cart">
                <a href="#" class="btn_3" id="add-to-cart-btn">add to cart</a>
 
-               <a  class="like_us" id="wish-list-button"> <i class="fa fa-heart" id="wish" ></i> </a>
+               <a  class="like_us" id="wish-list-button"> <i class="fa fa-heart" id="wish" style="color:blue"></i> </a>
            </div>
            <div class="social_icon">
                <a href="https://www.facebook.com/" class="fb"><i class="ti-facebook"></i></a>
@@ -88,16 +88,16 @@ $(function () {
          </div>
        </div>
      </div>`);
-      var image=document.getElementById('pdp_image');
-      var cart_button=document.getElementById('add-to-cart-btn');
-      console.log(cart_button);
-      if(status!="Out of stock"){
-        image.setAttribute("style","opacity: 0.5");
-        cart_button.disabled = true;
-       // document.getElementById("add-to-cart-btn").disabled = true;
+      // var image=document.getElementById('pdp_image');
+      // var cart_button=document.getElementById('add-to-cart-btn');
+      // console.log(cart_button);
+      // if(status!="Out of stock"){
+      //   image.setAttribute("style","opacity: 0.5");
+      //   cart_button.disabled = true;
+      //  // document.getElementById("add-to-cart-btn").disabled = true;
 
-          console.log(status);
-      }
+      //     console.log(status);
+      // }
       var wish_icon = document.getElementById("wish");
       for (var i = 0; i < skulist.length; i++) {
         if (skulist[i] == response.skuId) {
@@ -110,7 +110,7 @@ $(function () {
         var wish_icon = document.getElementById("wish");
         console.log(wish_icon);
         var datas = {
-          "profileId": sessionId,
+          "profileId": 4,
           "skuId": last_part
         }
         $.ajax({
@@ -149,7 +149,7 @@ $(function () {
 
           success: function (responseFromOrder) {
 
-            console.log(skuId)
+            console.log(responseFromOrder)
 
             var orderId = responseFromOrder.payload[0].orderId;
             var profileId = sessionId; //TODO fetch from session
