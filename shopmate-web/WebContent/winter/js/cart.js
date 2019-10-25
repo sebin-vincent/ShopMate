@@ -1,9 +1,12 @@
 $(document).ready(function () {
-    
-    
+    var sessionId= sessionStorage.getItem("profile_id"); 
+   var urlOriginal="http://localhost:8084/order/cart/"+sessionId+"/1"
+//    console.log(urlOriginal);
     $.ajax({
+    
         type: "GET",
-        url: "http://localhost:8084/order/cart/1001/1", //Todo get profile id from session 
+        url: urlOriginal, //Todo get profile id from session 
+        
         success: function (response) {
             
             var items = response.payload[0].item

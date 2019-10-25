@@ -39,8 +39,6 @@ public class CatalogController {
 	public Response_Info getCatalog() {
 
 		response_Info.setPayload(retrieveCatalogServiceImpl.findAllCatalog());
-		
-
 		return response_Info;
 	}
 

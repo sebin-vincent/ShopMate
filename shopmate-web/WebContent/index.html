@@ -152,7 +152,7 @@
     </div>
     <div class="search_input" id="search_input_box">
       <div class="container ">
-        <form class="d-flex justify-content-between search-inner">
+        <form class="d-flex justify-content-between search-inner" id="search-form">
           <input type="text" class="form-control" id="search_input" placeholder="Search Here">
           <button type="submit" class="btn"></button>
           <span class="ti-close" id="close_search" title="Close Search"></span>
@@ -412,7 +412,11 @@
         </div>
         <div class="col-sm-6 col-lg-4">
           <div class="single_footer_part">
-            <h4>Newsletter</h4>
+            <h4>Newsletter</h4><form class="d-flex justify-content-between search-inner">
+          <input type="text" class="form-control" id="search_input" placeholder="Search Here">
+          <button type="submit" class="btn"></button>
+          <span class="ti-close" id="close_search" title="Close Search"></span>
+        </form>
             <div id="mc_embed_signup">
               <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part">
                 <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address" class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Email Address '">
@@ -479,6 +483,7 @@
 
   <script src="winter/js/latest-arrivals.js"></script>
   <script src="winter/js/trending.js"></script>
+  <script src="winter/js/searchbar.js"></script>
 
 </body>
 
