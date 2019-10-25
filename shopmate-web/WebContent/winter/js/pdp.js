@@ -1,4 +1,8 @@
 
+//var profileId=sessionStorage.getItem("profile_id");
+
+var sessionId= sessionStorage.getItem("profile_id"); 
+
 $(function () {
   var url = window.location.href;
   //var url = $(location).attr('href')
@@ -31,6 +35,8 @@ $(function () {
     type: "GET",
     url: "http://localhost:8082/sku/details/" + last_part,
     success: function (response) {
+    
+      skuId = response.skuId;
       $.each(response, function (indexInArray, payload) {
 
       });
@@ -46,8 +52,7 @@ $(function () {
       //append sku imaage
 
       $parent_image.append(`<div data-thumb="img/product_details/prodect_details_1.png">
-           <img src="${response.imageUrl}" style="    margin-left: 149px;
-           " />
+           <img src="${response.imageUrl}" id="pdp_image"style="margin-left: 149px; " />
          </div>`);
       //append sku details
       $product_feature.append(`<h3>${response.skuName}</h3>
@@ -73,17 +78,26 @@ $(function () {
            <div class="add_to_cart">
                <a href="#" class="btn_3" id="add-to-cart-btn">add to cart</a>
 
-               <a href="#" class="like_us" id="wish-list-button"> <i class="fa fa-heart" id="wish" ></i> </a>
+               <a  class="like_us" id="wish-list-button"> <i class="fa fa-heart" id="wish" ></i> </a>
            </div>
            <div class="social_icon">
                <a href="https://www.facebook.com/" class="fb"><i class="ti-facebook"></i></a>
-               <a href="#" class="tw"><i class="ti-twitter-alt"></i></a>
+               <a href="" class="tw"><i class="ti-twitter-alt"></i></a>
                <a href="https://www.linkedin.com/company" class="li"><i class="ti-linkedin"></i></a>
            </div>
          </div>
        </div>
      </div>`);
+      var image=document.getElementById('pdp_image');
+      var cart_button=document.getElementById('add-to-cart-btn');
+      console.log(cart_button);
+      if(status!="Out of stock"){
+        image.setAttribute("style","opacity: 0.5");
+        cart_button.disabled = true;
+       // document.getElementById("add-to-cart-btn").disabled = true;
 
+          console.log(status);
+      }
       var wish_icon = document.getElementById("wish");
       for (var i = 0; i < skulist.length; i++) {
         if (skulist[i] == response.skuId) {
@@ -96,7 +110,7 @@ $(function () {
         var wish_icon = document.getElementById("wish");
         console.log(wish_icon);
         var datas = {
-          "profileId": 4,
+          "profileId": sessionId,
           "skuId": last_part
         }
         $.ajax({
@@ -113,7 +127,7 @@ $(function () {
 
             }
             else if (response.status_Message == "item exist") {
-              alert("item revoved from your cart");
+              alert("item removed from your wish list");
               wish_icon.setAttribute("style", "color:blue;");
             }
             else {
@@ -131,15 +145,17 @@ $(function () {
         $.ajax({
           async: false,
           type: "GET",
-          url: "http://localhost:8084/order/get/orderid/1234", //TODO paste profile id from session
+          url: "http://localhost:8084/order/get/orderid/"+sessionId, //TODO paste profile id from session
 
           success: function (responseFromOrder) {
 
+            console.log(skuId)
+
             var orderId = responseFromOrder.payload[0].orderId;
-            var profileId = '1234'; //TODO fetch from session
+            var profileId = sessionId; //TODO fetch from session
             var skuId = response.payload[0].skuId;
             var skuQty = 1;
-            var unitPrice = response.payload[0].salePrice;
+            var unitPrice = response.salePrice;
 
             var addToCartRequestData = {
 
