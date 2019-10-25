@@ -142,7 +142,7 @@ document.getElementById("fp_up_bttn").addEventListener("click",function(){
         if(response.status_Message==="Password changed"){
           alert("Please login with new password");
           $('#forgot_password_form')[0].reset();
-          window.location.href = "F:/shopmate/shopmate-web/WebContent/winter/templates/login.html";
+          window.location.href = "login.html";
 
         }
         else if(response.status_Message==="Invalid credentials"){

@@ -1,4 +1,5 @@
 //login
+var sessionId= sessionStorage.getItem("profile_id"); 
 $("#login-button").click(function (e) { 
     e.preventDefault();
     
@@ -59,7 +60,7 @@ function change_password(){
     function change(){
         datas={
 
-            profile_id:4,
+            profile_id:sessionId,
 	        password:"qwertyuiop",
 	        extra:{
 		        new_Password:"new_password",

@@ -4,10 +4,7 @@ import com.l7.shopmate.inventory.model.SkuName;
 import com.l7.shopmate.inventory.service.IndexingService;
 import com.l7.shopmate.inventory.service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,6 +18,7 @@ public class SearchEngineController {
     @Autowired
     IndexingService indexingService;
 
+    @CrossOrigin
     @GetMapping("/search/{name}")
     public List<SkuName> searchBySkuName(@PathVariable String name) {
 
@@ -28,6 +26,7 @@ public class SearchEngineController {
 
     }
 
+    @CrossOrigin
     @GetMapping("/index-data")
     public String indexDBData() {
 

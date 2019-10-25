@@ -1,6 +1,10 @@
+
 var sale_status1;
 var sale_status2;
 var sale_status3;
+
+var sessionId= sessionStorage.getItem("profile_id");
+
 $(function () {
   var url = window.location.href;
   var $parent = $('#products')
@@ -190,7 +194,7 @@ $(function () {
         sku_id = sku_ids[sku_ids.length - 1];
 
         var datas = {
-          "profileId": 4,
+          "profileId": sessionId,
           "skuId": sku_id
         }
         $.ajax({
