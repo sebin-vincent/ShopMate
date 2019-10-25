@@ -11,6 +11,6 @@ public interface WishListRepositoryDao extends JpaRepository<WishListDto, Intege
 
 	public WishListDto findBySkuIdAndProfileId(int skuId,int profileId);
     public List<WishListDto> findByProfileId(int profileId);
-    
+    public void deleteBySkuIdAndProfileId(int skuId,int profileId);
 
 }
