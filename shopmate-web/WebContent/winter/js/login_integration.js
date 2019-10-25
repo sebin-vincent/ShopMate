@@ -24,6 +24,7 @@ function ajaxCall(){
                 if (typeof(Storage) !== "undefined") {
                     // Store
                     sessionStorage.setItem("profile_id", response.payload);
+                    console.log( sessionStorage.getItem("profile_id"));
                     // Retrieve
                     
                   } else {
@@ -44,15 +45,7 @@ $("#change_paswd_show_bttn").click(function (e) {
     change_password  ();  
 });
 
-//login-session creation
-if (typeof(Storage) !== "undefined") {
-    // Store
-    sessionStorage.setItem("lastname", "Smith");
-    
-    console.log( sessionStorage.getItem("lastname"));
-  } else {
-    console.log("does not support");
-  }
+
 
 
 //change password
