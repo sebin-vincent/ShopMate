@@ -1,5 +1,6 @@
 $(document).ready(function () {
-
+    var sessionId= sessionStorage.getItem("profile_id"); 
+    var urlOriginal="http://localhost:8080/wishlist/"+sessionId+"/retrieve"
 
     var skuPrice, skuImage, skuName;
     var index = 0;
@@ -8,7 +9,7 @@ $(document).ready(function () {
     //TODO work with ordering stuff
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/wishlist/1234/retrieve", //TODO replace 1234 with profile id
+        url: urlOriginal, //TODO replace 1234 with profile id
 
         success: function (responseFromProfile) {
 
