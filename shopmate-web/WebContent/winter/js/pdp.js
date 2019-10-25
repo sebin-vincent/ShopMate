@@ -153,7 +153,7 @@ $(function () {
 
             var orderId = responseFromOrder.payload[0].orderId;
             var profileId = sessionId; //TODO fetch from session
-            var skuId = response.payload[0].skuId;
+            var skuId = response.skuId;
             var skuQty = 1;
             var unitPrice = response.salePrice;
 
