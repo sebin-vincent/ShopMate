@@ -84,7 +84,7 @@ function showSlides(n) {
   if (n < 1) { slideIndex = imagesSRC.length }
 
   document.getElementById('imgSEQ_NUM').src = imagesSRC[slideIndex - 1];
-  document.getElementById('pdplink').href="single-product.html?"+sku[slideIndex-1];
+  document.getElementById('pdplink').href="winter/templates/single-product.html?"+sku[slideIndex-1];
   
   if ($(".imgSEQ_NUM").is(":hidden")) {
     $(".imgSEQ_NUM").show();
