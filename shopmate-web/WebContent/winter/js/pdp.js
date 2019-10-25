@@ -1,4 +1,6 @@
 
+var skuId = 0;
+
 $(function () {
   var url = window.location.href;
   //var url = $(location).attr('href')
@@ -31,6 +33,8 @@ $(function () {
     type: "GET",
     url: "http://localhost:8082/sku/details/" + last_part,
     success: function (response) {
+    
+      skuId = response.skuId;
       $.each(response, function (indexInArray, payload) {
 
       });
@@ -135,11 +139,13 @@ $(function () {
 
           success: function (responseFromOrder) {
 
+            console.log(skuId)
+
             var orderId = responseFromOrder.payload[0].orderId;
             var profileId = '1234'; //TODO fetch from session
-            var skuId = response.payload[0].skuId;
+            var skuId = response.skuId;
             var skuQty = 1;
-            var unitPrice = response.payload[0].salePrice;
+            var unitPrice = response.salePrice;
 
             var addToCartRequestData = {
 
