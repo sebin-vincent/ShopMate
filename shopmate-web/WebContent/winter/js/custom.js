@@ -1,3 +1,6 @@
+
+var sessionId= sessionStorage.getItem("profile_id");
+console.log(sessionId);
 (function ($) {
   "use strict";
 
