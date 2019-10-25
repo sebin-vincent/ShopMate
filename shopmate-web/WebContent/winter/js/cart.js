@@ -1,9 +1,12 @@
 $(document).ready(function () {
-    
-    
+    var sessionId= sessionStorage.getItem("profile_id"); 
+   var urlOriginal="http://localhost:8084/order/cart/"+sessionId+"/1"
+//    console.log(urlOriginal);
     $.ajax({
+    
         type: "GET",
-        url: "http://localhost:8084/order/cart/1001/1", //Todo get profile id from session 
+        url: urlOriginal, //Todo get profile id from session 
+        
         success: function (response) {
             
             var items = response.payload[0].item
@@ -19,7 +22,7 @@ $(document).ready(function () {
                 type: "GET",
                 url: url,
                 success: function (response) {
-                    //for (let i = 0; i < items.length; i++)      
+                        
                          
             
                 
@@ -32,7 +35,8 @@ $(document).ready(function () {
                             tdTag2.setAttribute("class","item-price")
                             var tdTag3=document.createElement("td")
                             var tdTag4=document.createElement("td")
-                            var tdTag5 = document.createElement("td")
+                            tdTag4.setAttribute("class","total")
+                            //var tdTag5 = document.createElement("td")
                            
             
                           
@@ -73,7 +77,7 @@ $(document).ready(function () {
                             var temp = subDivTag.getElementsByClassName("cart-quantity-input")[0]
                             var quan = (temp.value)*itemPrice
                           
-                           tdTag4.innerHTML=`<h5> ${quan} </h5>`
+                           //tdTag4.innerHTML=`<h5> ${quan} </h5>`
                             trTag.appendChild(tdTag1);
                             trTag.appendChild(tdTag2);
                             trTag.appendChild(tdTag3);
@@ -125,19 +129,25 @@ $(document).ready(function () {
                 
                 var cartRows = cartItems.getElementsByClassName("cart-row")
                 
-                var total=0
+                var subtotal=0
                 for (let k = 0; k < cartRows.length; k++) {
                     var cartRow = cartRows[k]
                     var priceElement= cartRow.getElementsByClassName("item-price")[0]
+                    
                     var quantityElement= cartRow.getElementsByClassName("cart-quantity-input")[0]
+
                     var  price = parseFloat(priceElement.innerText)
                     var quantity = quantityElement.value
-                    total = total + (price*quantity)
+                    var total = price * quantity
+                    document.getElementsByClassName("total")[k].innerHTML=`<h5> ${total}</h5>`
+                   
+                    
+                    subtotal = subtotal + (price*quantity)
                     
                     
                 }
                 
-                document.getElementById("subtotal").innerHTML=`${total}`
+                document.getElementById("subtotal").innerHTML=`${subtotal}`
             }          
 
         
