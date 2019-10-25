@@ -17,12 +17,12 @@ $(function(){
       success: function (response) {
         for(var i=0;i<response.payload[0].length;i++){
           skulist.push(response.payload[0][i]);
-          console.log(response.payload[0][i]);
+          //console.log(response.payload[0][i]);
         }
       }
       
     });
-    console.log(skulist);
+   // console.log(skulist);
     $.ajax({
         type: "GET",
         url: "http://localhost:8082/sku/"+last_part,
@@ -31,7 +31,7 @@ $(function(){
             //     $parent.append(`<div class="row">   <div class="column">  <img src="${response.payload[0].imageUrl}" alt="Snow" style="width:100%">              <div class="category_social_icon">  <ul>  <li><a href="#"><i class="ti-heart"></i></a></li>   <li><a href="#"><i class="ti-bag"></i></a></li>   </ul><a href="single-product.html"><h5 style="margin-left: 40px;">${response.payload[0].skuName}</h5></a>              </div>  <p style="margin-left: 69px;">$${response.payload[0].listPrice}</p>          </div> </div>`);
                   
             // });
-            console.log(response);
+            //console.log(response);
             for(var i=0;i<response.payload.length;i++){
                 $parent.append(`<div class="row">  
                  <div class="column" >  
@@ -63,7 +63,7 @@ $(function(){
       $('i.fa fa-heart').click(function (e) { 
         e.preventDefault();
         var wish_icon=$(this).attr('id');
-        console.log(wish_icon);
+        //console.log(wish_icon);
         var datas={
           "profileId":4,
             "skuId":last_part
@@ -97,3 +97,17 @@ $(function(){
       }
     });
 });
+
+$(document).ready(function () {
+  
+  var temp2 = document.getElementsByClassName("js-range-slider")[0]
+  console.log(temp2.value) 
+ 
+});
+
+function filter (){
+  //console.log(event)
+  var temp2 = document.getElementById("amount2")
+ console.log(temp2.value)
+    }
+
