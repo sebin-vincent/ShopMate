@@ -133,15 +133,15 @@ $(function () {
         `);
         var image1 = `image_${response.payload[i].skuId}`
         var img1 = document.getElementById(image1);
-        console.log(img1);
+        //console.log(img1);
 
         var image2 = `image_${response.payload[i + 1].skuId}`
         var img2 = document.getElementById(image2);
-        console.log(img2);
+        //console.log(img2);
 
         var image3 = `image_${response.payload[i + 2].skuId}`
         var img3 = document.getElementById(image3);
-        console.log(img3);
+        //console.log(img3);
         if(status1!=0){
           img1.setAttribute("style","opacity: 0.2");
         }
@@ -236,7 +236,8 @@ $(document).ready(function () {
 
 function filter (){
   //console.log(event)
-  var temp2 = document.getElementById("amount2")
- console.log(temp2.value)
+  var temp2 = document.getElementsByClassName("js-range-slider")[0]
+  console.log(temp2.value) 
+ 
     }
 

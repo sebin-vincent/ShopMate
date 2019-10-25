@@ -136,8 +136,8 @@
     var double_html =
         '<span class="irs-shadow shadow-from"></span>' +
         '<span class="irs-shadow shadow-to"></span>' +
-        '<span class="irs-slider from"></span>' +
-        '<span class="irs-slider to"></span>';
+        '<span class="irs-slider from" onmouseup= "filter()"></span>' +
+        '<span class="irs-slider to" onmouseup= "filter()"></span>';
 
     var disable_html =
         '<span class="irs-disable-mask"></span>';
