@@ -1,4 +1,4 @@
-
+//var profileId=sessionStorage.getItem("profile_id");
 $(function () {
   var url = window.location.href;
   //var url = $(location).attr('href')
@@ -46,8 +46,7 @@ $(function () {
       //append sku imaage
 
       $parent_image.append(`<div data-thumb="img/product_details/prodect_details_1.png">
-           <img src="${response.imageUrl}" style="    margin-left: 149px;
-           " />
+           <img src="${response.imageUrl}" id="pdp_image"style="margin-left: 149px; " />
          </div>`);
       //append sku details
       $product_feature.append(`<h3>${response.skuName}</h3>
@@ -73,17 +72,26 @@ $(function () {
            <div class="add_to_cart">
                <a href="#" class="btn_3" id="add-to-cart-btn">add to cart</a>
 
-               <a href="#" class="like_us" id="wish-list-button"> <i class="fa fa-heart" id="wish" ></i> </a>
+               <a  class="like_us" id="wish-list-button"> <i class="fa fa-heart" id="wish" ></i> </a>
            </div>
            <div class="social_icon">
                <a href="https://www.facebook.com/" class="fb"><i class="ti-facebook"></i></a>
-               <a href="#" class="tw"><i class="ti-twitter-alt"></i></a>
+               <a href="" class="tw"><i class="ti-twitter-alt"></i></a>
                <a href="https://www.linkedin.com/company" class="li"><i class="ti-linkedin"></i></a>
            </div>
          </div>
        </div>
      </div>`);
+      var image=document.getElementById('pdp_image');
+      var cart_button=document.getElementById('add-to-cart-btn');
+      console.log(cart_button);
+      if(status!="Out of stock"){
+        image.setAttribute("style","opacity: 0.5");
+        cart_button.disabled = true;
+       // document.getElementById("add-to-cart-btn").disabled = true;
 
+          console.log(status);
+      }
       var wish_icon = document.getElementById("wish");
       for (var i = 0; i < skulist.length; i++) {
         if (skulist[i] == response.skuId) {
@@ -113,7 +121,7 @@ $(function () {
 
             }
             else if (response.status_Message == "item exist") {
-              alert("item revoved from your cart");
+              alert("item removed from your wish list");
               wish_icon.setAttribute("style", "color:blue;");
             }
             else {
