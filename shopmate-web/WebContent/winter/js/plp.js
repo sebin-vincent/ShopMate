@@ -81,13 +81,6 @@ $(function () {
       </ul>
     </a>  
     
-<<<<<<< HEAD
-      
-      success: function (response) {
-        for(var i=0;i<response.payload[0].length;i++){
-          skulist.push(response.payload[0][i]);
-          //console.log(response.payload[0][i]);
-=======
   </div>
 
 
@@ -151,7 +144,6 @@ $(function () {
         console.log(img3);
         if(status1!=0){
           img1.setAttribute("style","opacity: 0.2");
->>>>>>> cde18f23e0fdb3a9ee8918565379852cae01434c
         }
         // $parent.append(` <div class="row" style="padding-right: 25px">  
         //                     <div class="column" style="padding-bottom: 64px;">  
@@ -179,55 +171,6 @@ $(function () {
         //                   </div>`
         //                   );
       }
-<<<<<<< HEAD
-      
-    });
-   // console.log(skulist);
-    $.ajax({
-        type: "GET",
-        url: "http://localhost:8082/sku/"+last_part,
-        success: function (response) {
-            // $.each(response.payload, function (indexInArray, payload ) { 
-            //     $parent.append(`<div class="row">   <div class="column">  <img src="${response.payload[0].imageUrl}" alt="Snow" style="width:100%">              <div class="category_social_icon">  <ul>  <li><a href="#"><i class="ti-heart"></i></a></li>   <li><a href="#"><i class="ti-bag"></i></a></li>   </ul><a href="single-product.html"><h5 style="margin-left: 40px;">${response.payload[0].skuName}</h5></a>              </div>  <p style="margin-left: 69px;">$${response.payload[0].listPrice}</p>          </div> </div>`);
-                  
-            // });
-            //console.log(response);
-            for(var i=0;i<response.payload.length;i++){
-                $parent.append(`<div class="row">  
-                 <div class="column" >  
-                    <a href="single-product.html?${response.payload[i].skuId}">
-                    <img src="${response.payload[i].imageUrl}" alt="Snow" style="width:185px;height:350px">
-                              <div class="category_social_icon">  <ul>  <li><a href="#" class="like_us" id="wish-list-button_${i}"> 
-                              <i class="fa fa-heart" id="wish_${i}" ></i></a></li>   </a></li>   </ul>
-                              
-                                <h5 style="margin-left: 40px;">${response.payload[i].skuName}</h5></a>  
-                                </div>  <p style="margin-left: 69px;">$${response.payload[0].listPrice}</p>
-                                  </div> </div>`);
-            }
-   
-    // var wish_icon=document.getElementById("wish_0");
-    // console.log(wish_icon);
-    for(var j=0;j<response.payload.length;j++){
-      var  wish_icon=document.getElementById("wish_"+j);
-      //console.log(wish_icon);
-        for(var i=0;i<skulist.length;i++){
-            if(response.payload[j].skuId==skulist[i]){
-                wish_icon.setAttribute("style","color:red;");
-            }
-        }
-    }
-// for(var i=0;i<response.payload.length;i++){
-//   var wish_button="#wish-list-button_"+i;
-//   var wish="wish_"+i;
-//   var wish_icon=document.getElementById("wish_"+i);
-      $('i.fa fa-heart').click(function (e) { 
-        e.preventDefault();
-        var wish_icon=$(this).attr('id');
-        //console.log(wish_icon);
-        var datas={
-          "profileId":4,
-            "skuId":last_part
-=======
 
       for (var j = 0; j < response.payload.length; j++) {
         var wish_icon = document.getElementById("wish_" + response.payload[j].skuId);
@@ -254,7 +197,6 @@ $(function () {
         var datas = {
           "profileId": sessionId,
           "skuId": sku_id
->>>>>>> cde18f23e0fdb3a9ee8918565379852cae01434c
         }
         $.ajax({
           async: false,
