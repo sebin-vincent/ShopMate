@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 
 var skuId = 0;
 
+=======
+var sessionId= sessionStorage.getItem("profile_id"); 
+>>>>>>> 1108de61c9b8275ee1521670bd1f52ab3e4b4772
 $(function () {
   var url = window.location.href;
   //var url = $(location).attr('href')
@@ -100,7 +104,7 @@ $(function () {
         var wish_icon = document.getElementById("wish");
         console.log(wish_icon);
         var datas = {
-          "profileId": 4,
+          "profileId": sessionId,
           "skuId": last_part
         }
         $.ajax({
@@ -135,15 +139,20 @@ $(function () {
         $.ajax({
           async: false,
           type: "GET",
-          url: "http://localhost:8084/order/get/orderid/1234", //TODO paste profile id from session
+          url: "http://localhost:8084/order/get/orderid/"+sessionId, //TODO paste profile id from session
 
           success: function (responseFromOrder) {
 
             console.log(skuId)
 
             var orderId = responseFromOrder.payload[0].orderId;
+<<<<<<< HEAD
             var profileId = '1234'; //TODO fetch from session
             var skuId = response.skuId;
+=======
+            var profileId = sessionId; //TODO fetch from session
+            var skuId = response.payload[0].skuId;
+>>>>>>> 1108de61c9b8275ee1521670bd1f52ab3e4b4772
             var skuQty = 1;
             var unitPrice = response.salePrice;
 
