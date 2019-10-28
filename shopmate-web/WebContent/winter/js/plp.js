@@ -212,6 +212,21 @@ $(function () {
     }
   });
 });
+
+$(document).ready(function () {
+  
+  var temp2 = document.getElementsByClassName("js-range-slider")[0]
+  console.log(temp2.value.split(';'))  
+ 
+});
+
+function filter (){
+  //console.log(event)
+  var temp2 = document.getElementsByClassName("js-range-slider")[0]
+  console.log(temp2.value.split(';')) 
+ 
+    }
+
 function stock(id, stat) {
   
 

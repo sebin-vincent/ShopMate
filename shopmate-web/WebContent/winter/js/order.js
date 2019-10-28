@@ -5,7 +5,7 @@ $(document).ready(function () {
   var emptycart = document.getElementById('table')
   if (profileid == null) {
     alert("please login")
-    window.location.href = "D:/shopmate/shopmate-web/WebContent/winter/templates/login.html";
+    window.location.href = "login.html";
   } else {
     $.ajax({
       url: "http://localhost:8084/order/get/allorder/" + profileid,
