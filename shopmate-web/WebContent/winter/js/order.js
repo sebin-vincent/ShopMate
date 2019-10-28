@@ -7,7 +7,6 @@ $(document).ready(function () {
     alert("please login")
     window.location.href = "D:/shopmate/shopmate-web/WebContent/winter/templates/login.html";
   } else {
-    console.log("-----------------------------------hai-----------------------------------------")
     $.ajax({
       url: "http://localhost:8084/order/get/allorder/" + profileid,
 
@@ -15,6 +14,9 @@ $(document).ready(function () {
         temp = response.payload
 
         for (let i = 0; i < temp.length; i++) {
+          if(temp[i].orderStatusId == 1){
+            continue;
+          }
           var trTag = document.createElement("tr")
           var tdTag1 = document.createElement("td")
           var tdTagEmpty = document.createElement("td")
@@ -33,11 +35,28 @@ $(document).ready(function () {
           var orderlist = document.getElementById("orderList")
           orderlist.append(trTag);
 
+          if (temp[i].orderStatusId == 0) {
+            var orderPlaced = document.createElement("h5")
+            orderPlaced.setAttribute("style", "background-color:orange;height: 30px;width: 100px;border-radius:5px ;text-align: center;align-content: center; padding-top: 0.3rem;color: white;")
+            orderPlaced.innerHTML = "order placed"
+            tdTag1.appendChild(orderPlaced)
+            trTag.appendChild(tdTag5)
+          }
+
+
           if (temp[i].orderStatusId == 1) {
             var cancelbutton = document.createElement("button");
             cancelbutton.setAttribute("class", "cancelbutton")
-            cancelbutton.innerHTML = "Cart Items"
-            tdTag1.appendChild(cancelbutton)
+            cancelbutton.innerHTML = "incomplete"
+            // tdTag1.appendChild(cancelbutton)
+            // trTag.appendChild(tdTag5)
+
+            atag = document.createElement("a")
+            var urlLink="cart.html"
+            atag.setAttribute("href",urlLink)
+
+            atag.appendChild(cancelbutton)
+            tdTag1.appendChild(atag)
             trTag.appendChild(tdTag5)
           }
           if (temp[i].orderStatusId == 2) {
@@ -84,8 +103,17 @@ $(document).ready(function () {
                 imgTag1.setAttribute("style", "height: 100px;width: 60px;border-radius:5px ;align-content: center; padding-top: 0.3rem;")
                 tdTagItemName.appendChild(imgTag1)
 
+                atag = document.createElement("a")
+                var urlLink="single-product.html?"+temp[i].item[j].skuId
+                atag.setAttribute("href",urlLink)
                 h5tagitemName.innerHTML = resp2.skuName
-                tdTagItemName.appendChild(h5tagitemName)
+                atag.appendChild(h5tagitemName)
+                tdTagItemName.appendChild(atag)
+
+                //<a href="single-product.html?${response.payload[i].skuId}">
+
+                // h5tagitemName.innerHTML = resp2.skuName
+                // tdTagItemName.appendChild(h5tagitemName)
 
                 h5tagQuantity.innerHTML = temp[i].item[j].quantity
                 tdTag2.appendChild(h5tagQuantity)

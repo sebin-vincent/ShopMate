@@ -72,7 +72,7 @@ $(function(){
 
         $.ajax({
           type: "GET",
-          url: "http://localhost:8084/order/get/orderid/1234", //TODO paste profile id from session
+          url: "http://localhost:8084/order/get/orderid/1001", //TODO paste profile id from session
 
           success: function (responseFromOrder) {
 
