@@ -1,183 +1,191 @@
 $(document).ready(function () {
-    var sessionId= sessionStorage.getItem("profile_id"); 
-   var urlOriginal="http://localhost:8084/order/cart/"+sessionId+"/1"
+    var sessionId = sessionStorage.getItem("profile_id");
 
-    $.ajax({
-    
-        type: "GET",
-        url: urlOriginal,
-        
-        success: function (response) {
+    if (sessionId == null) {
+        window.location.href = "login.html"
+    } else {
+        var urlOriginal = "http://localhost:8084/order/cart/" + sessionId + "/1"
+        $.ajax({
 
-            if (response.payload[0].item.length==0) {
-                
-                var temp = document.getElementsByClassName("table-responsive")
-                $(temp).remove();
-                 document.getElementById("job").innerHTML="<h2>No items in the cart <h2>"
-                
-            }else{
+            type: "GET",
+            url: urlOriginal,
 
-                var items = response.payload[0].item
-                var orderId = response.payload[0].orderId
+            success: function (response) {
 
-                for (let m = 0; m < items.length; m++) {
-                    
-                    
-                
-                var skuId= items[m].skuId
-                var url = "http://localhost:8082/sku/details/"+skuId
-    
-    
-                $.ajax({
-                    async: false,
-                    type: "GET",
-                    url: url,
-                    async: false,
-                    success: function (response) {
-                            
-                   
-    
-                               var trTag= document.createElement("tr")
-                               trTag.setAttribute("class","cart-row")
-                               trTag.setAttribute("id",`${skuId}`)
-                                var tdTag1=document.createElement("td")
-                                var tdTag2=document.createElement("td")
-                                tdTag2.setAttribute("class","item-price")
-                                var tdTag3=document.createElement("td")
-                                var tdTag4=document.createElement("td")
-                                tdTag4.setAttribute("class","total")
+
+                if (response.payload[0].item.length == 0) {
+
+                    var temp = document.getElementsByClassName("table-responsive")
+                    $(temp).remove();
+                    document.getElementById("job").innerHTML = "<h2>No items in the cart <h2>"
+
+                } else {
+
+                    var items = response.payload[0].item
+                    var orderId = response.payload[0].orderId
+
+                    for (let m = 0; m < items.length; m++) {
+
+
+
+                        var skuId = items[m].skuId
+                        var url = "http://localhost:8082/sku/details/" + skuId
+
+
+                        $.ajax({
+                            async: false,
+                            type: "GET",
+                            url: url,
+                            async: false,
+                            success: function (response) {
+
+
+
+                                var trTag = document.createElement("tr")
+                                trTag.setAttribute("class", "cart-row")
+                                trTag.setAttribute("id", `${skuId}`)
+                                var tdTag1 = document.createElement("td")
+                                var tdTag2 = document.createElement("td")
+                                tdTag2.setAttribute("class", "item-price")
+                                var tdTag3 = document.createElement("td")
+                                var tdTag4 = document.createElement("td")
+                                tdTag4.setAttribute("class", "total")
                                 //var tdTag5 = document.createElement("td")
-                               
-                
-                              
-                   
-                                var divTag1=document.createElement("div")
-                                divTag1.setAttribute("class","media")
-                                
-                                var divTag2 =document.createElement("div")
-                                divTag2.setAttribute("class","d-flex")
-                                
-                                var divTag3 =document.createElement("div")
-                                divTag3.setAttribute("class","media-body") 
-    
+
+
+
+
+                                var divTag1 = document.createElement("div")
+                                divTag1.setAttribute("class", "media")
+
+                                var divTag2 = document.createElement("div")
+                                divTag2.setAttribute("class", "d-flex")
+
+                                var divTag3 = document.createElement("div")
+                                divTag3.setAttribute("class", "media-body")
+
                                 var subDivTag = document.createElement("div")
-                                subDivTag.setAttribute("class","product_count")
-                                
-                                                       
-                                
+                                subDivTag.setAttribute("class", "product_count")
+
+
+
                                 divTag1.appendChild(divTag2);
                                 divTag1.appendChild(divTag3);
-                                
+
                                 tdTag1.appendChild(divTag1)
                                 tdTag3.appendChild(subDivTag);
-                                
-                                
-                                divTag2.innerHTML=`<img src='${response.imageUrl} ' alt=''>` 
-                               
-                                tdTag2.innerHTML=`<h5>${items[m].unitPrice}</h5>`
-                                divTag3.innerHTML=`<p id="item-name">${response.skuName}</p>`
-    
-                               
+
+
+                                divTag2.innerHTML = `<img src='${response.imageUrl} ' alt=''>`
+
+                                tdTag2.innerHTML = `<h5>${items[m].unitPrice}</h5>`
+                                divTag3.innerHTML = `<p id="item-name">${response.skuName}</p>`
+
+
                                 var itemPrice = `${items[m].unitPrice}`
-                                
-                               subDivTag.innerHTML=`<div class="cart-quantity cart-column">
+
+                                subDivTag.innerHTML = `<div class="cart-quantity cart-column">
                                <input class="cart-quantity-input" type="number" value="${items[m].quantity}">
                                <button class="btn btn-danger" id="delete" type="button">REMOVE</button>
                            </div>`
                                 var temp = subDivTag.getElementsByClassName("cart-quantity-input")
-                                var quan = (temp.value)*itemPrice
-                              
-                               //tdTag4.innerHTML=`<h5> ${quan} </h5>`
+                                var quan = (temp.value) * itemPrice
+
+                                //tdTag4.innerHTML=`<h5> ${quan} </h5>`
                                 trTag.appendChild(tdTag1);
                                 trTag.appendChild(tdTag2);
                                 trTag.appendChild(tdTag3);
                                 trTag.appendChild(tdTag4);
-    
-                                
-                               $(trTag).prependTo(document.getElementById("cart-item"));          
-                
-                subTotal()                          
-            
+
+
+                                $(trTag).prependTo(document.getElementById("cart-item"));
+
+                                subTotal()
+
+                            }
+                        });
+                        var removeCartItem = document.getElementsByClassName('btn-danger')
+                        var quantityInputs = document.getElementsByClassName("cart-quantity-input ")
+
+                        var input = quantityInputs[0]
+                        input.addEventListener('change', quantityChanged)
+
+                        var button = removeCartItem[0]
+                        button.addEventListener('click', removeItem)
+
                     }
-                });
-                var removeCartItem = document.getElementsByClassName('btn-danger')
-                var quantityInputs = document.getElementsByClassName("cart-quantity-input ")
-                
-                    var input = quantityInputs[0]
-                    input.addEventListener('change',quantityChanged)
-                    
-                    var button  = removeCartItem[0]
-                    button.addEventListener('click',removeItem)
-                
-                }
-               
-                function quantityChanged(event){
-                    var input = event.target
-                    if(isNaN(input.value)|| input.value<=0){
-                        input.value=1
+
+                    function quantityChanged(event) {
+                        var input = event.target
+                        if (isNaN(input.value) || input.value <= 0) {
+                            input.value = 1
+                        }
+                        subTotal()
+
                     }
-                    subTotal()
-    
-                }
-               
-                function removeItem(event){
-                    var buttonClicked = event.target
-                  // console.log(event.data)
-                    
+
+                    function removeItem(event) {
+                        var buttonClicked = event.target
+                        // console.log(event.data)
+
                         buttonClicked.parentElement.parentElement.parentElement.parentElement.remove()
-                        var id =$(buttonClicked.parentElement.parentElement.parentElement.parentElement).attr('id')
-                        
-                    
+                        var id = $(buttonClicked.parentElement.parentElement.parentElement.parentElement).attr('id')
+
+
                         var removeUrl = `http://localhost:8081/cart/delete/?orderId=${orderId}&skuId=${id}`
-                        
+
                         $.ajax({
                             type: "delete",
                             url: removeUrl,
-                            async:false,
+                            async: false,
                             success: function (response) {
-                                
+
                             }
                         });
 
-                        
-                    
-                        
-                       subTotal()
-                }
-    
-                function subTotal() {
-    
-                    var cartItems = document.getElementById("cart-item")
-                    
-                    var cartRows = cartItems.getElementsByClassName("cart-row")
-                    
-                    var subtotal=0
-                    for (let k = 0; k < cartRows.length; k++) {
-                        var cartRow = cartRows[k]
-                        var priceElement= cartRow.getElementsByClassName("item-price")[0]
-                        
-                        var quantityElement= cartRow.getElementsByClassName("cart-quantity-input")[0]
-    
-                        var  price = parseFloat(priceElement.innerText)
-                        var quantity = quantityElement.value
-                        var total = price * quantity
-                        document.getElementsByClassName("total")[k].innerHTML=`<h5> ${total}</h5>`
-                       
-                        
-                        subtotal = subtotal + (price*quantity)
-                        
-                        
+
+
+
+                        subTotal()
                     }
-                    
-                    document.getElementById("subtotal").innerHTML=`${subtotal}`
-                }          
-    
+
+                    function subTotal() {
+
+                        var cartItems = document.getElementById("cart-item")
+
+                        var cartRows = cartItems.getElementsByClassName("cart-row")
+
+                        var subtotal = 0
+                        for (let k = 0; k < cartRows.length; k++) {
+                            var cartRow = cartRows[k]
+                            var priceElement = cartRow.getElementsByClassName("item-price")[0]
+
+                            var quantityElement = cartRow.getElementsByClassName("cart-quantity-input")[0]
+
+                            var price = parseFloat(priceElement.innerText)
+                            var quantity = quantityElement.value
+                            var total = price * quantity
+                            document.getElementsByClassName("total")[k].innerHTML = `<h5> ${total}</h5>`
+
+
+                            subtotal = subtotal + (price * quantity)
+
+
+                        }
+
+                        document.getElementById("subtotal").innerHTML = `${subtotal}`
+                    }
+
+                }
+
+
+
             }
-            
-           
-           
-            }
-    });
+        });
+    }
+
+
+
 });
 
 
