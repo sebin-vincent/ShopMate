@@ -13,8 +13,9 @@ import com.litmus7.shopmate.catalog.dto.StockKeepingUnitDto;
 public interface SkuRepository extends JpaRepository<StockKeepingUnitDto, Integer>{
 	
 	@Query(value="select sm.* from sku_master sm inner join product_sku ps on sm.sku_id=ps.sku_id"
-			+ " where ps.product_id= :productId and sm.on_sale=0",
+			+ " where ps.product_id= :productId ",
 			nativeQuery=true)
+	//changed by resmi
 	public List<StockKeepingUnitDto> getSkusbyProductId(@Param("productId") int productId);
 
 }
