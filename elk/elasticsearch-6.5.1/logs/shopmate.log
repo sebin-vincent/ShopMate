@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [2019-10-25T09:31:44,881][INFO ][o.e.e.NodeEnvironment    ] [ct7pFEH] using [1] data paths, mounts [[(C:)]], net usable_space [163.8gb], net total_space [264.4gb], types [NTFS]
 [2019-10-25T09:31:44,903][INFO ][o.e.e.NodeEnvironment    ] [ct7pFEH] heap size [990.7mb], compressed ordinary object pointers [true]
 [2019-10-25T09:31:45,061][INFO ][o.e.n.Node               ] [ct7pFEH] node name derived from node ID [ct7pFEH4S6OxIyICckoAbg]; set [node.name] to override
@@ -154,3 +155,14 @@
 [2019-10-25T15:09:24,412][INFO ][o.e.c.m.MetaDataIndexTemplateService] [DbZYPSd] adding template [.monitoring-beats] for index patterns [.monitoring-beats-6-*]
 [2019-10-25T15:09:24,456][INFO ][o.e.c.m.MetaDataIndexTemplateService] [DbZYPSd] adding template [.monitoring-kibana] for index patterns [.monitoring-kibana-6-*]
 [2019-10-25T15:09:24,584][INFO ][o.e.l.LicenseService     ] [DbZYPSd] license [996aecad-d415-48af-8600-61ac35879e27] mode [basic] - valid
+=======
+[2019-10-28T09:11:44,081][INFO ][o.e.x.m.MlDailyMaintenanceService] [ct7pFEH] triggering scheduled [ML] maintenance tasks
+[2019-10-28T09:12:19,258][INFO ][o.e.x.m.a.TransportDeleteExpiredDataAction] [ct7pFEH] Deleting expired data
+[2019-10-28T09:12:49,018][INFO ][o.e.x.m.a.TransportDeleteExpiredDataAction] [ct7pFEH] Completed deletion of expired data
+[2019-10-28T09:12:49,096][INFO ][o.e.x.m.MlDailyMaintenanceService] [ct7pFEH] Successfully completed [ML] maintenance tasks
+[2019-10-28T09:13:23,940][INFO ][o.e.b.Bootstrap          ] [ct7pFEH] running graceful exit on windows
+[2019-10-28T09:13:24,081][INFO ][o.e.n.Node               ] [ct7pFEH] stopping ...
+[2019-10-28T09:13:25,692][INFO ][o.e.x.w.WatcherService   ] [ct7pFEH] stopping watch service, reason [shutdown initiated]
+[2019-10-28T09:13:27,142][INFO ][o.e.x.m.j.p.l.CppLogMessageHandler] [ct7pFEH] [controller/6228] [Main.cc@148] Ml controller exiting
+[2019-10-28T09:13:27,267][INFO ][o.e.x.m.j.p.NativeController] [ct7pFEH] Native controller process has stopped - no new native processes can be started
+>>>>>>> e9c1a583eeaa93873871eec564feb4747e5e64d4
