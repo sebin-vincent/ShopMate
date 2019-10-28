@@ -137,7 +137,7 @@
         '<span class="irs-shadow shadow-from"></span>' +
         '<span class="irs-shadow shadow-to"></span>' +
         '<span class="irs-slider from"></span>' +
-        '<span class="irs-slider to"></span>';
+        '<span class="irs-slider to" ></span>';
 
     var disable_html =
         '<span class="irs-disable-mask"></span>';

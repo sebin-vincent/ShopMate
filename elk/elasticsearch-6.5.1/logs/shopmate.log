@@ -1,3 +1,175 @@
+<<<<<<< HEAD
+[2019-10-28T09:46:49,645][INFO ][o.e.x.m.MlDailyMaintenanceService] [ct7pFEH] triggering scheduled [ML] maintenance tasks
+[2019-10-28T09:46:50,560][INFO ][o.e.x.m.a.TransportDeleteExpiredDataAction] [ct7pFEH] Deleting expired data
+[2019-10-28T09:46:51,295][INFO ][o.e.x.m.a.TransportDeleteExpiredDataAction] [ct7pFEH] Completed deletion of expired data
+[2019-10-28T09:46:51,305][INFO ][o.e.x.m.MlDailyMaintenanceService] [ct7pFEH] Successfully completed [ML] maintenance tasks
+[2019-10-28T11:36:17,245][INFO ][o.e.b.Bootstrap          ] [ct7pFEH] running graceful exit on windows
+[2019-10-28T11:36:17,247][INFO ][o.e.n.Node               ] [ct7pFEH] stopping ...
+[2019-10-28T11:36:17,260][INFO ][o.e.x.w.WatcherService   ] [ct7pFEH] stopping watch service, reason [shutdown initiated]
+[2019-10-28T11:36:17,578][INFO ][o.e.x.m.j.p.l.CppLogMessageHandler] [ct7pFEH] [controller/38344] [Main.cc@148] Ml controller exiting
+[2019-10-28T11:36:17,588][INFO ][o.e.x.m.j.p.NativeController] [ct7pFEH] Native controller process has stopped - no new native processes can be started
+[2019-10-28T11:36:17,638][INFO ][o.e.n.Node               ] [ct7pFEH] stopped
+[2019-10-28T11:36:17,640][INFO ][o.e.n.Node               ] [ct7pFEH] closing ...
+[2019-10-28T11:36:17,655][INFO ][o.e.n.Node               ] [ct7pFEH] closed
+=======
+<<<<<<< HEAD
+[2019-10-25T09:31:44,881][INFO ][o.e.e.NodeEnvironment    ] [ct7pFEH] using [1] data paths, mounts [[(C:)]], net usable_space [163.8gb], net total_space [264.4gb], types [NTFS]
+[2019-10-25T09:31:44,903][INFO ][o.e.e.NodeEnvironment    ] [ct7pFEH] heap size [990.7mb], compressed ordinary object pointers [true]
+[2019-10-25T09:31:45,061][INFO ][o.e.n.Node               ] [ct7pFEH] node name derived from node ID [ct7pFEH4S6OxIyICckoAbg]; set [node.name] to override
+[2019-10-25T09:31:45,063][INFO ][o.e.n.Node               ] [ct7pFEH] version[6.5.1], pid[14436], build[default/zip/8c58350/2018-11-16T02:22:42.182257Z], OS[Windows 10/10.0/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/11.0.3/11.0.3+12-LTS]
+[2019-10-25T09:31:45,066][INFO ][o.e.n.Node               ] [ct7pFEH] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=C:\Users\AMJAD~1.SIB\AppData\Local\Temp\elasticsearch, -XX:+HeapDumpOnOutOfMemoryError, -XX:HeapDumpPath=data, -XX:ErrorFile=logs/hs_err_pid%p.log, -Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,pid,tags:filecount=32,filesize=64m, -Djava.locale.providers=COMPAT, -XX:UseAVX=2, -Delasticsearch, -Des.path.home=C:\Users\amjad.sibili\Desktop\shopmate-workspace\elk\elasticsearch-6.5.1, -Des.path.conf=C:\Users\amjad.sibili\Desktop\shopmate-workspace\elk\elasticsearch-6.5.1\config, -Des.distribution.flavor=default, -Des.distribution.type=zip]
+[2019-10-25T09:32:06,794][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [aggs-matrix-stats]
+[2019-10-25T09:32:06,794][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [analysis-common]
+[2019-10-25T09:32:06,796][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [ingest-common]
+[2019-10-25T09:32:06,797][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [lang-expression]
+[2019-10-25T09:32:06,798][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [lang-mustache]
+[2019-10-25T09:32:06,799][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [lang-painless]
+[2019-10-25T09:32:06,800][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [mapper-extras]
+[2019-10-25T09:32:06,801][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [parent-join]
+[2019-10-25T09:32:06,802][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [percolator]
+[2019-10-25T09:32:06,803][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [rank-eval]
+[2019-10-25T09:32:06,803][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [reindex]
+[2019-10-25T09:32:06,806][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [repository-url]
+[2019-10-25T09:32:06,807][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [transport-netty4]
+[2019-10-25T09:32:06,808][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [tribe]
+[2019-10-25T09:32:06,809][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-ccr]
+[2019-10-25T09:32:06,810][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-core]
+[2019-10-25T09:32:06,811][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-deprecation]
+[2019-10-25T09:32:06,812][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-graph]
+[2019-10-25T09:32:06,813][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-logstash]
+[2019-10-25T09:32:06,813][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-ml]
+[2019-10-25T09:32:06,814][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-monitoring]
+[2019-10-25T09:32:06,817][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-rollup]
+[2019-10-25T09:32:06,819][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-security]
+[2019-10-25T09:32:06,819][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-sql]
+[2019-10-25T09:32:06,820][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-upgrade]
+[2019-10-25T09:32:06,821][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-watcher]
+[2019-10-25T09:32:06,822][INFO ][o.e.p.PluginsService     ] [ct7pFEH] no plugins loaded
+[2019-10-25T09:32:15,720][INFO ][o.e.x.s.a.s.FileRolesStore] [ct7pFEH] parsed [0] roles from file [C:\Users\amjad.sibili\Desktop\shopmate-workspace\elk\elasticsearch-6.5.1\config\roles.yml]
+[2019-10-25T09:32:16,810][INFO ][o.e.x.m.j.p.l.CppLogMessageHandler] [ct7pFEH] [controller/12252] [Main.cc@109] controller (64 bit): Version 6.5.1 (Build 1c5fe241dd9aea) Copyright (c) 2018 Elasticsearch BV
+[2019-10-25T09:32:17,835][DEBUG][o.e.a.ActionModule       ] [ct7pFEH] Using REST wrapper from plugin org.elasticsearch.xpack.security.Security
+[2019-10-25T09:32:18,480][INFO ][o.e.d.DiscoveryModule    ] [ct7pFEH] using discovery type [zen] and host providers [settings]
+[2019-10-25T09:32:20,130][INFO ][o.e.n.Node               ] [ct7pFEH] initialized
+[2019-10-25T09:32:20,144][INFO ][o.e.n.Node               ] [ct7pFEH] starting ...
+[2019-10-25T09:32:21,842][INFO ][o.e.t.TransportService   ] [ct7pFEH] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2019-10-25T09:32:24,977][INFO ][o.e.c.s.MasterService    ] [ct7pFEH] zen-disco-elected-as-master ([0] nodes joined), reason: new_master {ct7pFEH}{ct7pFEH4S6OxIyICckoAbg}{2hw9T0IVQoqJsgDkDRse9A}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=8464158720, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true}
+[2019-10-25T09:32:24,988][INFO ][o.e.c.s.ClusterApplierService] [ct7pFEH] new_master {ct7pFEH}{ct7pFEH4S6OxIyICckoAbg}{2hw9T0IVQoqJsgDkDRse9A}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=8464158720, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true}, reason: apply cluster state (from master [master {ct7pFEH}{ct7pFEH4S6OxIyICckoAbg}{2hw9T0IVQoqJsgDkDRse9A}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=8464158720, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true} committed version [1] source [zen-disco-elected-as-master ([0] nodes joined)]])
+[2019-10-25T09:32:26,092][WARN ][o.e.x.s.a.s.m.NativeRoleMappingStore] [ct7pFEH] Failed to clear cache for realms [[]]
+[2019-10-25T09:32:26,176][INFO ][o.e.l.LicenseService     ] [ct7pFEH] license [be0a93ea-badd-462d-a3e5-0f6c4615d5f4] mode [basic] - valid
+[2019-10-25T09:32:26,217][INFO ][o.e.g.GatewayService     ] [ct7pFEH] recovered [2] indices into cluster_state
+[2019-10-25T09:32:27,450][INFO ][o.e.x.s.t.n.SecurityNetty4HttpServerTransport] [ct7pFEH] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2019-10-25T09:32:27,452][INFO ][o.e.n.Node               ] [ct7pFEH] started
+[2019-10-25T09:32:29,299][INFO ][o.e.c.r.a.AllocationService] [ct7pFEH] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[shopmate][4]] ...]).
+[2019-10-25T14:53:53,328][INFO ][o.e.e.NodeEnvironment    ] [ct7pFEH] using [1] data paths, mounts [[New Volume (E:)]], net usable_space [183.3gb], net total_space [199.9gb], types [NTFS]
+[2019-10-25T14:53:53,373][INFO ][o.e.e.NodeEnvironment    ] [ct7pFEH] heap size [990.7mb], compressed ordinary object pointers [true]
+[2019-10-25T14:53:53,472][INFO ][o.e.n.Node               ] [ct7pFEH] node name derived from node ID [ct7pFEH4S6OxIyICckoAbg]; set [node.name] to override
+[2019-10-25T14:53:53,472][INFO ][o.e.n.Node               ] [ct7pFEH] version[6.5.1], pid[30060], build[default/zip/8c58350/2018-11-16T02:22:42.182257Z], OS[Windows 10/10.0/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/11.0.3/11.0.3+12-LTS]
+[2019-10-25T14:53:53,472][INFO ][o.e.n.Node               ] [ct7pFEH] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=C:\Users\NEENU~1.JOS\AppData\Local\Temp\elasticsearch, -XX:+HeapDumpOnOutOfMemoryError, -XX:HeapDumpPath=data, -XX:ErrorFile=logs/hs_err_pid%p.log, -Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,pid,tags:filecount=32,filesize=64m, -Djava.locale.providers=COMPAT, -XX:UseAVX=2, -Delasticsearch, -Des.path.home=E:\shopmate\elk\elasticsearch-6.5.1, -Des.path.conf=E:\shopmate\elk\elasticsearch-6.5.1\config, -Des.distribution.flavor=default, -Des.distribution.type=zip]
+[2019-10-25T14:54:13,003][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [aggs-matrix-stats]
+[2019-10-25T14:54:13,003][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [analysis-common]
+[2019-10-25T14:54:13,003][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [ingest-common]
+[2019-10-25T14:54:13,003][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [lang-expression]
+[2019-10-25T14:54:13,003][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [lang-mustache]
+[2019-10-25T14:54:13,003][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [lang-painless]
+[2019-10-25T14:54:13,003][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [mapper-extras]
+[2019-10-25T14:54:13,007][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [parent-join]
+[2019-10-25T14:54:13,007][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [percolator]
+[2019-10-25T14:54:13,007][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [rank-eval]
+[2019-10-25T14:54:13,007][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [reindex]
+[2019-10-25T14:54:13,007][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [repository-url]
+[2019-10-25T14:54:13,007][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [transport-netty4]
+[2019-10-25T14:54:13,011][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [tribe]
+[2019-10-25T14:54:13,011][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-ccr]
+[2019-10-25T14:54:13,011][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-core]
+[2019-10-25T14:54:13,011][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-deprecation]
+[2019-10-25T14:54:13,015][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-graph]
+[2019-10-25T14:54:13,015][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-logstash]
+[2019-10-25T14:54:13,019][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-ml]
+[2019-10-25T14:54:13,019][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-monitoring]
+[2019-10-25T14:54:13,019][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-rollup]
+[2019-10-25T14:54:13,019][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-security]
+[2019-10-25T14:54:13,019][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-sql]
+[2019-10-25T14:54:13,027][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-upgrade]
+[2019-10-25T14:54:13,027][INFO ][o.e.p.PluginsService     ] [ct7pFEH] loaded module [x-pack-watcher]
+[2019-10-25T14:54:13,031][INFO ][o.e.p.PluginsService     ] [ct7pFEH] no plugins loaded
+[2019-10-25T14:54:22,005][INFO ][o.e.x.s.a.s.FileRolesStore] [ct7pFEH] parsed [0] roles from file [E:\shopmate\elk\elasticsearch-6.5.1\config\roles.yml]
+[2019-10-25T14:54:23,267][INFO ][o.e.x.m.j.p.l.CppLogMessageHandler] [ct7pFEH] [controller/15916] [Main.cc@109] controller (64 bit): Version 6.5.1 (Build 1c5fe241dd9aea) Copyright (c) 2018 Elasticsearch BV
+[2019-10-25T14:54:24,085][DEBUG][o.e.a.ActionModule       ] [ct7pFEH] Using REST wrapper from plugin org.elasticsearch.xpack.security.Security
+[2019-10-25T14:54:24,543][INFO ][o.e.d.DiscoveryModule    ] [ct7pFEH] using discovery type [zen] and host providers [settings]
+[2019-10-25T14:54:25,799][INFO ][o.e.n.Node               ] [ct7pFEH] initialized
+[2019-10-25T14:54:25,799][INFO ][o.e.n.Node               ] [ct7pFEH] starting ...
+[2019-10-25T14:54:27,565][INFO ][o.e.t.TransportService   ] [ct7pFEH] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2019-10-25T14:54:30,733][INFO ][o.e.c.s.MasterService    ] [ct7pFEH] zen-disco-elected-as-master ([0] nodes joined), reason: new_master {ct7pFEH}{ct7pFEH4S6OxIyICckoAbg}{FWmem4p9T2yMLIhzVeoU6A}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=8472981504, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true}
+[2019-10-25T14:54:30,749][INFO ][o.e.c.s.ClusterApplierService] [ct7pFEH] new_master {ct7pFEH}{ct7pFEH4S6OxIyICckoAbg}{FWmem4p9T2yMLIhzVeoU6A}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=8472981504, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true}, reason: apply cluster state (from master [master {ct7pFEH}{ct7pFEH4S6OxIyICckoAbg}{FWmem4p9T2yMLIhzVeoU6A}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=8472981504, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true} committed version [1] source [zen-disco-elected-as-master ([0] nodes joined)]])
+[2019-10-25T14:54:31,930][WARN ][o.e.x.s.a.s.m.NativeRoleMappingStore] [ct7pFEH] Failed to clear cache for realms [[]]
+[2019-10-25T14:54:32,015][INFO ][o.e.l.LicenseService     ] [ct7pFEH] license [be0a93ea-badd-462d-a3e5-0f6c4615d5f4] mode [basic] - valid
+[2019-10-25T14:54:32,055][INFO ][o.e.g.GatewayService     ] [ct7pFEH] recovered [2] indices into cluster_state
+[2019-10-25T14:54:33,028][INFO ][o.e.x.s.t.n.SecurityNetty4HttpServerTransport] [ct7pFEH] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2019-10-25T14:54:33,028][INFO ][o.e.n.Node               ] [ct7pFEH] started
+[2019-10-25T14:54:33,829][INFO ][o.e.c.r.a.AllocationService] [ct7pFEH] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[shopmate][4]] ...]).
+[2019-10-25T15:08:41,108][INFO ][o.e.b.Bootstrap          ] [ct7pFEH] running graceful exit on windows
+[2019-10-25T15:08:41,112][INFO ][o.e.n.Node               ] [ct7pFEH] stopping ...
+[2019-10-25T15:08:41,164][INFO ][o.e.x.w.WatcherService   ] [ct7pFEH] stopping watch service, reason [shutdown initiated]
+[2019-10-25T15:08:41,523][INFO ][o.e.x.m.j.p.l.CppLogMessageHandler] [ct7pFEH] [controller/15916] [Main.cc@148] Ml controller exiting
+[2019-10-25T15:08:41,531][INFO ][o.e.x.m.j.p.NativeController] [ct7pFEH] Native controller process has stopped - no new native processes can be started
+[2019-10-25T15:08:41,635][INFO ][o.e.n.Node               ] [ct7pFEH] stopped
+[2019-10-25T15:08:41,635][INFO ][o.e.n.Node               ] [ct7pFEH] closing ...
+[2019-10-25T15:08:41,745][INFO ][o.e.n.Node               ] [ct7pFEH] closed
+[2019-10-25T15:09:03,295][INFO ][o.e.e.NodeEnvironment    ] [DbZYPSd] using [1] data paths, mounts [[New Volume (E:)]], net usable_space [183.3gb], net total_space [199.9gb], types [NTFS]
+[2019-10-25T15:09:03,299][INFO ][o.e.e.NodeEnvironment    ] [DbZYPSd] heap size [990.7mb], compressed ordinary object pointers [true]
+[2019-10-25T15:09:03,303][INFO ][o.e.n.Node               ] [DbZYPSd] node name derived from node ID [DbZYPSdPRf-WNpTqRqVTFA]; set [node.name] to override
+[2019-10-25T15:09:03,303][INFO ][o.e.n.Node               ] [DbZYPSd] version[6.5.1], pid[23892], build[default/zip/8c58350/2018-11-16T02:22:42.182257Z], OS[Windows 10/10.0/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/11.0.3/11.0.3+12-LTS]
+[2019-10-25T15:09:03,303][INFO ][o.e.n.Node               ] [DbZYPSd] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=C:\Users\NEENU~1.JOS\AppData\Local\Temp\elasticsearch, -XX:+HeapDumpOnOutOfMemoryError, -XX:HeapDumpPath=data, -XX:ErrorFile=logs/hs_err_pid%p.log, -Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,pid,tags:filecount=32,filesize=64m, -Djava.locale.providers=COMPAT, -XX:UseAVX=2, -Delasticsearch, -Des.path.home=E:\shopmate\elk\elasticsearch-6.5.1, -Des.path.conf=E:\shopmate\elk\elasticsearch-6.5.1\config, -Des.distribution.flavor=default, -Des.distribution.type=zip]
+[2019-10-25T15:09:06,395][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [aggs-matrix-stats]
+[2019-10-25T15:09:06,399][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [analysis-common]
+[2019-10-25T15:09:06,399][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [ingest-common]
+[2019-10-25T15:09:06,399][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [lang-expression]
+[2019-10-25T15:09:06,399][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [lang-mustache]
+[2019-10-25T15:09:06,399][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [lang-painless]
+[2019-10-25T15:09:06,399][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [mapper-extras]
+[2019-10-25T15:09:06,399][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [parent-join]
+[2019-10-25T15:09:06,403][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [percolator]
+[2019-10-25T15:09:06,403][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [rank-eval]
+[2019-10-25T15:09:06,403][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [reindex]
+[2019-10-25T15:09:06,407][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [repository-url]
+[2019-10-25T15:09:06,407][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [transport-netty4]
+[2019-10-25T15:09:06,407][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [tribe]
+[2019-10-25T15:09:06,407][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [x-pack-ccr]
+[2019-10-25T15:09:06,411][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [x-pack-core]
+[2019-10-25T15:09:06,415][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [x-pack-deprecation]
+[2019-10-25T15:09:06,415][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [x-pack-graph]
+[2019-10-25T15:09:06,415][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [x-pack-logstash]
+[2019-10-25T15:09:06,419][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [x-pack-ml]
+[2019-10-25T15:09:06,419][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [x-pack-monitoring]
+[2019-10-25T15:09:06,419][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [x-pack-rollup]
+[2019-10-25T15:09:06,419][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [x-pack-security]
+[2019-10-25T15:09:06,423][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [x-pack-sql]
+[2019-10-25T15:09:06,423][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [x-pack-upgrade]
+[2019-10-25T15:09:06,427][INFO ][o.e.p.PluginsService     ] [DbZYPSd] loaded module [x-pack-watcher]
+[2019-10-25T15:09:06,431][INFO ][o.e.p.PluginsService     ] [DbZYPSd] no plugins loaded
+[2019-10-25T15:09:12,113][INFO ][o.e.x.s.a.s.FileRolesStore] [DbZYPSd] parsed [0] roles from file [E:\shopmate\elk\elasticsearch-6.5.1\config\roles.yml]
+[2019-10-25T15:09:13,269][INFO ][o.e.x.m.j.p.l.CppLogMessageHandler] [DbZYPSd] [controller/19068] [Main.cc@109] controller (64 bit): Version 6.5.1 (Build 1c5fe241dd9aea) Copyright (c) 2018 Elasticsearch BV
+[2019-10-25T15:09:13,853][DEBUG][o.e.a.ActionModule       ] [DbZYPSd] Using REST wrapper from plugin org.elasticsearch.xpack.security.Security
+[2019-10-25T15:09:14,293][INFO ][o.e.d.DiscoveryModule    ] [DbZYPSd] using discovery type [zen] and host providers [settings]
+[2019-10-25T15:09:15,741][INFO ][o.e.n.Node               ] [DbZYPSd] initialized
+[2019-10-25T15:09:15,741][INFO ][o.e.n.Node               ] [DbZYPSd] starting ...
+[2019-10-25T15:09:17,839][INFO ][o.e.t.TransportService   ] [DbZYPSd] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2019-10-25T15:09:21,007][INFO ][o.e.c.s.MasterService    ] [DbZYPSd] zen-disco-elected-as-master ([0] nodes joined), reason: new_master {DbZYPSd}{DbZYPSdPRf-WNpTqRqVTFA}{u7P1ZjzpT4q9lbhpOabI8A}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=8472981504, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true}
+[2019-10-25T15:09:21,031][INFO ][o.e.c.s.ClusterApplierService] [DbZYPSd] new_master {DbZYPSd}{DbZYPSdPRf-WNpTqRqVTFA}{u7P1ZjzpT4q9lbhpOabI8A}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=8472981504, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true}, reason: apply cluster state (from master [master {DbZYPSd}{DbZYPSdPRf-WNpTqRqVTFA}{u7P1ZjzpT4q9lbhpOabI8A}{127.0.0.1}{127.0.0.1:9300}{ml.machine_memory=8472981504, xpack.installed=true, ml.max_open_jobs=20, ml.enabled=true} committed version [1] source [zen-disco-elected-as-master ([0] nodes joined)]])
+[2019-10-25T15:09:21,475][WARN ][o.e.x.s.a.s.m.NativeRoleMappingStore] [DbZYPSd] Failed to clear cache for realms [[]]
+[2019-10-25T15:09:21,635][INFO ][o.e.g.GatewayService     ] [DbZYPSd] recovered [0] indices into cluster_state
+[2019-10-25T15:09:22,574][INFO ][o.e.x.s.t.n.SecurityNetty4HttpServerTransport] [DbZYPSd] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2019-10-25T15:09:22,578][INFO ][o.e.n.Node               ] [DbZYPSd] started
+[2019-10-25T15:09:23,980][INFO ][o.e.c.m.MetaDataIndexTemplateService] [DbZYPSd] adding template [.watch-history-9] for index patterns [.watcher-history-9*]
+[2019-10-25T15:09:24,028][INFO ][o.e.c.m.MetaDataIndexTemplateService] [DbZYPSd] adding template [.triggered_watches] for index patterns [.triggered_watches*]
+[2019-10-25T15:09:24,088][INFO ][o.e.c.m.MetaDataIndexTemplateService] [DbZYPSd] adding template [.watches] for index patterns [.watches*]
+[2019-10-25T15:09:24,168][INFO ][o.e.c.m.MetaDataIndexTemplateService] [DbZYPSd] adding template [.monitoring-logstash] for index patterns [.monitoring-logstash-6-*]
+[2019-10-25T15:09:24,288][INFO ][o.e.c.m.MetaDataIndexTemplateService] [DbZYPSd] adding template [.monitoring-es] for index patterns [.monitoring-es-6-*]
+[2019-10-25T15:09:24,360][INFO ][o.e.c.m.MetaDataIndexTemplateService] [DbZYPSd] adding template [.monitoring-alerts] for index patterns [.monitoring-alerts-6]
+[2019-10-25T15:09:24,412][INFO ][o.e.c.m.MetaDataIndexTemplateService] [DbZYPSd] adding template [.monitoring-beats] for index patterns [.monitoring-beats-6-*]
+[2019-10-25T15:09:24,456][INFO ][o.e.c.m.MetaDataIndexTemplateService] [DbZYPSd] adding template [.monitoring-kibana] for index patterns [.monitoring-kibana-6-*]
+[2019-10-25T15:09:24,584][INFO ][o.e.l.LicenseService     ] [DbZYPSd] license [996aecad-d415-48af-8600-61ac35879e27] mode [basic] - valid
+=======
 [2019-10-28T09:11:44,081][INFO ][o.e.x.m.MlDailyMaintenanceService] [ct7pFEH] triggering scheduled [ML] maintenance tasks
 [2019-10-28T09:12:19,258][INFO ][o.e.x.m.a.TransportDeleteExpiredDataAction] [ct7pFEH] Deleting expired data
 [2019-10-28T09:12:49,018][INFO ][o.e.x.m.a.TransportDeleteExpiredDataAction] [ct7pFEH] Completed deletion of expired data
@@ -7,3 +179,5 @@
 [2019-10-28T09:13:25,692][INFO ][o.e.x.w.WatcherService   ] [ct7pFEH] stopping watch service, reason [shutdown initiated]
 [2019-10-28T09:13:27,142][INFO ][o.e.x.m.j.p.l.CppLogMessageHandler] [ct7pFEH] [controller/6228] [Main.cc@148] Ml controller exiting
 [2019-10-28T09:13:27,267][INFO ][o.e.x.m.j.p.NativeController] [ct7pFEH] Native controller process has stopped - no new native processes can be started
+>>>>>>> e9c1a583eeaa93873871eec564feb4747e5e64d4
+>>>>>>> e811842b163a73d62bc7cd8a64d89e0673ffe547
