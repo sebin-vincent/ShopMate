@@ -77,11 +77,7 @@ $(function () {
             ${response.discription}
         </p>
          <div class="card_area">
-           <div class="product_count d-inline-block">
-             <span class="inumber-decrement"> <i class="ti-minus"></i></span>
-             <input class="input-number" type="text" value="1" min="0" max="10">
-             <span class="number-increment"> <i class="ti-plus"></i></span>
-           </div>
+           
            <div class="add_to_cart">
                <a href="#" class="btn_3" id="add-to-cart-btn">add to cart</a>
 
@@ -117,18 +113,18 @@ $(function () {
         type: "GET",
         contentType: "application/json",
         dataType: "json",
-        url: "http://localhost:8084/order/cart/1001/1",//100 is the profileid
+        url: "http://localhost:8084/order/cart/"+sessionId+"/1",//100 is the profileid
         data: "data",
         success: function (response) {
           var length = response.payload[0].item.length;
-          console.log(response.payload[0].item[0].skuId);
+          console.log(response);
           for (var i = 0; i < length; i++) {
-            if (response.payload[0].item[i].skuId == "obile123") {
+            if (response.payload[0].item[i].skuId == last_part) {
               var add_to_cart = document.getElementById('add-to-cart-btn');
               add_to_cart.innerHTML = 'Buy now';
               add_to_cart.removeAttribute("id");
               add_to_cart.setAttribute("id", "added");
-              added.setAttribute("href", "F:/shopmate/shopmate-web/WebContent/winter/templates/cart.html");
+              added.setAttribute("href", "cart.html");
               
             }
           }
