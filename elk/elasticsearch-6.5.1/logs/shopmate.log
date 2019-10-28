@@ -1,0 +1,9 @@
+[2019-10-28T09:11:44,081][INFO ][o.e.x.m.MlDailyMaintenanceService] [ct7pFEH] triggering scheduled [ML] maintenance tasks
+[2019-10-28T09:12:19,258][INFO ][o.e.x.m.a.TransportDeleteExpiredDataAction] [ct7pFEH] Deleting expired data
+[2019-10-28T09:12:49,018][INFO ][o.e.x.m.a.TransportDeleteExpiredDataAction] [ct7pFEH] Completed deletion of expired data
+[2019-10-28T09:12:49,096][INFO ][o.e.x.m.MlDailyMaintenanceService] [ct7pFEH] Successfully completed [ML] maintenance tasks
+[2019-10-28T09:13:23,940][INFO ][o.e.b.Bootstrap          ] [ct7pFEH] running graceful exit on windows
+[2019-10-28T09:13:24,081][INFO ][o.e.n.Node               ] [ct7pFEH] stopping ...
+[2019-10-28T09:13:25,692][INFO ][o.e.x.w.WatcherService   ] [ct7pFEH] stopping watch service, reason [shutdown initiated]
+[2019-10-28T09:13:27,142][INFO ][o.e.x.m.j.p.l.CppLogMessageHandler] [ct7pFEH] [controller/6228] [Main.cc@148] Ml controller exiting
+[2019-10-28T09:13:27,267][INFO ][o.e.x.m.j.p.NativeController] [ct7pFEH] Native controller process has stopped - no new native processes can be started

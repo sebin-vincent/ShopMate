@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  sessionStorage.setItem("profile_id", "1001")
+  
   var profileid = sessionStorage.getItem("profile_id")
   var temp
   var emptycart = document.getElementById('table')

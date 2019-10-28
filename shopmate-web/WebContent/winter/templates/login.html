@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="../css/style.css">
  <!-- icon CSS -->
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+   
   <link rel="stylesheet" href="../css/custom_login.css">
 </head>
 
@@ -90,32 +90,36 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
                       <a class="dropdown-item" href="confirmation.html">
                           <i class="fa fa-user" aria-hidden="true" style="color:white"ss></i>
-
+  
                           <span id="XXX">  My Profile</span>
                        </a>
                       <a class="dropdown-item" href="tracking.html">
                           <i class="fa fa-cart-plus" aria-hidden="true"  style="color:white"></i>
                           <span id="XXX"> My orders</span>
                       </a>
-                      <a class="dropdown-item" href="checkout.html">
+                      
+                      <a class="dropdown-item" href="wishlist.html">
                         <i class="fa fa-heart" aria-hidden="true" style="color:white"></i>
                         <span id="XXX">Wish list</span>
                       </a>
+
                       <a class="dropdown-item" href="#" onclick="change_password()">
-                       <i class="fa fa-key" aria-hidden="true" style="color:white"></i>
-                       <button type="button" value="change password" class="btn_3" id="change_paswd_show_bttn">
-                         Change password
-                     </button>
-                     </a>
+                        <i class="fa fa-key" aria-hidden="true" style="color:white"></i>
+                        <button type="button" value="change password" class="btn_3" id="change_paswd_show_bttn">
+                          Change password
+                      </button>
+                        
+                      </a>
+  
                       <a class="dropdown-item"  href="cart.html">
                         <i class="fa fa-sign-out" aria-hidden="true" style="color:white"></i>
                         <span id="XXX">Logout</span>
-
+                        
                       </a>
-
-
+                     
+                      
                     </div>
-                  </li>
+                  </li> 
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.html">Contact</a>
@@ -125,9 +129,7 @@
                         <div class="hearer_icon d-flex">
 <!------------------------------to be removed to profile section------->
                                 <div class="col-md-12 form-group">
-                                        <button type="button" value="change password" class="btn_3" id="change_paswd_show_bttn">
-                                                Change password
-                                            </button>
+                                        
                                         </div>
 
 
@@ -244,7 +246,7 @@
                                     <input type="email" class="form-control" id="fp_email" name="email_c" value=""
                                         placeholder="Email" required>
                                 </div>
-
+                         
                                  <div class="col-md-12 form-group p_star" id="forgot_password_questions">
                                         <select class="security" id="sec_quest" name="security_quest" style="display: block;
                                         width: 100%;
@@ -260,7 +262,10 @@
                                         border-radius: .25rem;
                                         transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;"  required>
                                             <option value=""hidden>Select the question from the following options</option>
-
+                                            <!-- <option value="1">Who's your daddy?</option>
+                                            <option value="2">What is your favorite color?</option>
+                                            <option value="3">What is your favorite book?</option>
+                                            <option value="4">What brand of food did your first pet eat?</option> -->
                                          </select>
                                 </div>
 
@@ -330,7 +335,7 @@
                                     <input type="tel" class="form-control" id="tel-num" name="tel-num" value=""
                                         placeholder="Mobile number" required>
                                 </div>
-
+                                
                                 <div class="col-md-12 form-group p_star" id="forgot_password_questions">
                                     <select class="security" id="sec_quest_" name="security_quest" style="display: block;
                                     width: 100%;
@@ -346,7 +351,7 @@
                                     border-radius: .25rem;
                                     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;"  required>
                                          <option value=""hidden>Select the question from the following options</option>
-                                         <!-- <option value="1">Who's your daddy?</option>
+                                         <!-- <option value="1">Who's your daddy?</option> 
                                         <option value="2">What is your favorite color?</option>
                                         <option value="3">What is your favorite book?</option>
                                         <option value="4">What brand of food did your first pet eat?</option> -->
@@ -512,7 +517,7 @@
   <script src="../js/custom.js"></script>
   <script src="../js/login.js"></script>
   <script src="../js/login_integration.js"></script>
-
+  
 </body>
 
 </html>

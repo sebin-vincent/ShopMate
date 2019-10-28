@@ -142,7 +142,7 @@ document.getElementById("fp_up_bttn").addEventListener("click",function(){
         if(response.status_Message==="Password changed"){
           alert("Please login with new password");
           $('#forgot_password_form')[0].reset();
-          window.location.href = "F:/shopmate/shopmate-web/WebContent/winter/templates/login.html";
+          window.location.href = "login.html";
 
         }
         else if(response.status_Message==="Invalid credentials"){
@@ -166,15 +166,6 @@ document.getElementById("fp_up_bttn").addEventListener("click",function(){
 
 /////////////to be removed to profile section change password////////////////////
 
-document.getElementById("change_paswd_show_bttn").addEventListener("click",function() {
-  document.getElementById("change_password_right").style.display='block';
-  document.getElementById("login").style.display='none';
-  document.getElementById("already_our_customer").style.display='block';
-  document.getElementById("new_to_our_shop").style.display='none'; 
-  document.getElementById("forgot_password").style.display='none';
-  document.getElementById("forgot_password_left").style.display='none';
-  //document.getElementById("change_password").style.display='none';
-});
 document.getElementById("change_paswd_bttn").addEventListener("click",function() {
   var oldPaswd=document.getElementById("chng_old_password").value;
   var newPaswd=document.getElementById("chng_new_password").value;

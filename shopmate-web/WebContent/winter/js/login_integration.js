@@ -1,4 +1,5 @@
 //login
+var sessionId= sessionStorage.getItem("profile_id"); 
 $("#login-button").click(function (e) { 
     e.preventDefault();
     
@@ -7,10 +8,10 @@ $("#login-button").click(function (e) {
 });
 function ajaxCall(){
     datas={
-            userName: $("input[name=email]").val(),
+            login_Id: $("input[name=email]").val(),
             password:$("input[name=password]").val()
         }
-        console.log(datas)
+       
     $.ajax({
         type: "POST",
         url: "http://localhost:8080/login",
@@ -19,16 +20,17 @@ function ajaxCall(){
         dataType: "json",
         success: function (response) {
             if(response.status_Code==200){
-                console.log(response)
+               
                 if (typeof(Storage) !== "undefined") {
                     // Store
                     sessionStorage.setItem("profile_id", response.payload);
+                    console.log( sessionStorage.getItem("profile_id"));
                     // Retrieve
-                    console.log(sessionStorage.getItem("profile_id"))
+                    
                   } else {
                     alert("browser not support");
                   }
-                window.location.href = "F:/shopmate/shopmate-web/WebContent/winter/templates/index.html";
+                window.location.href = "../../index.html";
             }
             else{
                 alert("invalid credentials")
@@ -43,15 +45,7 @@ $("#change_paswd_show_bttn").click(function (e) {
     change_password  ();  
 });
 
-//login-session creation
-if (typeof(Storage) !== "undefined") {
-    // Store
-    sessionStorage.setItem("lastname", "Smith");
-    
-    console.log( sessionStorage.getItem("lastname"));
-  } else {
-    console.log("does not support");
-  }
+
 
 
 //change password
@@ -66,7 +60,7 @@ function change_password(){
     function change(){
         datas={
 
-            profile_id:4,
+            profile_id:sessionId,
 	        password:"qwertyuiop",
 	        extra:{
 		        new_Password:"new_password",
@@ -93,11 +87,11 @@ function change_password(){
                 var status_message=response.status_Message;
                 if(status_message==="password changed successfully"){
                     alert("password changed successfully");
-                    window.location.href = "F:/shopmate/shopmate-web/WebContent/winter/templates/index.html";
+                    window.location.href = "../../index.html";
                 }
                 else if(status_Message=="User already exist"){
                     alert("user already exist")
-                    window.location.href = "F:/shopmate/shopmate-web/WebContent/winter/templates/login.html";
+                    window.location.href = "login.html";
                 }
             }
         });
