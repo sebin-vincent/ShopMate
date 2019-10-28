@@ -113,6 +113,7 @@ $(function () {
 
       //added to cart
       $.ajax({
+        async: false,
         type: "GET",
         contentType: "application/json",
         dataType: "json",
@@ -122,19 +123,13 @@ $(function () {
           var length = response.payload[0].item.length;
           console.log(response.payload[0].item[0].skuId);
           for (var i = 0; i < length; i++) {
-            if (response.payload[0].item[i].skuId == "mobile123") {
+            if (response.payload[0].item[i].skuId == "obile123") {
               var add_to_cart = document.getElementById('add-to-cart-btn');
               add_to_cart.innerHTML = 'Buy now';
-
+              add_to_cart.removeAttribute("id");
               add_to_cart.setAttribute("id", "added");
-              var buttn = document.getElementById('added');
-              $('#added').click(function (e) {
-                e.preventDefault();
-                added.setAttribute("href", "F:/shopmate/shopmate-web/WebContent/winter/templates/cart.html");
-
-              });
-
-
+              added.setAttribute("href", "F:/shopmate/shopmate-web/WebContent/winter/templates/cart.html");
+              
             }
           }
 
@@ -177,69 +172,76 @@ $(function () {
 
       var add_cart = document.getElementById('add-to-cart-btn');
       if (add_cart == "added") {
+        console.log(add_cart);
         add_cart.setAttribute("href", "F:/shopmate/shopmate-web/WebContent/winter/templates/cart.html");
       }
       else {
         $(add_cart).click(function (e) {
+          console.log(add_cart);
+          if (add_cart == "added") {
+            console.log(add_cart);
+            add_cart.setAttribute("href", "F:/shopmate/shopmate-web/WebContent/winter/templates/cart.html");
+          }
+          else {
 
-          e.preventDefault();
+            e.preventDefault();
 
-          $.ajax({
-            async: false,
-            type: "GET",
-            url: "http://localhost:8084/order/get/orderid/" + sessionId, //TODO paste profile id from session
-            success: function (responseFromOrder) {
-              var orderId = responseFromOrder.payload[0].orderId;
-              var profileId = sessionId; //TODO fetch from session
-              var skuId = response.skuId;
-              var skuQty = 1;
-              var unitPrice = response.salePrice;
-              var addToCartRequestData = {
+            $.ajax({
+              async: false,
+              type: "GET",
+              url: "http://localhost:8084/order/get/orderid/" + sessionId, //TODO paste profile id from session
+              success: function (responseFromOrder) {
+                var orderId = responseFromOrder.payload[0].orderId;
+                var profileId = sessionId; //TODO fetch from session
+                var skuId = response.skuId;
+                var skuQty = 1;
+                var unitPrice = response.salePrice;
+                var addToCartRequestData = {
 
-                "orderId": orderId,
-                "skuId": skuId,
-                "quantity": skuQty,
-                "unitPrice": unitPrice,
-                "lastModifiedDate": null
+                  "orderId": orderId,
+                  "skuId": skuId,
+                  "quantity": skuQty,
+                  "unitPrice": unitPrice,
+                  "lastModifiedDate": null
 
-              };
+                };
 
-              $.ajax({
-                type: "POST",
-                url: "http://localhost:8081/cart/add",
-                data: JSON.stringify(addToCartRequestData),
-                dataType: "json",
-                contentType: "application/json; charset=utf-8",
-                success: function (responseFromCart) {
+                $.ajax({
+                  type: "POST",
+                  url: "http://localhost:8081/cart/add",
+                  data: JSON.stringify(addToCartRequestData),
+                  dataType: "json",
+                  contentType: "application/json; charset=utf-8",
+                  success: function (responseFromCart) {
 
-                  updateInventoryData = {
+                    updateInventoryData = {
 
-                    "skuId": skuId,
-                    "quantity": skuQty
-
-                  }
-
-                  $.ajax({
-
-                    type: "PUT",
-                    url: "http://localhost:8083/items/reserve",
-                    data: JSON.stringify(updateInventoryData),
-                    dataType: "json",
-                    contentType: "application/json; charset=utf-8",
-
-                    success: function (responseFromInventory) {
-
-                      $("#add-to-cart-btn").html("Added to Cart");
+                      "skuId": skuId,
+                      "quantity": skuQty
 
                     }
-                  });
 
-                }
-              });
+                    $.ajax({
 
-            }
-          });
+                      type: "PUT",
+                      url: "http://localhost:8083/items/reserve",
+                      data: JSON.stringify(updateInventoryData),
+                      dataType: "json",
+                      contentType: "application/json; charset=utf-8",
 
+                      success: function (responseFromInventory) {
+
+                        $("#add-to-cart-btn").html("Added to Cart");
+
+                      }
+                    });
+
+                  }
+                });
+
+              }
+            });
+          }
         });
       }
 
