@@ -1,11 +1,11 @@
 $(document).ready(function () {
     var sessionId= sessionStorage.getItem("profile_id"); 
-   var urlOriginal="http://localhost:8084/order/cart/"+1001+"/1"
-//    console.log(urlOriginal);
+   var urlOriginal="http://localhost:8084/order/cart/"+sessionId+"/1"
+
     $.ajax({
     
         type: "GET",
-        url: urlOriginal, //Todo get profile id from session 
+        url: urlOriginal,
         
         success: function (response) {
 
@@ -14,10 +14,12 @@ $(document).ready(function () {
                 var temp = document.getElementsByClassName("table-responsive")
                 $(temp).remove();
                  document.getElementById("job").innerHTML="<h2>No items in the cart <h2>"
-                s
+                
             }else{
 
                 var items = response.payload[0].item
+                var orderId = response.payload[0].orderId
+
                 for (let m = 0; m < items.length; m++) {
                     
                     
@@ -27,17 +29,17 @@ $(document).ready(function () {
     
     
                 $.ajax({
+                    async: false,
                     type: "GET",
                     url: url,
+                    async: false,
                     success: function (response) {
                             
-                             
-                
-                    
                    
     
                                var trTag= document.createElement("tr")
                                trTag.setAttribute("class","cart-row")
+                               trTag.setAttribute("id",`${skuId}`)
                                 var tdTag1=document.createElement("td")
                                 var tdTag2=document.createElement("td")
                                 tdTag2.setAttribute("class","item-price")
@@ -80,9 +82,9 @@ $(document).ready(function () {
                                 
                                subDivTag.innerHTML=`<div class="cart-quantity cart-column">
                                <input class="cart-quantity-input" type="number" value="${items[m].quantity}">
-                               <button class="btn btn-danger" type="button">REMOVE</button>
+                               <button class="btn btn-danger" id="delete" type="button">REMOVE</button>
                            </div>`
-                                var temp = subDivTag.getElementsByClassName("cart-quantity-input")[0]
+                                var temp = subDivTag.getElementsByClassName("cart-quantity-input")
                                 var quan = (temp.value)*itemPrice
                               
                                //tdTag4.innerHTML=`<h5> ${quan} </h5>`
@@ -92,30 +94,23 @@ $(document).ready(function () {
                                 trTag.appendChild(tdTag4);
     
                                 
-                               $(trTag).prependTo(document.getElementById("cart-item"));
-                               
-                               
-    
+                               $(trTag).prependTo(document.getElementById("cart-item"));          
                 
-                            
-                
-                subTotal()
-    
+                subTotal()                          
+            
+                    }
+                });
                 var removeCartItem = document.getElementsByClassName('btn-danger')
                 var quantityInputs = document.getElementsByClassName("cart-quantity-input ")
                 
-                for (let i = 0; i < quantityInputs.length; i++) {
-                   var input = quantityInputs[i]
-                   input.addEventListener('change',quantityChanged)
+                    var input = quantityInputs[0]
+                    input.addEventListener('change',quantityChanged)
                     
-                }
-                for (let j = 0; j < removeCartItem.length; j++){
-    
-                    var button  = removeCartItem[j]
+                    var button  = removeCartItem[0]
                     button.addEventListener('click',removeItem)
-                         
+                
                 }
-    
+               
                 function quantityChanged(event){
                     var input = event.target
                     if(isNaN(input.value)|| input.value<=0){
@@ -127,8 +122,26 @@ $(document).ready(function () {
                
                 function removeItem(event){
                     var buttonClicked = event.target
+                  // console.log(event.data)
+                    
                         buttonClicked.parentElement.parentElement.parentElement.parentElement.remove()
+                        var id =$(buttonClicked.parentElement.parentElement.parentElement.parentElement).attr('id')
+                        
+                    
+                        var removeUrl = `http://localhost:8081/cart/delete/?orderId=${orderId}&skuId=${id}`
+                        
+                        $.ajax({
+                            type: "delete",
+                            url: removeUrl,
+                            async:false,
+                            success: function (response) {
+                                
+                            }
+                        });
 
+                        
+                    
+                        
                        subTotal()
                 }
     
@@ -159,12 +172,6 @@ $(document).ready(function () {
                     document.getElementById("subtotal").innerHTML=`${subtotal}`
                 }          
     
-            
-                    }
-                });
-    
-                
-                }
             }
             
            
