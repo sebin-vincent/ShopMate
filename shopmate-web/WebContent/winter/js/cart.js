@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var sessionId= sessionStorage.getItem("profile_id"); 
-   var urlOriginal="http://localhost:8084/order/cart/"+sessionId+"/1"
+   var urlOriginal="http://localhost:8084/order/cart/"+1001+"/1"
 
     $.ajax({
     
@@ -9,7 +9,7 @@ $(document).ready(function () {
         
         success: function (response) {
 
-            if (response.payload.length==0) {
+            if (response.payload[0].item.length==0) {
                 
                 var temp = document.getElementsByClassName("table-responsive")
                 $(temp).remove();
