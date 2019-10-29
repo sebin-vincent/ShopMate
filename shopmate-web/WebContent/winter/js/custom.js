@@ -1,6 +1,16 @@
 
 var sessionId= sessionStorage.getItem("profile_id");
 console.log(sessionId);
+$(document).ready(function(){
+  if(sessionId===null){
+    document.getElementById("myaccounttab").style.display="none";
+  }
+  else{
+    document.getElementById("logintab").style.display="none";
+    document.getElementById("myaccounttab").style.display="block";
+  }
+});
+
 (function ($) {
   "use strict";
 
@@ -332,3 +342,4 @@ inputNumber($('.input-number'));
 
 
 }(jQuery));
+
