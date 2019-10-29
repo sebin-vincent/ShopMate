@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+
     $.ajax({
         type: "GET",
         url: "http://localhost:8084/order/trending/3",
