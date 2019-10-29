@@ -1,10 +1,8 @@
-<<<<<<< HEAD
 
-var skuId = 0;
+//var profileId=sessionStorage.getItem("profile_id");
 
-=======
-var sessionId= sessionStorage.getItem("profile_id"); 
->>>>>>> 1108de61c9b8275ee1521670bd1f52ab3e4b4772
+var sessionId = sessionStorage.getItem("profile_id");
+
 $(function () {
   var url = window.location.href;
   //var url = $(location).attr('href')
@@ -20,42 +18,48 @@ $(function () {
     async: false,
     type: "GET",
     dataType: "json",
+
     url: "http://localhost:8080/wishlist/4/retrieve",
 
 
-    success: function (response) {
-      for (var i = 0; i < response.payload[0].length; i++) {
-        skulist.push(response.payload[0][i]);
+    success: function (response1) {
+      for (var i = 0; i < response1.payload[0].length; i++) {
+        skulist.push(response1.payload[0][i]);
 
       }
     }
 
   });
-  console.log(skulist[0]);
+  // for (var j = 0; j < skulist.length; j++) {
+  //   console.log(skulist[j]);
+  // } console.log(skulist[0]);
   $.ajax({
     async: false,
     type: "GET",
     url: "http://localhost:8082/sku/details/" + last_part,
     success: function (response) {
-    
+
       skuId = response.skuId;
-      $.each(response, function (indexInArray, payload) {
+      $.ajax({
+        async: false,
+        type: "GET",
 
+        url: "http://localhost:8083/items/" + last_part,
+
+        success: function (r) {
+
+
+          if (r.stock.state.stateType == "GREEN") {
+            status = "On Stock";
+          }
+          else {
+            status = "Out of stock";
+
+          }
+        }
       });
-
-
-      if (response.onSale == 1) {
-        status = "Out of stock";
-
-      }
-      else {
-        status = "On stock"
-      }
-      //append sku imaage
-
       $parent_image.append(`<div data-thumb="img/product_details/prodect_details_1.png">
-           <img src="${response.imageUrl}" style="    margin-left: 149px;
-           " />
+           <img src="${response.imageUrl}" id="pdp_image"style="margin-left: 149px; " />
          </div>`);
       //append sku details
       $product_feature.append(`<h3>${response.skuName}</h3>
@@ -73,19 +77,15 @@ $(function () {
             ${response.discription}
         </p>
          <div class="card_area">
-           <div class="product_count d-inline-block">
-             <span class="inumber-decrement"> <i class="ti-minus"></i></span>
-             <input class="input-number" type="text" value="1" min="0" max="10">
-             <span class="number-increment"> <i class="ti-plus"></i></span>
-           </div>
+           
            <div class="add_to_cart">
                <a href="#" class="btn_3" id="add-to-cart-btn">add to cart</a>
 
-               <a href="#" class="like_us" id="wish-list-button"> <i class="fa fa-heart" id="wish" ></i> </a>
+               <a  class="like_us" id="wish-list-button"> <i class="fa fa-heart" id="wish" style="color:blue;"></i> </a>
            </div>
            <div class="social_icon">
                <a href="https://www.facebook.com/" class="fb"><i class="ti-facebook"></i></a>
-               <a href="#" class="tw"><i class="ti-twitter-alt"></i></a>
+               <a href="" class="tw"><i class="ti-twitter-alt"></i></a>
                <a href="https://www.linkedin.com/company" class="li"><i class="ti-linkedin"></i></a>
            </div>
          </div>
@@ -94,17 +94,58 @@ $(function () {
 
       var wish_icon = document.getElementById("wish");
       for (var i = 0; i < skulist.length; i++) {
-        if (skulist[i] == response.skuId) {
+        if (skulist[i] === response.skuId) {
           wish_icon.setAttribute("style", "color:red;");
         }
       }
 
+      var image = document.getElementById('pdp_image');
+      if (status == "Out of stock") {
+        image.setAttribute("style", "opacity: 0.5");
+        // cart_button.disabled = true;
+        // document.getElementById("add-to-cart-btn").disabled = true;
+
+      }
+
+      //added to cart
+      $.ajax({
+        async: false,
+        type: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        url: "http://localhost:8084/order/cart/"+sessionId+"/1",//100 is the profileid
+        success: function (response) {
+          console.log(response);
+          if (response.payload[0] != null) {
+
+
+            var length = response.payload[0].item.length;
+
+            console.log(response);
+            for (var i = 0; i < length; i++) {
+              if (response.payload[0].item[i].skuId == last_part) {
+                var add_to_cart = document.getElementById('add-to-cart-btn');
+                add_to_cart.innerHTML = 'Buy now';
+                add_to_cart.removeAttribute("id");
+                add_to_cart.setAttribute("id", "added");
+                added.setAttribute("href", "cart.html");
+
+              }
+            }
+          }
+          else{
+            
+          }
+        }
+      });
+
+
+      //add to wishlist
       $("#wish-list-button").click(function (e) {
         e.preventDefault();
         var wish_icon = document.getElementById("wish");
-        console.log(wish_icon);
         var datas = {
-          "profileId": sessionId,
+          "profileId": 4,
           "skuId": last_part
         }
         $.ajax({
@@ -121,7 +162,7 @@ $(function () {
 
             }
             else if (response.status_Message == "item exist") {
-              alert("item revoved from your cart");
+              alert("item removed from your wish list");
               wish_icon.setAttribute("style", "color:blue;");
             }
             else {
@@ -132,81 +173,81 @@ $(function () {
 
       });
 
-      $("#add-to-cart-btn").click(function (e) {
+      var add_cart = document.getElementById('add-to-cart-btn');
 
-        e.preventDefault();
+      $(add_cart).click(function (e) {
+        console.log(add_cart);
+        if (add_cart == "added") {
+          console.log(add_cart);
+          add_cart.setAttribute("href", "F:/shopmate/shopmate-web/WebContent/winter/templates/cart.html");
+        }
+        else {
 
-        $.ajax({
-          async: false,
-          type: "GET",
-          url: "http://localhost:8084/order/get/orderid/"+sessionId, //TODO paste profile id from session
+          e.preventDefault();
 
-          success: function (responseFromOrder) {
+          $.ajax({
+            async: false,
+            type: "GET",
+            url: "http://localhost:8084/order/get/orderid/" + sessionId, //TODO paste profile id from session
+            success: function (responseFromOrder) {
+              var orderId = responseFromOrder.payload[0].orderId;
+              var profileId = sessionId; //TODO fetch from session
+              var skuId = response.skuId;
+              var skuQty = 1;
+              var unitPrice = response.salePrice;
+              var addToCartRequestData = {
 
-            console.log(skuId)
+                "orderId": orderId,
+                "skuId": skuId,
+                "quantity": skuQty,
+                "unitPrice": unitPrice,
+                "lastModifiedDate": null
 
-            var orderId = responseFromOrder.payload[0].orderId;
-<<<<<<< HEAD
-            var profileId = '1234'; //TODO fetch from session
-            var skuId = response.skuId;
-=======
-            var profileId = sessionId; //TODO fetch from session
-            var skuId = response.payload[0].skuId;
->>>>>>> 1108de61c9b8275ee1521670bd1f52ab3e4b4772
-            var skuQty = 1;
-            var unitPrice = response.salePrice;
+              };
 
-            var addToCartRequestData = {
+              $.ajax({
+                type: "POST",
+                url: "http://localhost:8081/cart/add",
+                data: JSON.stringify(addToCartRequestData),
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (responseFromCart) {
 
-              "orderId": orderId,
-              "skuId": skuId,
-              "quantity": skuQty,
-              "unitPrice": unitPrice,
-              "lastModifiedDate": null
+                  updateInventoryData = {
 
-            };
-
-            $.ajax({
-              type: "POST",
-              url: "http://localhost:8081/cart/add",
-              data: JSON.stringify(addToCartRequestData),
-              dataType: "json",
-              contentType: "application/json; charset=utf-8",
-
-              success: function (responseFromCart) {
-
-                updateInventoryData = {
-
-                  "skuId": skuId,
-                  "quantity": skuQty
-
-                }
-
-                $.ajax({
-
-                  type: "PUT",
-                  url: "http://localhost:8083/items/reserve",
-                  data: JSON.stringify(updateInventoryData),
-                  dataType: "json",
-                  contentType: "application/json; charset=utf-8",
-
-                  success: function (responseFromInventory) {
-
-                    $("#add-to-cart-btn").html("Added to Cart");
+                    "skuId": skuId,
+                    "quantity": skuQty
 
                   }
-                });
 
-              }
-            });
+                  $.ajax({
 
-          }
-        });
+                    type: "PUT",
+                    url: "http://localhost:8083/items/reserve",
+                    data: JSON.stringify(updateInventoryData),
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
 
+                    success: function (responseFromInventory) {
+
+                      $("#add-to-cart-btn").html("Added to Cart");
+
+                    }
+                  });
+
+                }
+              });
+
+            }
+          });
+        }
       });
+
 
     }
   });
 
 });
+
+
 

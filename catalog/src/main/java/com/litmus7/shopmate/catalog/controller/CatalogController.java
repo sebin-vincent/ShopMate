@@ -64,7 +64,6 @@ public class CatalogController {
 	}
 	
 	
-	
 	@CrossOrigin
 	@GetMapping(path = "/sliderimages")
 	public List<SliderImage> fetchSliderImages(){
