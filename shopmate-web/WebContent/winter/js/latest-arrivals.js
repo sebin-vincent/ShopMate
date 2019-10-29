@@ -17,7 +17,7 @@ $(document).ready(function () {
                         var baseTemplate = `
 
                         <div class="latest-arrived-item">
-                        <a href="${element.skuPDPUrl}"> <img src="${responseFromCatalog.skuImage}" alt="${element.skuName}"> </a>
+                        <a href="winter/templates/single-product.html?${element.skuId}"> <img src="${responseFromCatalog.skuImage}" alt="${element.skuName}"> </a>
                         <div class="latest-arrived-item-text">${element.skuName}</div>
                         </div>
 
