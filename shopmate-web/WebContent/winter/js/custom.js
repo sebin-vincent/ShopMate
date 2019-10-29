@@ -1,4 +1,5 @@
 
+
 var sessionId= sessionStorage.getItem("profile_id");
 console.log(sessionId);
 $(document).ready(function(){
@@ -10,6 +11,7 @@ $(document).ready(function(){
     document.getElementById("myaccounttab").style.display="block";
   }
 });
+
 
 (function ($) {
   "use strict";
