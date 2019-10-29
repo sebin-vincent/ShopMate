@@ -34,12 +34,12 @@ function productList( min, max){
       type: "GET",
       url: "http://localhost:8082/sku/" + last_part,
       success: function (response) {
-  
+        var wishIcon=[]
         for (var i = 0; i < (response.payload.length - 2); (i = i + 3)) {
          var x=i+1;
          var y=i+2;
           if ((response.payload[i].salePrice >= min && response.payload[i].salePrice<=max)  ) {
-            
+            wishIcon.push(response.payload[i].skuId)
           console.log(min,max)
           
           stock(`${response.payload[i].skuId}`, 1);
@@ -75,22 +75,22 @@ function productList( min, max){
           var img1 = document.getElementById(image1);
   
   
-          var image2 = `image_${response.payload[x].skuId}`
-          var img2 = document.getElementById(image2);
+          // var image2 = `image_${response.payload[x].skuId}`
+          // var img2 = document.getElementById(image2);
   
   
-          var image3 = `image_${response.payload[y].skuId}`
-          var img3 = document.getElementById(image3);
+          // var image3 = `image_${response.payload[y].skuId}`
+          // var img3 = document.getElementById(image3);
   
           if (sale_status1 == "Out of Stock") {
             img1.setAttribute("style", "opacity: 0.4");
           }
-          if (sale_status2 == "Out of Stock") {
-            img2.setAttribute("style", "opacity: 0.4");
-          }
-          if (sale_status3 == "Out of Stock") {
-            img3.setAttribute("style", "opacity: 0.4");
-          }
+          // if (sale_status2 == "Out of Stock") {
+          //   img2.setAttribute("style", "opacity: 0.4");
+          // }
+          // if (sale_status3 == "Out of Stock") {
+          //   img3.setAttribute("style", "opacity: 0.4");
+          // }
           // $parent.append(` <div class="row" style="padding-right: 25px">  
           //                     <div class="column" style="padding-bottom: 64px;">  
           //                        <a href="single-product.html?${response.payload[i].skuId}">
@@ -118,10 +118,11 @@ function productList( min, max){
           //                   );
         }
       }
-        for (var j = 0; j < response.payload.length; j++) {
-          var wish_icon = document.getElementById("wish_" + response.payload[j].skuId);
+        for (var j = 0; j < wishIcon.length; j++) {
+          var wish_icon = document.getElementById("wish_" + wishIcon[j]);
+          console.log(wishIcon)
           for (var i = 0; i < skulist.length; i++) {
-            if (response.payload[j].skuId == skulist[i]) {
+            if (wishIcon[j]== skulist[i]) {
               wish_icon.setAttribute("style", "color:red;");
   
             }
