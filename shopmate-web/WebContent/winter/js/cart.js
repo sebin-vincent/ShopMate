@@ -3,7 +3,7 @@ $(document).ready(function () {
     if (sessionId==null) {
         window.location.href="login.html"
     } else {
-        var urlOriginal="http://localhost:8084/order/cart/"+sessionId+"/1"
+        var urlOriginal="http://localhost:8084/order/cart/"+1234+"/1"
 
         $.ajax({
         
@@ -120,6 +120,31 @@ $(document).ready(function () {
                         if(isNaN(input.value)|| input.value<=0){
                             input.value=1
                         }
+                        var id =$(input.parentElement.parentElement.parentElement.parentElement).attr('id')
+                       
+                        updateInventoryData = {
+
+                            "skuId": id,
+                            "quantity": input.value
+      
+                          }
+      
+                          $.ajax({
+      
+                            type: "PUT",
+                            url: "http://localhost:8083/items/reserve",
+                            data: JSON.stringify(updateInventoryData),
+                            dataType: "json",
+                            contentType: "application/json; charset=utf-8",
+                            async:false,
+      
+                            success: function (responseFromInventory) {
+      
+                              alert("quantity updated")
+      
+                            }
+                          });
+
                         subTotal()
         
                     }
