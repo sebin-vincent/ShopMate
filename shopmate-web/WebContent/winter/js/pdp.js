@@ -230,7 +230,7 @@ $(function () {
 
                     success: function (responseFromInventory) {
 
-                      $("#add-to-cart-btn").html("Added to Cart");
+                      $("#add-to-cart-btn").html("Buy Now");
 
                     }
                   });
