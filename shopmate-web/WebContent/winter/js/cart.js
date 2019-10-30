@@ -24,9 +24,12 @@ $(document).ready(function () {
                     var items = response.payload[0].item
                     var orderId = response.payload[0].orderId
 
+                    sessionStorage.setItem("cartItems",items.length)
+                    
+
                     for (let m = 0; m < items.length; m++) {
 
-
+                        
 
                         var skuId = items[m].skuId
                         var url = "http://localhost:8082/sku/details/" + skuId
@@ -38,9 +41,12 @@ $(document).ready(function () {
                             url: url,
                             async: false,
                             success: function (response) {
-
-
-
+                                
+                                console.log(response);
+                               sessionStorage.setItem("skuNameToCheckout"+m, response.skuName);
+                               sessionStorage.setItem("salePrice"+m, response.salePrice);
+                               //
+                               
                                 var trTag = document.createElement("tr")
                                 trTag.setAttribute("class", "cart-row")
                                 trTag.setAttribute("id", `${skuId}`)
@@ -80,7 +86,7 @@ $(document).ready(function () {
 
                                 tdTag2.innerHTML = `<h5>${items[m].unitPrice}</h5>`
                                 divTag3.innerHTML = `<p id="item-name">${response.skuName}</p>`
-
+                                
 
                                 var itemPrice = `${items[m].unitPrice}`
 
@@ -189,13 +195,14 @@ $(document).ready(function () {
 
                             var price = parseFloat(priceElement.innerText)
                             var quantity = quantityElement.value
+                            sessionStorage.setItem("quantity",quantity);
                             var total = price * quantity
                             document.getElementsByClassName("total")[k].innerHTML = `<h5> ${total}</h5>`
 
 
                             subtotal = subtotal + (price * quantity)
-
-
+                            sessionStorage.setItem("subtotal",subtotal);
+                          
                         }
 
                         document.getElementById("subtotal").innerHTML = `${subtotal}`

@@ -2,6 +2,8 @@ var savedAddressClicked = false;
 var sessionId = sessionStorage.getItem("profile_id");
 var urlOriginal = "http://localhost:8080/shippingaddress/" + sessionId
 console.log(sessionId)
+
+var cartItems = sessionStorage.getItem("cartItems");
 $(document).ready(function () {
 
     $(function () {
@@ -21,6 +23,34 @@ $(document).ready(function () {
             }
         });
     });
+    
+    $(function () {
+
+        for (let index = 0; index < cartItems; index++) {
+            var skuNameFromCart=sessionStorage.getItem("skuNameToCheckout"+index)
+           
+            var saleprice=sessionStorage.getItem("salePrice"+index);
+            var subtotal=sessionStorage.getItem("subtotal");
+
+            var template = `<li>
+            <a href="#">${skuNameFromCart}
+              
+              <span class="last">${saleprice}</span>
+            </a>
+          </li>`;
+          $("#checkoutOrders").append(template);
+            
+        }   
+        var template2 = `<li>
+        <a href="#">Total
+          <span>${subtotal}</span>
+        </a>
+      </li>`;
+      $("#subtotal").append(template2);
+
+
+    });
+
 
 
 
