@@ -1,13 +1,5 @@
 $(document).ready(function () {
-<<<<<<< HEAD
-    var sessionId= sessionStorage.getItem("profile_id"); 
-    if (sessionId==null) {
-        window.location.href="login.html"
-    } else {
-        var urlOriginal="http://localhost:8084/order/cart/"+1234+"/1"
-=======
     var sessionId = sessionStorage.getItem("profile_id");
->>>>>>> 269b878f9582bcd295906ffe3587b63ef6d82fa0
 
     if (sessionId == null) {
         window.location.href = "login.html"
