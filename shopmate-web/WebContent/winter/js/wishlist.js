@@ -21,8 +21,8 @@ function delete_item(element) {
 
 $(document).ready(function () {
     var sessionId = sessionStorage.getItem("profile_id");
-   // var urlOriginal = "http://localhost:8080/wishlist/" + sessionId + "/retrieve"
-    var urlOriginal = "http://localhost:8080/wishlist/" + 1234 + "/retrieve"
+    var urlOriginal = "http://localhost:8080/wishlist/" + sessionId + "/retrieve"
+    //var urlOriginal = "http://localhost:8080/wishlist/" + 1234 + "/retrieve"
 
 
     var skuPrice, skuImage, skuName;
