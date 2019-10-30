@@ -42,7 +42,7 @@ public class WishListService implements WishListServiceDao {
 			wishListRepositoryDao.deleteBySkuIdAndProfileId(wishListDto.getSkuId(), wishListDto.getProfileId());
 			return response;
 		}
-		
+
 
 		
 
@@ -59,4 +59,11 @@ public class WishListService implements WishListServiceDao {
 		return skuIds;
 
 	}
+
+	@Override
+	public void deleteFromWishlist(WishListDto wishListDto) {
+		wishListRepositoryDao.deleteBySkuIdAndProfileId(wishListDto.getSkuId(), wishListDto.getProfileId());
+	}
+
+
 }
