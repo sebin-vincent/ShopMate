@@ -39,5 +39,19 @@ public class WishListController {
         return response_info;
     }
 
+    @CrossOrigin
+    @DeleteMapping("/delete")
+    public Response_Info deleteWishlistItem(@RequestBody WishListDto wishListDto) {
+        wishListService.deleteFromWishlist(wishListDto);
+        Response_Info response_info = new Response_Info();
+        response_info.setStatus_Message("deleted");
+        response_info.setStatus_Code(200);
+        response_info.setPayload(Collections.singletonList(new ArrayList<>().add(
+                "Deleted successfully"
+        )));
+
+        return response_info;
+    }
+
 
 }

@@ -17,7 +17,7 @@ $(document).ready(function () {
 
   $(".imgSEQ_NUM").hide();
 
-
+ 
 
   $.ajax({
     url: "http://localhost:8082/sliderimages",

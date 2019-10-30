@@ -40,10 +40,10 @@ function ajaxCall(){
     });
 }
 
-$("#change_paswd_show_bttn").click(function (e) { 
-    e.preventDefault();
-    change_password  ();  
-});
+// $("#change_paswd_show_bttn").click(function (e) { 
+//     e.preventDefault();
+//     change_password  ();  
+// });
 
 
 

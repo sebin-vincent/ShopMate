@@ -4,7 +4,7 @@ $(document).ready(function () {
     if (sessionId == null) {
         window.location.href = "login.html"
     } else {
-        var urlOriginal = "http://localhost:8084/order/cart/" + sessionId + "/1"
+        var urlOriginal = "http://localhost:8084/order/cart/" + 1234 + "/1"
         $.ajax({
 
             type: "GET",
@@ -220,4 +220,11 @@ $(document).ready(function () {
 
 });
 
-
+function logout() {
+    //console.log("hi")
+    console.log(sessionStorage.getItem("profile_id"))
+     sessionStorage.removeItem("profile_id")
+     console.log(sessionStorage.getItem("profile_id"))
+    
+     }
+  
