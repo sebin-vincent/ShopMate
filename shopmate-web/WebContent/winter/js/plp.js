@@ -20,7 +20,7 @@ function productList( min, max){
       async: false,
       type: "GET",
       dataType: "json",
-      url: "http://localhost:8080/wishlist/4/retrieve",
+      url: "http://localhost:8080/wishlist/"+sessionId+"/retrieve",
       success: function (response) {
         for (var i = 0; i < response.payload[0].length; i++) {
           skulist.push(response.payload[0][i]);
