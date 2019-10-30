@@ -1,7 +1,7 @@
 var savedAddressClicked = false;
 var sessionId = sessionStorage.getItem("profile_id");
 var urlOriginal = "http://localhost:8080/shippingaddress/" + sessionId
-console.log(sessionId)
+//console.log(sessionId)
 $(document).ready(function () {
 
     $(function () {
@@ -77,4 +77,10 @@ $('#f-option3').click(function () {
 
 });
 
-
+function logout() {
+    //console.log("hi")
+    console.log(sessionStorage.getItem("profile_id"))
+     sessionStorage.removeItem("profile_id")
+     console.log(sessionStorage.getItem("profile_id"))
+    
+     }
