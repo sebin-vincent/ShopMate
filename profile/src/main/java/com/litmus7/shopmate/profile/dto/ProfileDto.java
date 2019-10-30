@@ -3,6 +3,7 @@ import java.util.Date;
 import java.util.Map;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
@@ -35,6 +36,7 @@ public class ProfileDto {
 	@Column(name = "registration_date")
 	private Date registration_Date;
 
+	@Email
 	@Column(name = "email_id ")
 	private String email_Id;
 

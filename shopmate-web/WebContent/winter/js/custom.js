@@ -1,6 +1,4 @@
 
-var sessionId= sessionStorage.getItem("profile_id");
-console.log(sessionId);
 (function ($) {
   "use strict";
 
@@ -328,7 +326,9 @@ inputNumber($('.input-number'));
 
  $('.controls').on('click', function(){
   $(this).addClass('active').siblings().removeClass('active');
- }); 
+ });
+ 
+ 
 
 
 }(jQuery));

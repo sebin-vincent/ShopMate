@@ -11,7 +11,7 @@ $(document).ready(function () {
       success: function (response3) {
 
         if(response3.message == "success"){
-          window.location.href = "http://localhost:8085/shopmate-web/winter/templates/order.html";
+          window.location.href = "order.html";
         }
         
       }
@@ -19,7 +19,7 @@ $(document).ready(function () {
   }
   if (profileid == null) {
     alert("please login")
-    window.location.href = "http://localhost:8085/shopmate-web/winter/templates/login.html";
+    window.location.href = "login.html";
   } else {
     $.ajax({
       url: "http://localhost:8084/order/get/allorder/" + profileid,

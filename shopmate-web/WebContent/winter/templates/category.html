@@ -104,7 +104,7 @@
 
                                           </a>
 
-                                          <a class="dropdown-item"  href="cart.html">
+                                          <a class="dropdown-item"  href="../../index.html" onclick= "logout()">
                                             <i class="fa fa-sign-out" aria-hidden="true" style="color:white"></i>
                                             <span id="XXX">Logout</span>
 
@@ -304,7 +304,7 @@
                             <div class="widgets_inner">
                                 <div class="range_item">
                                     <!-- <div id="slider-range"></div> -->
-                                    <input type="text" class="js-range-slider" value="" />
+                                    <input type="text" class="js-range-slider"  id ="slider" value=""   />
                                     <div class="d-flex align-items-center">
                                         <div class="price_text">
                                             <p>Price :</p>
@@ -312,9 +312,12 @@
                                         <div class="price_value d-flex justify-content-center">
                                             <input type="text" class="js-input-from" id="amount" readonly />
                                             <span>to</span>
-                                            <input type="text" class="js-input-to" id="amount" readonly />
+                                            <input type="text" class="js-input-to" id="amount2" readonly />
                                         </div>
                                     </div>
+                                </div>
+                                <div>
+                                    <button class="btn btn-danger" id="apply" type="button"  onclick=filter()>Apply</button>
                                 </div>
                             </div>
                         </aside>

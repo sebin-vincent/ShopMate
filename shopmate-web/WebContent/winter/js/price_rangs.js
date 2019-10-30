@@ -137,7 +137,7 @@
         '<span class="irs-shadow shadow-from"></span>' +
         '<span class="irs-shadow shadow-to"></span>' +
         '<span class="irs-slider from"></span>' +
-        '<span class="irs-slider to"></span>';
+        '<span class="irs-slider to" ></span>';
 
     var disable_html =
         '<span class="irs-disable-mask"></span>';
@@ -2378,7 +2378,7 @@ var $range = $(".js-range-slider"),
     $inputTo = $(".js-input-to"),
     instance,
     min = 0,
-    max = 1000,
+    max = 30000,
     from = 10,
     to = 100;
 
@@ -2387,7 +2387,7 @@ $range.ionRangeSlider({
     min: min,
     max: max,
     from: 0,
-    to: 500,
+    to: 30000,
   prefix: 'tk. ',
     onStart: updateInputs,
     onChange: updateInputs,
