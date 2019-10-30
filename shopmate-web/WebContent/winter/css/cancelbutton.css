@@ -1,9 +1,8 @@
 .button {
-
-    background-color: rgb(255, 0, 0); /* Green */
+  background-color: rgb(255, 0, 0); /* Green */
   border: none;
   color: white;
-  padding: 16px 32px;
+  padding: 5px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -15,13 +14,17 @@
 }
 
 .cancelbutton {
-    background-color: white; 
+border-radius:5px;
+    background-color: white;
+height: 30px;
+  width: 100px; 
     color: black; 
-    padding: 5px 20px;
     border: 2px solid rgb(252, 0, 0);
   }
   
   .cancelbutton:hover {
+height: 30px;
+  width: 100px; 
     background-color: rgb(255, 0, 0);
     color: white;
   }

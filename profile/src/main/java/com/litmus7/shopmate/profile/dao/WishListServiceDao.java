@@ -10,5 +10,6 @@ public interface WishListServiceDao {
 	
     public Response_Info addToUserWishList(WishListDto wishListDto);
     public List<Integer> fetchWishListByUserId(int profileId);
+    public void deleteFromWishlist(WishListDto wishListDto);
     
 }
