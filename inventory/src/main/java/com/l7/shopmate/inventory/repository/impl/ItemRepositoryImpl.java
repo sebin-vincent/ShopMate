@@ -69,4 +69,23 @@ public class ItemRepositoryImpl implements ItemRepository {
 
         return latestArrivedItems;
     }
+
+    @Override
+    public Stock restoreItem(int skuId, int quantity) {
+
+        Stock itemStock = entityManager.find(Item.class, String.valueOf(skuId)).getStock();
+        int change = quantity - itemStock.getReservedStock();
+        System.out.println(change);
+        if (change > 0) {
+            itemStock.setAvailableStock(itemStock.getAvailableStock() - change);
+            itemStock.setReservedStock(itemStock.getReservedStock() + change);
+        } else {
+            if (change < 0) {
+                itemStock.setAvailableStock(itemStock.getAvailableStock() + Math.abs(change));
+                itemStock.setReservedStock(itemStock.getReservedStock() - Math.abs(change));
+            }
+        }
+
+        return itemStock;
+    }
 }
