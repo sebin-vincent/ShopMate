@@ -1,18 +1,10 @@
 $(document).ready(function () {
-<<<<<<< HEAD
-    var sessionId= sessionStorage.getItem("profile_id"); 
-    if (sessionId==null) {
-        window.location.href="login.html"
-    } else {
-        var urlOriginal="http://localhost:8084/order/cart/"+1234+"/1"
-=======
     var sessionId = sessionStorage.getItem("profile_id");
->>>>>>> 269b878f9582bcd295906ffe3587b63ef6d82fa0
 
     if (sessionId == null) {
         window.location.href = "login.html"
     } else {
-        var urlOriginal = "http://localhost:8084/order/cart/" + sessionId + "/1"
+        var urlOriginal = "http://localhost:8084/order/cart/" + 1234 + "/1"
         $.ajax({
 
             type: "GET",
@@ -221,4 +213,11 @@ $(document).ready(function () {
 
 });
 
-
+function logout() {
+    //console.log("hi")
+    console.log(sessionStorage.getItem("profile_id"))
+     sessionStorage.removeItem("profile_id")
+     console.log(sessionStorage.getItem("profile_id"))
+    
+     }
+  

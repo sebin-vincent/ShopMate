@@ -326,7 +326,9 @@ inputNumber($('.input-number'));
 
  $('.controls').on('click', function(){
   $(this).addClass('active').siblings().removeClass('active');
- }); 
+ });
+ 
+ 
 
 
 }(jQuery));
