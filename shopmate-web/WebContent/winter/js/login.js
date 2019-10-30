@@ -69,10 +69,12 @@ document.getElementById("sign_up_bttn").addEventListener("click",function() {
               if(response.status_Message=="User added successfully"){
                 alert("signup successfull");
               }
-              else{
-                alert("Invalid credential");
+              else if (status_Message == "User already exist") {
+                alert("user already exist");
               }
-              
+              else{
+                alert("Invalid credentials");
+              }
               
           }
       });
@@ -166,19 +168,19 @@ document.getElementById("fp_up_bttn").addEventListener("click",function(){
 
 /////////////to be removed to profile section change password////////////////////
 
-document.getElementById("change_paswd_bttn").addEventListener("click",function() {
-  var oldPaswd=document.getElementById("chng_old_password").value;
-  var newPaswd=document.getElementById("chng_new_password").value;
-  var confPaswd=document.getElementById("chng_conf_password").value;
-  if(newPaswd!=confPaswd){
-    alert("Please confirm new password!");
-  }else if (newPaswd=="" || confPaswd=="" ||oldPaswd=="") {
-    alert("Please fill all fields!");
-  }
-  else{
-    document.getElementById("change_password_form").submit();
-  }
-});
+// document.getElementById("change_paswd_bttn").addEventListener("click",function() {
+//   var oldPaswd=document.getElementById("chng_old_password").value;
+//   var newPaswd=document.getElementById("chng_new_password").value;
+//   var confPaswd=document.getElementById("chng_conf_password").value;
+//   if(newPaswd!=confPaswd){
+//     alert("Please confirm new password!");
+//   }else if (newPaswd=="" || confPaswd=="" ||oldPaswd=="") {
+//     alert("Please fill all fields!");
+//   }
+//   else{
+//     //document.getElementById("change_password_form").submit();
+//   }
+// });
 /////////////to be removed to profile section change password////////////////////
 
 // function signup() {

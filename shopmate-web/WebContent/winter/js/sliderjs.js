@@ -17,15 +17,7 @@ $(document).ready(function () {
 
   $(".imgSEQ_NUM").hide();
 
-  var sessionId = sessionStorage.getItem("profile_id");
-  if(sessionId===null){
-    document.getElementById("myaccounttab").style.display="none";
-    document.getElementById("logintab").style.display="block";
-  }
-  else{
-    document.getElementById("myaccounttab").style.display="block";
-    document.getElementById("logintab").style.display="none";
-  }
+ 
 
   $.ajax({
     url: "http://localhost:8082/sliderimages",
