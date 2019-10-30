@@ -1,11 +1,25 @@
 $(document).ready(function () {
-  
   var profileid = sessionStorage.getItem("profile_id")
   var temp
   var emptycart = document.getElementById('table')
+  function cancel(orderidparam){
+    var url = "http://localhost:8084/order/cancel/" + orderidparam
+    $.ajax({
+      type: "PUT",
+      url: url,
+      async: false,
+      success: function (response3) {
+
+        if(response3.message == "success"){
+          window.location.href = "http://localhost:8085/shopmate-web/winter/templates/order.html";
+        }
+        
+      }
+    });
+  }
   if (profileid == null) {
     alert("please login")
-    window.location.href = "D:/shopmate/shopmate-web/WebContent/winter/templates/login.html";
+    window.location.href = "http://localhost:8085/shopmate-web/winter/templates/login.html";
   } else {
     $.ajax({
       url: "http://localhost:8084/order/get/allorder/" + profileid,
@@ -37,9 +51,30 @@ $(document).ready(function () {
 
           if (temp[i].orderStatusId == 0) {
             var orderPlaced = document.createElement("h5")
-            orderPlaced.setAttribute("style", "background-color:orange;height: 30px;width: 100px;border-radius:5px ;text-align: center;align-content: center; padding-top: 0.3rem;color: white;")
+            orderPlaced.setAttribute("style", "background-color:green;height: 30px;width: 100px;border-radius:5px ;text-align: center;align-content: center; padding-top: 0.3rem;color: white;")
             orderPlaced.innerHTML = "order placed"
             tdTag1.appendChild(orderPlaced)
+            trTag.appendChild(tdTag5)
+          }
+
+          if (temp[i].orderStatusId == 0) {
+            // var cancelorder = document.createElement("button")
+            // cancelorder.setAttribute("class","cancelbutton")
+            // cancelorder.innerHTML = "cancel order"
+            // tdTag1.appendChild(cancelorder)
+            // trTag.appendChild(tdTag5)
+
+            var cancelanchor = document.createElement("a")
+            //var cancelurl = "http://localhost:8084/order/cancel/" + temp[i].orderId
+            //cancelanchor.setAttribute("href",cancelurl)
+            var cancelorder = document.createElement("button")
+            cancelorder.setAttribute("class","cancelbutton")
+            cancelorder.innerHTML = "cancel order"
+            var funName="cancel("+temp[i].orderId+")"
+            cancelorder.setAttribute("onclick",funName)
+
+            cancelanchor.appendChild(cancelorder)
+            tdTag1.appendChild(cancelanchor)
             trTag.appendChild(tdTag5)
           }
 
@@ -138,3 +173,4 @@ $(document).ready(function () {
     });
   }
 });
+
