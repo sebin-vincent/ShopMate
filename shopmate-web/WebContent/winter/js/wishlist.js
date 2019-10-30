@@ -1,7 +1,7 @@
 function delete_item(element) {
 
     var data = {
-        profileId: "1234",
+        profileId: sessionStorage.getItem("profile_id"),
         skuId: element
     }
 
