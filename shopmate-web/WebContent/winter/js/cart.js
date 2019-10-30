@@ -88,10 +88,9 @@ $(document).ready(function () {
                                <input class="cart-quantity-input" type="number" value="${items[m].quantity}">
                                <button class="btn btn-danger" id="delete" type="button">REMOVE</button>
                            </div>`
-                                var temp = subDivTag.getElementsByClassName("cart-quantity-input")
-                                var quan = (temp.value) * itemPrice
+                            
 
-                                //tdTag4.innerHTML=`<h5> ${quan} </h5>`
+                                
                                 trTag.appendChild(tdTag1);
                                 trTag.appendChild(tdTag2);
                                 trTag.appendChild(tdTag3);
@@ -120,6 +119,7 @@ $(document).ready(function () {
                         if (isNaN(input.value) || input.value <= 0) {
                             input.value = 1
                         }
+                        
                         var id =$(input.parentElement.parentElement.parentElement.parentElement).attr('id')
                        
                         updateInventoryData = {
@@ -214,10 +214,10 @@ $(document).ready(function () {
 });
 
 function logout() {
-    //console.log("hi")
-    console.log(sessionStorage.getItem("profile_id"))
-     sessionStorage.removeItem("profile_id")
-     console.log(sessionStorage.getItem("profile_id"))
-    
-     }
+  //console.log("hi")
+  console.log(sessionStorage.getItem("profile_id"))
+   sessionStorage.removeItem("profile_id")
+   console.log(sessionStorage.getItem("profile_id"))
   
+   }
+
