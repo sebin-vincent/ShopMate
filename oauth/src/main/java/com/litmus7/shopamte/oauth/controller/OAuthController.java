@@ -19,24 +19,12 @@ public class OAuthController {
     @Autowired
     private OAuthServiceDao oAuthService;
 
-//    @CrossOrigin
-//    @GetMapping("/")
-//    public String home() {
-//
-////        RedirectView redirectView = new RedirectView();
-////        redirectView.setUrl("http://localhost:8080");
-////        return redirectView;
-//
-//        return "test";
-//
-//    }
-
     @CrossOrigin
     @RequestMapping("user")
-//    @ResponseBody
     public ModelAndView getUser(Principal principal) {
 
-//        JSONObject jsonObject = new JSONObject();
+
+
         Response_Info response_info = new Response_Info();
         String token = null;
 
@@ -47,22 +35,21 @@ public class OAuthController {
             email = (String) userDetails.get("email");
             token = oAuthService.isEmailExists(email);
 
-//            jsonObject.put("status", "200");
-//            jsonObject.put("message", "fetched");
-//            jsonObject.put("token", token);
-
             response_info.setStatus_Code(200);
             response_info.setStatus_Message("lookup response");
             response_info.setPayload(Collections.singletonList(token));
+
+            RedirectView redirectView = new RedirectView();
+            redirectView.setUrl("google.com");
+
+            String redirectUrl = "http://127.0.0.1:5500/winter/templates/authenticated.html?pid=" + token;
+            return new ModelAndView("redirect:" + redirectUrl);
+
+        } else {
+            return new ModelAndView("redirect:https://google.com");
         }
 
-        RedirectView redirectView = new RedirectView();
-        redirectView.setUrl("google.com");
 
-        String redirectUrl = "http://127.0.0.1:5500/winter/templates/authenticated.html?pid=" + token;
-        // String redirectUrl = "https://github.com/";
-        return new ModelAndView("redirect:" + redirectUrl);
-        //TODO redirect to authenticated.html with paramter as token, for security reasons, encrypt the token.
     }
 
     /*

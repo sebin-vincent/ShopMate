@@ -15,4 +15,5 @@ public interface ItemService {
     public Stock UnreserveItem(int id, int quantity);
     public List<LatestArrivedItem> getLatestArrivedItems(int itemsCount);
     public String getItemNameBySkuId(int skuId);
+    public Stock restoreItems(int skuId, int quantity);
 }

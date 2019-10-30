@@ -16,4 +16,5 @@ public interface ItemRepository {
     public Stock reserveItem(int skuid, int quantity);
     public Stock unreserveItem(int skuid, int quantity);
     public List<Item> getLatestArrivals(int itemCount);
+    public Stock restoreItem(int skuId, int quantity);
 }

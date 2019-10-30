@@ -72,4 +72,11 @@ public class ItemController {
 	public ResponseInfo getItemName(@PathVariable String skuId) {
 		return new ResponseInfo(200, "retrieved", itemServiceImpl.getItemNameBySkuId(Integer.parseInt(skuId)));
 	}
+
+	@CrossOrigin
+	@PutMapping("restore")
+	public Stock restoreItem(@RequestBody ReserveBodyDto reserveBodyDto) {
+		System.out.println(reserveBodyDto);
+		return itemServiceImpl.restoreItems(Integer.parseInt(reserveBodyDto.getSkuId()), reserveBodyDto.getQuantity());
+	}
 }
