@@ -114,8 +114,6 @@ $(function () {
         contentType: "application/json",
         dataType: "json",
         url: "http://localhost:8084/order/cart/"+sessionId+"/1",//100 is the profileid
-        data: "data",
-
         success: function (response) {
           console.log(response);
           if (response.payload[0] != null) {
@@ -147,7 +145,7 @@ $(function () {
         e.preventDefault();
         var wish_icon = document.getElementById("wish");
         var datas = {
-          "profileId": sessionId,
+          "profileId": 4,
           "skuId": last_part
         }
         $.ajax({
