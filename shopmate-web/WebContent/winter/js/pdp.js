@@ -2,7 +2,7 @@
 //var profileId=sessionStorage.getItem("profile_id");
 
 var sessionId = sessionStorage.getItem("profile_id");
-
+console.log(sessionId);
 $(function () {
   var url = window.location.href;
   //var url = $(location).attr('href')
@@ -145,7 +145,7 @@ $(function () {
         e.preventDefault();
         var wish_icon = document.getElementById("wish");
         var datas = {
-          "profileId": 4,
+          "profileId": sessionId,
           "skuId": last_part
         }
         $.ajax({

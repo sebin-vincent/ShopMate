@@ -33,6 +33,17 @@ document.getElementById("sign_up_bttn").addEventListener("click",function() {
     alert("Please fill all fields!");
 
   }
+  else if(pass1.length<5 || pass2.length <5 ){
+    alert("password must contain atleast 5 letter")
+
+  }
+  else if(phone.length!=10){
+    alert("enter a valid number");
+
+  }
+  else if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)==false){
+    alert("enter a valid email adress");
+  }
   else{
     signup();
     //document.getElementById("sign_up_form").submit();
