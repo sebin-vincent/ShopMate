@@ -179,7 +179,7 @@ $(function () {
         console.log(add_cart);
         if (add_cart == "added") {
           console.log(add_cart);
-          add_cart.setAttribute("href", "F:/shopmate/shopmate-web/WebContent/winter/templates/cart.html");
+          add_cart.setAttribute("href", "../templates/cart.html");
         }
         else {
 
@@ -231,7 +231,7 @@ $(function () {
                     success: function (responseFromInventory) {
 
                       $("#add-to-cart-btn").html("Buy Now");
-
+                      
                     }
                   });
 
