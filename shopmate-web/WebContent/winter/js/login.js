@@ -33,8 +33,8 @@ document.getElementById("sign_up_bttn").addEventListener("click",function() {
     alert("Please fill all fields!");
 
   }
-  else if(pass1.length<5 || pass2.length <5 ){
-    alert("password must contain atleast 5 letter")
+  else if(pass1.length<8 || pass2.length <8 ){
+    alert("password must contain atleast 8 letter")
 
   }
   else if(phone.length!=10){
