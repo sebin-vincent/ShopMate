@@ -77,7 +77,7 @@ document.getElementById("sign_up_bttn").addEventListener("click",function() {
               if(response.status_Message=="User added successfully"){
                 alert("signup successfull");
               }
-              else if (status_Message == "User already exist") {
+              else if (response.status_Message == "User already exist") {
                 alert("user already exist");
               }
               else{

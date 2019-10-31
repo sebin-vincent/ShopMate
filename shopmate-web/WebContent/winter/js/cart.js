@@ -4,7 +4,7 @@ $(document).ready(function () {
     if (sessionId == null) {
         window.location.href = "login.html"
     } else {
-        var urlOriginal = "http://localhost:8084/order/cart/" + 1234 + "/1"
+        var urlOriginal = "http://localhost:8084/order/cart/" + sessionId + "/1"
         $.ajax({
 
             type: "GET",
@@ -94,10 +94,9 @@ $(document).ready(function () {
                                <input class="cart-quantity-input" type="number" value="${items[m].quantity}">
                                <button class="btn btn-danger" id="delete" type="button">REMOVE</button>
                            </div>`
-                                var temp = subDivTag.getElementsByClassName("cart-quantity-input")
-                                var quan = (temp.value) * itemPrice
+                            
 
-                                //tdTag4.innerHTML=`<h5> ${quan} </h5>`
+                                
                                 trTag.appendChild(tdTag1);
                                 trTag.appendChild(tdTag2);
                                 trTag.appendChild(tdTag3);
@@ -121,92 +120,7 @@ $(document).ready(function () {
 
                     }
 
-                    function quantityChanged(event) {
-                        var input = event.target
-                        if (isNaN(input.value) || input.value <= 0) {
-                            input.value = 1
-                        }
-                        var id =$(input.parentElement.parentElement.parentElement.parentElement).attr('id')
-                       
-                        updateInventoryData = {
-
-                            "skuId": id,
-                            "quantity": input.value
-      
-                          }
-      
-                          $.ajax({
-      
-                            type: "PUT",
-                            url: "http://localhost:8083/items/reserve",
-                            data: JSON.stringify(updateInventoryData),
-                            dataType: "json",
-                            contentType: "application/json; charset=utf-8",
-                            async:false,
-      
-                            success: function (responseFromInventory) {
-      
-                              alert("quantity updated")
-      
-                            }
-                          });
-
-                        subTotal()
-
-                    }
-
-                    function removeItem(event) {
-                        var buttonClicked = event.target
-                        // console.log(event.data)
-
-                        buttonClicked.parentElement.parentElement.parentElement.parentElement.remove()
-                        var id = $(buttonClicked.parentElement.parentElement.parentElement.parentElement).attr('id')
-
-
-                        var removeUrl = `http://localhost:8081/cart/delete/?orderId=${orderId}&skuId=${id}`
-
-                        $.ajax({
-                            type: "delete",
-                            url: removeUrl,
-                            async: false,
-                            success: function (response) {
-
-                            }
-                        });
-
-
-
-
-                        subTotal()
-                    }
-
-                    function subTotal() {
-
-                        var cartItems = document.getElementById("cart-item")
-
-                        var cartRows = cartItems.getElementsByClassName("cart-row")
-
-                        var subtotal = 0
-                        for (let k = 0; k < cartRows.length; k++) {
-                            var cartRow = cartRows[k]
-                            var priceElement = cartRow.getElementsByClassName("item-price")[0]
-
-                            var quantityElement = cartRow.getElementsByClassName("cart-quantity-input")[0]
-
-                            var price = parseFloat(priceElement.innerText)
-                            var quantity = quantityElement.value
-                            sessionStorage.setItem("quantity",quantity);
-                            var total = price * quantity
-                            document.getElementsByClassName("total")[k].innerHTML = `<h5> ${total}</h5>`
-
-
-                            subtotal = subtotal + (price * quantity)
-                            sessionStorage.setItem("subtotal",subtotal);
-                          
-                        }
-
-                        document.getElementById("subtotal").innerHTML = `${subtotal}`
-                    }
+                  
 
                 }
 
@@ -221,10 +135,139 @@ $(document).ready(function () {
 });
 
 function logout() {
-    //console.log("hi")
-    console.log(sessionStorage.getItem("profile_id"))
-     sessionStorage.removeItem("profile_id")
-     console.log(sessionStorage.getItem("profile_id"))
-    
-     }
+  //console.log("hi")
+  console.log(sessionStorage.getItem("profile_id"))
+   sessionStorage.removeItem("profile_id")
+   console.log(sessionStorage.getItem("profile_id"))
   
+   }
+function quantityChanged(event) {
+    var input = event.target
+    if (isNaN(input.value) || input.value <= 0) {
+        input.value = 1
+    }
+    
+    var id =$(input.parentElement.parentElement.parentElement.parentElement).attr('id')
+   
+   
+
+    subTotal()
+
+    }
+
+function removeItem(event) {
+    var buttonClicked = event.target
+    // console.log(event.data)
+
+    buttonClicked.parentElement.parentElement.parentElement.parentElement.remove()
+    var id = $(buttonClicked.parentElement.parentElement.parentElement.parentElement).attr('id')
+
+
+    var removeUrl = `http://localhost:8081/cart/delete/?orderId=${orderId}&skuId=${id}`
+
+    $.ajax({
+        type: "delete",
+        url: removeUrl,
+        async: false,
+        success: function (response) {
+
+        }
+    });
+    var quantity = input.value
+    if(input.value==1){
+        quantity = 0;
+    }
+  
+    updateInventoryData = {
+
+        "skuId": id,
+        "quantity": quantity
+
+      }
+
+      $.ajax({
+
+        type: "PUT",
+        url: "http://localhost:8083/items/restore/",
+        data: JSON.stringify(updateInventoryData),
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        async:false,
+
+        success: function (responseFromInventory) {
+
+         // alert("quantity updated")
+
+        }
+      });
+
+
+
+
+
+    subTotal()
+    }
+
+function subTotal() {
+
+    var cartItems = document.getElementById("cart-item")
+
+    var cartRows = cartItems.getElementsByClassName("cart-row")
+
+    var subtotal = 0
+    for (let k = 0; k < cartRows.length; k++) {
+        var cartRow = cartRows[k]
+        var priceElement = cartRow.getElementsByClassName("item-price")[0]
+
+        var quantityElement = cartRow.getElementsByClassName("cart-quantity-input")[0]
+
+        var price = parseFloat(priceElement.innerText)
+        var quantity = quantityElement.value
+        sessionStorage.setItem("quantity",quantity);
+        var total = price * quantity
+        document.getElementsByClassName("total")[k].innerHTML = `<h5> ${total}</h5>`
+
+
+        subtotal = subtotal + (price * quantity)
+        sessionStorage.setItem("subtotal",subtotal);
+      
+    }
+
+    document.getElementById("subtotal").innerHTML = `${subtotal}`
+    }
+
+
+function checkout(){
+    var cartRows = document.getElementsByClassName("cart-row")
+    
+    for (let index = 0; index < cartRows.length; index++) {
+        var skuId = $(cartRows[index]).attr('id')
+        var quantity= document.getElementsByClassName("cart-quantity-input")[index].value
+
+        updateInventoryData = {
+
+            "skuId": skuId,
+            "quantity": quantity
+    
+          }
+    
+          $.ajax({
+    
+            type: "PUT",
+            url: "http://localhost:8083/items/restore/",
+            data: JSON.stringify(updateInventoryData),
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            async:false,
+    
+            success: function (responseFromInventory) {
+    
+             
+    
+            }
+          });
+        
+    }
+}
+
+
