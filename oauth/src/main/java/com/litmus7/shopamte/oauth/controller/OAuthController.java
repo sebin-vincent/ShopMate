@@ -1,14 +1,14 @@
 package com.litmus7.shopamte.oauth.controller;
 
+import com.litmus7.shopamte.oauth.model.CipherText;
 import com.litmus7.shopamte.oauth.model.Response_Info;
+import com.litmus7.shopamte.oauth.security.TokenEncryption;
 import com.litmus7.shopamte.oauth.service.OAuthServiceDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.RedirectView;
 
-import javax.servlet.http.HttpSession;
 import java.security.Principal;
 import java.util.Collections;
 import java.util.HashMap;
@@ -19,10 +19,11 @@ public class OAuthController {
     @Autowired
     private OAuthServiceDao oAuthService;
 
+    private String key = "test-key";
+
     @CrossOrigin
     @RequestMapping("user")
     public ModelAndView getUser(Principal principal) {
-
 
 
         Response_Info response_info = new Response_Info();
@@ -39,10 +40,10 @@ public class OAuthController {
             response_info.setStatus_Message("lookup response");
             response_info.setPayload(Collections.singletonList(token));
 
-            RedirectView redirectView = new RedirectView();
-            redirectView.setUrl("google.com");
+            String encryptedToken = TokenEncryption.encode(new StringBuilder(token).reverse().toString());
 
-            String redirectUrl = "http://127.0.0.1:5500/winter/templates/authenticated.html?pid=" + token;
+            System.out.println(encryptedToken);
+            String redirectUrl = "http://127.0.0.1:5500/winter/templates/authenticated.html?pid=" + encryptedToken;
             return new ModelAndView("redirect:" + redirectUrl);
 
         } else {
@@ -52,11 +53,10 @@ public class OAuthController {
 
     }
 
-    /*
-        How it works
-            goto localhost:8080, signin using google
-            send a get request to localhost:8080/user and retrieve the token
-            add the token to the session
-     */
+    @GetMapping("decrypt")
+    public String decryptToken(@RequestBody CipherText cipherText) {
+        return TokenEncryption.decode(cipherText.getCipherText());
+    }
+
 
 }
