@@ -130,7 +130,7 @@ function productList(min, max) {
           }
         }
         var wish_button = document.getElementsByClassName('fa fa-heart');
-        for (var i = 0; i < wish_button.length; i++) {
+        for (var i = 1; i < wish_button.length; i++) {
           var input_i = wish_button[i];
           input_i.addEventListener('click', wishList);
         }
