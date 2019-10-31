@@ -63,19 +63,19 @@ public class UserDto {
 	private String answer;
 	
 	@Column(name = "primary_phone_mumber")
-	private int mobile;
+	private Double mobile;
 
 //	@Column(name = "question_id")
 //	private String question_id;
 //	
 //	
 	
-	public int getMobile() {
+	public Double getMobile() {
 		return mobile;
 	}
 
 	public void setMobile(int mobile) {
-		this.mobile = mobile;
+		this.mobile = (double) mobile;
 	}
 
 	public String getQuestionId() {
