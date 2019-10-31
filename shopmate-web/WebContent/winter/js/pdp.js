@@ -19,7 +19,7 @@ $(function () {
     type: "GET",
     dataType: "json",
 
-    url: "http://localhost:8080/wishlist/4/retrieve",
+    url: "http://localhost:8080/wishlist/"+sessionId+"/retrieve",
 
 
     success: function (response1) {
