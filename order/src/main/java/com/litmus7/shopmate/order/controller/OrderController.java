@@ -118,7 +118,7 @@ public class OrderController {
 	
 	// api for place order which update all the data to new data
 	@CrossOrigin
-	@PutMapping("order/Update")
+	@PutMapping("order/update")
 	public Response updateOrder(@RequestBody OrderDto order) {
 		response.setMessage("Ok");
 		response.setStatus(200);
