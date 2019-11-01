@@ -2,7 +2,10 @@
 //var profileId=sessionStorage.getItem("profile_id");
 
 var sessionId = sessionStorage.getItem("profile_id");
-console.log(sessionId);
+// console.log(sessionId);
+
+
+
 $(function () {
   var url = window.location.href;
   //var url = $(location).attr('href')
@@ -146,36 +149,36 @@ $(function () {
           "profileId": sessionId,
           "skuId": last_part
         }
-        if(sessionId==null){
+        if (sessionId == null) {
           alert("Please login to continue");
-          document.location.href="login.html";
+          document.location.href = "login.html";
         }
-        else{
-        $.ajax({
-          async: false,
-          type: "POST",
-          contentType: "application/json",
-          dataType: "json",
-          url: "http://localhost:8080/wishlist/add",
-          data: JSON.stringify(datas),
-          success: function (response) {
-            if (response.status_Message == "item added") {
-              alert("Item added to your wish list");
-              wish_icon.setAttribute("style", "color:red;");
+        else {
+          $.ajax({
+            async: false,
+            type: "POST",
+            contentType: "application/json",
+            dataType: "json",
+            url: "http://localhost:8080/wishlist/add",
+            data: JSON.stringify(datas),
+            success: function (response) {
+              if (response.status_Message == "item added") {
+                alert("Item added to your wish list");
+                wish_icon.setAttribute("style", "color:red;");
 
+              }
+              else if (response.status_Message == "item exist") {
+                alert("item removed from your wish list");
+                wish_icon.setAttribute("style", "color:blue;");
+              }
+              else {
+                alert("try again");
+              }
             }
-            else if (response.status_Message == "item exist") {
-              alert("item removed from your wish list");
-              wish_icon.setAttribute("style", "color:blue;");
-            }
-            else {
-              alert("try again");
-            }
-          }
-        });
-      }
+          });
+        }
       });
-    
+
       var add_cart = document.getElementById('add-to-cart-btn');
 
       $(add_cart).click(function (e) {
@@ -189,61 +192,66 @@ $(function () {
 
           e.preventDefault();
 
-          $.ajax({
-            async: false,
-            type: "GET",
-            url: "http://localhost:8084/order/get/orderid/" + sessionId, //TODO paste profile id from session
-            success: function (responseFromOrder) {
-              var orderId = responseFromOrder.payload[0].orderId;
-              var profileId = sessionId; //TODO fetch from session
-              var skuId = response.skuId;
-              var skuQty = 1;
-              var unitPrice = response.salePrice;
-              var addToCartRequestData = {
+          if (sessionId == null) {
+            location.href = 'login.html';
+          } else {
 
-                "orderId": orderId,
-                "skuId": skuId,
-                "quantity": skuQty,
-                "unitPrice": unitPrice,
-                "lastModifiedDate": null
+            $.ajax({
+              async: false,
+              type: "GET",
+              url: "http://localhost:8084/order/get/orderid/" + sessionId, //TODO paste profile id from session
+              success: function (responseFromOrder) {
+                var orderId = responseFromOrder.payload[0].orderId;
+                var profileId = sessionId; //TODO fetch from session
+                var skuId = response.skuId;
+                var skuQty = 1;
+                var unitPrice = response.salePrice;
+                var addToCartRequestData = {
 
-              };
+                  "orderId": orderId,
+                  "skuId": skuId,
+                  "quantity": skuQty,
+                  "unitPrice": unitPrice,
+                  "lastModifiedDate": null
 
-              $.ajax({
-                type: "POST",
-                url: "http://localhost:8081/cart/add",
-                data: JSON.stringify(addToCartRequestData),
-                dataType: "json",
-                contentType: "application/json; charset=utf-8",
-                success: function (responseFromCart) {
+                };
 
-                  updateInventoryData = {
+                $.ajax({
+                  type: "POST",
+                  url: "http://localhost:8081/cart/add",
+                  data: JSON.stringify(addToCartRequestData),
+                  dataType: "json",
+                  contentType: "application/json; charset=utf-8",
+                  success: function (responseFromCart) {
 
-                    "skuId": skuId,
-                    "quantity": skuQty
+                    updateInventoryData = {
 
-                  }
-
-                  $.ajax({
-
-                    type: "PUT",
-                    url: "http://localhost:8083/items/reserve",
-                    data: JSON.stringify(updateInventoryData),
-                    dataType: "json",
-                    contentType: "application/json; charset=utf-8",
-
-                    success: function (responseFromInventory) {
-
-                      $("#add-to-cart-btn").html("Buy Now");
+                      "skuId": skuId,
+                      "quantity": skuQty
 
                     }
-                  });
 
-                }
-              });
+                    $.ajax({
 
-            }
-          });
+                      type: "PUT",
+                      url: "http://localhost:8083/items/reserve",
+                      data: JSON.stringify(updateInventoryData),
+                      dataType: "json",
+                      contentType: "application/json; charset=utf-8",
+
+                      success: function (responseFromInventory) {
+
+                        $("#add-to-cart-btn").html("Buy Now");
+
+                      }
+                    });
+
+                  }
+                });
+
+              }
+            });
+          }
         }
       });
 
