@@ -39,7 +39,7 @@ public class ItemServiceImpl implements ItemServiceDao {
 		resultOrder.setTotalAmount((int) totalAmount);
 		resultOrder.setAddressId(orderDto.getAddressId());
 		resultOrder.setDeliveryDate(orderDto.getDeliveryDate());
-		resultOrder.setOrderStatusId(2);
+		resultOrder.setOrderStatusId(0);
 		resultOrder.setPaymentMethodId(orderDto.getPaymentMethodId());
 		resultOrder.setShippingMethodId(orderDto.getShippingMethodId());
 		orderRepositoryDao.save(resultOrder);
