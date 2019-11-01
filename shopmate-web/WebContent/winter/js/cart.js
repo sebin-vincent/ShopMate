@@ -196,7 +196,7 @@ function removeItem(event) {
 
         success: function (responseFromInventory) {
 
-             alert("quantity updated")
+            
 
         }
     });
