@@ -37,8 +37,8 @@ document.getElementById("sign_up_bttn").addEventListener("click",function() {
     alert("password must contain atleast 8 letter")
 
   }
-  else if(phone.length!=10){
-    alert("enter a valid number");
+  else if(phone.length!=10 || (/^[0-9]*$/.test(phone))==false){
+    alert("enter a valid mobile number");
 
   }
   else if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)==false){
