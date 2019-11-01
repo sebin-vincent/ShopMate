@@ -108,3 +108,26 @@ $('#f-option3').click(function () {
 });
 
 
+function updateOrder(){
+    $.ajax({
+        type: "PUT",
+        dataType: "json",
+        data:{
+            "orderId":sessionStorage.getItem("orderId"),
+            "profileId":sessionStorage.getItem("profile_id"),
+            "addressId":"1",
+            "shippingMethodId":"1",
+            "paymentMethodId":"2",
+            "totalAmount":sessionStorage.getItem("subTotal"), 
+            "orderStatusId":"1",
+            "deliveryDate":"2019-11-01"
+        },
+        url: "http://localhost:8084/order/update",
+        success: function (result) {
+           
+
+        }
+    });
+}
+
+
