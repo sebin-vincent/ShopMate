@@ -168,6 +168,7 @@ public class OrderController {
 
 	}
 	
+	@CrossOrigin
 	@PutMapping("/order/update/quantity/{orderId}/{skuId}/{quantity}")
 	public Response updateQuantity(@PathVariable int orderId,@PathVariable int quantity,@PathVariable int skuId) {
 		response.setStatus(200);

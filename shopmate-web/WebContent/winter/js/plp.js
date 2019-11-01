@@ -36,7 +36,7 @@ function productList(min, max) {
       url: "http://localhost:8082/sku/" + last_part,
       success: function (response) {
         var wishIcon = []
-        for (var i = 0; i < (response.payload.length - 2); (i = i + 3)) {
+        for (var i = 0; i < response.payload.length; i++) {
           var x = i + 1;
           var y = i + 2;
           if ((response.payload[i].salePrice >= min && response.payload[i].salePrice <= max)) {
@@ -44,8 +44,7 @@ function productList(min, max) {
             console.log(min, max)
 
             stock(`${response.payload[i].skuId}`, 1);
-            stock(`${response.payload[x].skuId}`, 2);
-            stock(`${response.payload[y].skuId}`, 3);
+            
 
             $parent.append(` <div class="row" style="padding-right: 25px">  
                               <div class="column" style="padding-bottom: 64px;">  
