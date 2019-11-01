@@ -33,6 +33,17 @@ document.getElementById("sign_up_bttn").addEventListener("click",function() {
     alert("Please fill all fields!");
 
   }
+  else if(pass1.length<8 || pass2.length <8 ){
+    alert("password must contain atleast 8 letter")
+
+  }
+  else if(phone.length!=10 || (/^[0-9]*$/.test(phone))==false){
+    alert("enter a valid mobile number");
+
+  }
+  else if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)==false){
+    alert("enter a valid email adress");
+  }
   else{
     signup();
     //document.getElementById("sign_up_form").submit();
@@ -128,6 +139,9 @@ document.getElementById("fp_up_bttn").addEventListener("click",function(){
   }else if (newPassword=="" || confPassword=="" || answer=="" || email==""|| value=="") {
 
     alert("Please fill all fields!");
+
+  }else if(newPassword.length<8){
+    alert("password must contain atleast 8 letters")
 
   }
   else{

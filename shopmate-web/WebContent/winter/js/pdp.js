@@ -2,7 +2,7 @@
 //var profileId=sessionStorage.getItem("profile_id");
 
 var sessionId = sessionStorage.getItem("profile_id");
-
+console.log(sessionId);
 $(function () {
   var url = window.location.href;
   //var url = $(location).attr('href')
@@ -19,7 +19,7 @@ $(function () {
     type: "GET",
     dataType: "json",
 
-    url: "http://localhost:8080/wishlist/"+sessionId+"/retrieve",
+    url: "http://localhost:8080/wishlist/" + sessionId + "/retrieve",
 
 
     success: function (response1) {
@@ -113,7 +113,7 @@ $(function () {
         type: "GET",
         contentType: "application/json",
         dataType: "json",
-        url: "http://localhost:8084/order/cart/"+sessionId+"/1",//100 is the profileid
+        url: "http://localhost:8084/order/cart/" + sessionId + "/1",//100 is the profileid
         success: function (response) {
           console.log(response);
           if (response.payload[0] != null) {
@@ -133,9 +133,7 @@ $(function () {
               }
             }
           }
-          else{
-            
-          }
+
         }
       });
 
@@ -145,9 +143,14 @@ $(function () {
         e.preventDefault();
         var wish_icon = document.getElementById("wish");
         var datas = {
-          "profileId": 4,
+          "profileId": sessionId,
           "skuId": last_part
         }
+        if(sessionId==null){
+          alert("Please login to continue");
+          document.location.href="login.html";
+        }
+        else{
         $.ajax({
           async: false,
           type: "POST",
@@ -170,16 +173,17 @@ $(function () {
             }
           }
         });
-
+      }
       });
-
+    
       var add_cart = document.getElementById('add-to-cart-btn');
 
       $(add_cart).click(function (e) {
         console.log(add_cart);
         if (add_cart == "added") {
-          console.log(add_cart);
-          add_cart.setAttribute("href", "F:/shopmate/shopmate-web/WebContent/winter/templates/cart.html");
+
+          add_cart.setAttribute("href", "cart.html");
+
         }
         else {
 

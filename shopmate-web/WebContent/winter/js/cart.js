@@ -1,3 +1,5 @@
+var orderId;
+var input;
 $(document).ready(function () {
     var sessionId = sessionStorage.getItem("profile_id");
 
@@ -22,14 +24,14 @@ $(document).ready(function () {
                 } else {
 
                     var items = response.payload[0].item
-                    var orderId = response.payload[0].orderId
+                    orderId = response.payload[0].orderId
 
-                    sessionStorage.setItem("cartItems",items.length)
-                    
+                    sessionStorage.setItem("cartItems", items.length)
+
 
                     for (let m = 0; m < items.length; m++) {
 
-                        
+
 
                         var skuId = items[m].skuId
                         var url = "http://localhost:8082/sku/details/" + skuId
@@ -41,12 +43,12 @@ $(document).ready(function () {
                             url: url,
                             async: false,
                             success: function (response) {
-                                
+
                                 console.log(response);
-                               sessionStorage.setItem("skuNameToCheckout"+m, response.skuName);
-                               sessionStorage.setItem("salePrice"+m, response.salePrice);
-                               //
-                               
+                                sessionStorage.setItem("skuNameToCheckout" + m, response.skuName);
+                                sessionStorage.setItem("salePrice" + m, response.salePrice);
+                                //
+
                                 var trTag = document.createElement("tr")
                                 trTag.setAttribute("class", "cart-row")
                                 trTag.setAttribute("id", `${skuId}`)
@@ -86,7 +88,7 @@ $(document).ready(function () {
 
                                 tdTag2.innerHTML = `<h5>${items[m].unitPrice}</h5>`
                                 divTag3.innerHTML = `<p id="item-name">${response.skuName}</p>`
-                                
+
 
                                 var itemPrice = `${items[m].unitPrice}`
 
@@ -94,9 +96,9 @@ $(document).ready(function () {
                                <input class="cart-quantity-input" type="number" value="${items[m].quantity}">
                                <button class="btn btn-danger" id="delete" type="button">REMOVE</button>
                            </div>`
-                            
 
-                                
+
+
                                 trTag.appendChild(tdTag1);
                                 trTag.appendChild(tdTag2);
                                 trTag.appendChild(tdTag3);
@@ -112,7 +114,7 @@ $(document).ready(function () {
                         var removeCartItem = document.getElementsByClassName('btn-danger')
                         var quantityInputs = document.getElementsByClassName("cart-quantity-input ")
 
-                        var input = quantityInputs[0]
+                        input = quantityInputs[0]
                         input.addEventListener('change', quantityChanged)
 
                         var button = removeCartItem[0]
@@ -120,7 +122,7 @@ $(document).ready(function () {
 
                     }
 
-                  
+
 
                 }
 
@@ -135,25 +137,25 @@ $(document).ready(function () {
 });
 
 function logout() {
-  //console.log("hi")
-  console.log(sessionStorage.getItem("profile_id"))
-   sessionStorage.removeItem("profile_id")
-   console.log(sessionStorage.getItem("profile_id"))
-  
-   }
+    //console.log("hi")
+    console.log(sessionStorage.getItem("profile_id"))
+    sessionStorage.removeItem("profile_id")
+    console.log(sessionStorage.getItem("profile_id"))
+
+}
 function quantityChanged(event) {
     var input = event.target
     if (isNaN(input.value) || input.value <= 0) {
         input.value = 1
     }
-    
-    var id =$(input.parentElement.parentElement.parentElement.parentElement).attr('id')
-   
-   
+
+    var id = $(input.parentElement.parentElement.parentElement.parentElement).attr('id')
+
+
 
     subTotal()
 
-    }
+}
 
 function removeItem(event) {
     var buttonClicked = event.target
@@ -174,39 +176,37 @@ function removeItem(event) {
         }
     });
     var quantity = input.value
-    if(input.value==1){
-        quantity = 0;
-    }
-  
+    
+
     updateInventoryData = {
 
         "skuId": id,
-        "quantity": quantity
+        "quantity": 0
 
-      }
+    }
 
-      $.ajax({
+    $.ajax({
 
         type: "PUT",
         url: "http://localhost:8083/items/restore/",
         data: JSON.stringify(updateInventoryData),
         dataType: "json",
         contentType: "application/json; charset=utf-8",
-        async:false,
+        async: false,
 
         success: function (responseFromInventory) {
 
-         // alert("quantity updated")
+            
 
         }
-      });
+    });
 
 
 
 
 
     subTotal()
-    }
+}
 
 function subTotal() {
 
@@ -223,50 +223,58 @@ function subTotal() {
 
         var price = parseFloat(priceElement.innerText)
         var quantity = quantityElement.value
-        sessionStorage.setItem("quantity",quantity);
+        sessionStorage.setItem("quantity", quantity);
         var total = price * quantity
         document.getElementsByClassName("total")[k].innerHTML = `<h5> ${total}</h5>`
 
 
         subtotal = subtotal + (price * quantity)
-        sessionStorage.setItem("subtotal",subtotal);
-      
+        sessionStorage.setItem("subtotal", subtotal);
+
     }
 
     document.getElementById("subtotal").innerHTML = `${subtotal}`
-    }
+}
 
 
-function checkout(){
+function checkout() {
     var cartRows = document.getElementsByClassName("cart-row")
-    
+
     for (let index = 0; index < cartRows.length; index++) {
         var skuId = $(cartRows[index]).attr('id')
-        var quantity= document.getElementsByClassName("cart-quantity-input")[index].value
+        var quantity = document.getElementsByClassName("cart-quantity-input")[index].value
 
         updateInventoryData = {
 
             "skuId": skuId,
             "quantity": quantity
-    
-          }
-    
-          $.ajax({
-    
+
+        }
+
+        $.ajax({
+
             type: "PUT",
             url: "http://localhost:8083/items/restore/",
             data: JSON.stringify(updateInventoryData),
             dataType: "json",
             contentType: "application/json; charset=utf-8",
-            async:false,
-    
+            async: false,
+
             success: function (responseFromInventory) {
-    
-             
-    
+
+
+
             }
-          });
-        
+        });
+
+        $.ajax({
+            type: "PUT",
+            url: `http://localhost:8084/order/update/quantity/${orderId}/${skuId}/${quantity}`,
+            async: false,
+            success: function (response) {
+                
+            }
+        });
     }
 }
 
