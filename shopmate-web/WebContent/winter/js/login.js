@@ -140,6 +140,9 @@ document.getElementById("fp_up_bttn").addEventListener("click",function(){
 
     alert("Please fill all fields!");
 
+  }else if(newPassword.length<8){
+    alert("password must contain atleast 8 letters")
+
   }
   else{
 
