@@ -14,5 +14,8 @@ public interface ItemRepositoryDao extends JpaRepository<ItemDto, Integer>{
 	
 	@Query(value = "SELECT * FROM order_detail WHERE order_id =:orderId",nativeQuery = true)
 	public List<ItemDto> getAllSkuByOrderId(@Param("orderId") int orderId);
+	
+	@Query(value = "select * from order_detail where order_id=:orderId and sku_id=:skuId",nativeQuery = true)
+	public ItemDto updateQuantity(@Param("orderId") int orderId, @Param("skuId") int skuId);
 
 }
