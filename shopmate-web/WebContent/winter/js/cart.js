@@ -176,14 +176,12 @@ function removeItem(event) {
         }
     });
     var quantity = input.value
-    if (input.value == 1) {
-        quantity = 0;
-    }
+    
 
     updateInventoryData = {
 
         "skuId": id,
-        "quantity": quantity
+        "quantity": 0
 
     }
 
@@ -198,7 +196,7 @@ function removeItem(event) {
 
         success: function (responseFromInventory) {
 
-            // alert("quantity updated")
+             alert("quantity updated")
 
         }
     });
@@ -269,6 +267,14 @@ function checkout() {
             }
         });
 
+        $.ajax({
+            type: "PUT",
+            url: `http://localhost:8084/order/update/quantity/${orderId}/${skuId}/${quantity}`,
+            async: false,
+            success: function (response) {
+                
+            }
+        });
     }
 }
 
