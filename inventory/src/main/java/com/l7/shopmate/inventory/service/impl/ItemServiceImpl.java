@@ -107,5 +107,11 @@ public class ItemServiceImpl implements ItemService {
 
     }
 
+    @Override
+    public Stock restoreItems(int skuId, int quantity) {
+        System.out.println("inside service");
+        return itemRepositoryImpl.restoreItem(skuId, quantity);
+    }
+
 
 }

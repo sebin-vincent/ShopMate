@@ -2,7 +2,7 @@
 //var profileId=sessionStorage.getItem("profile_id");
 
 var sessionId = sessionStorage.getItem("profile_id");
-
+console.log(sessionId);
 $(function () {
   var url = window.location.href;
   //var url = $(location).attr('href')
@@ -19,7 +19,7 @@ $(function () {
     type: "GET",
     dataType: "json",
 
-    url: "http://localhost:8080/wishlist/4/retrieve",
+    url: "http://localhost:8080/wishlist/"+sessionId+"/retrieve",
 
 
     success: function (response1) {
@@ -145,7 +145,7 @@ $(function () {
         e.preventDefault();
         var wish_icon = document.getElementById("wish");
         var datas = {
-          "profileId": 4,
+          "profileId": sessionId,
           "skuId": last_part
         }
         $.ajax({
@@ -179,7 +179,7 @@ $(function () {
         console.log(add_cart);
         if (add_cart == "added") {
           console.log(add_cart);
-          add_cart.setAttribute("href", "F:/shopmate/shopmate-web/WebContent/winter/templates/cart.html");
+          add_cart.setAttribute("href", "../templates/cart.html");
         }
         else {
 
@@ -231,7 +231,7 @@ $(function () {
                     success: function (responseFromInventory) {
 
                       $("#add-to-cart-btn").html("Buy Now");
-
+                      
                     }
                   });
 

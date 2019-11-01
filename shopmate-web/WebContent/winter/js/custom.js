@@ -1,3 +1,14 @@
+$(document).ready(function(){
+  var sessionId = sessionStorage.getItem("profile_id");
+  if(sessionId===null){
+    document.getElementById("myaccounttab").style.display="none";
+    document.getElementById("logintab").style.display="block";
+  }
+  else{
+    document.getElementById("myaccounttab").style.display="block";
+    document.getElementById("logintab").style.display="none";
+  }
+});
 
 (function ($) {
   "use strict";
