@@ -45,4 +45,16 @@ public class ItemServiceImpl implements ItemServiceDao {
 		orderRepositoryDao.save(resultOrder);
 		return "success";
 	}
+
+	@Override
+	public String updateQuantity(int orderId, int skuId, int quantity) {
+		ItemDto itemDto = new ItemDto();
+		itemDto = itemRepositoryDao.updateQuantity(orderId, skuId);
+		itemDto.setQuantity(quantity);
+		itemRepositoryDao.save(itemDto);
+		return "success";
+	}
+	
+	
+	
 }

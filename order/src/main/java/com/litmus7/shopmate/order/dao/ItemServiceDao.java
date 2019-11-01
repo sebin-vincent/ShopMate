@@ -11,4 +11,5 @@ public interface ItemServiceDao {
 	
 	public String updateOrder(OrderDto orderDto);
 	public long totalAmount(List<ItemDto> itemDto);
+	public String updateQuantity(int orderId,int skuId,int quantity);
 }
