@@ -2,21 +2,8 @@ $(document).ready(function () {
   var profileid = sessionStorage.getItem("profile_id")
   var temp
   var emptycart = document.getElementById('table')
-  function cancel(orderidparam){
-    var url = "http://localhost:8084/order/cancel/" + orderidparam
-    $.ajax({
-      type: "PUT",
-      url: url,
-      async: false,
-      success: function (response3) {
-
-        if(response3.message == "success"){
-          window.location.href = "order.html";
-        }
-        
-      }
-    });
-  }
+  
+  
   if (profileid == null) {
     alert("please login")
     window.location.href = "login.html";
@@ -173,3 +160,19 @@ $(document).ready(function () {
     });
   }
 });
+
+function cancel(orderidparam){
+  var url = "http://localhost:8084/order/cancel/" + orderidparam
+  $.ajax({
+    type: "PUT",
+    url: url,
+    async: false,
+    success: function (response3) {
+
+      if(response3.message == "success"){
+        window.location.href = "order.html";
+      }
+      
+    }
+  });
+}
