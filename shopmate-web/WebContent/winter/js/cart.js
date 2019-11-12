@@ -93,7 +93,7 @@ $(document).ready(function () {
                                 var itemPrice = `${items[m].unitPrice}`
 
                                 subDivTag.innerHTML = `<div class="cart-quantity cart-column">
-                               <input class="cart-quantity-input" type="number" value="${items[m].quantity}">
+                               <input class="cart-quantity-input" type="number" value="${items[m].quantity}" max=10 onKeyDown="return false">
                                <button class="btn btn-danger" id="delete" type="button">REMOVE</button>
                            </div>`
 
@@ -148,9 +148,12 @@ function quantityChanged(event) {
     if (isNaN(input.value) || input.value <= 0) {
         input.value = 1
     }
+    if (isNaN(input.value) || input.value > 10) {
+        input.value = 10
+    }
 
     var id = $(input.parentElement.parentElement.parentElement.parentElement).attr('id')
-
+    console.log(typeof(input.value))
 
 
     subTotal()
