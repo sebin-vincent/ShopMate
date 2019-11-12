@@ -4,6 +4,7 @@ $(document).ready(function () {
     let param = searchParams.get('q');
     let itemName = param.split('+').join(' ');
 
+    console.log(itemName)
     $("#search-query").append(itemName);
 
     let first = true;

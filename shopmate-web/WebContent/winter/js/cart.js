@@ -27,7 +27,7 @@ $(document).ready(function () {
                     orderId = response.payload[0].orderId
 
                     sessionStorage.setItem("cartItems", items.length)
-
+                    sessionStorage.setItem("orderId",orderId);
 
                     for (let m = 0; m < items.length; m++) {
 

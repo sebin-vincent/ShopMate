@@ -9,7 +9,6 @@ import org.springframework.data.annotation.Id;
 
 @Data
 @Document(indexName = "shopmate_items", type = "sku_names", shards = 2)
-//@AllArgsConstructor
 @NoArgsConstructor
 public class SkuName {
 
