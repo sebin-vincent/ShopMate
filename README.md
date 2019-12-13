@@ -1,4 +1,2 @@
-# shopmate
+# Shopmate
 E-commerce site
-
-Changes from Sachin
