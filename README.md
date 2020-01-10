@@ -1,2 +1,2 @@
 # Shopmate
-E-commerce site
+E-commerce site implemented using Springboot in soa.
